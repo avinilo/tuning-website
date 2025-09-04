@@ -107,28 +107,47 @@ const Contact: React.FC = () => {
 
             {/* Schedule */}
             <div className="bg-gradient-subtle p-8 rounded-2xl border border-elegant shadow-elegant hover:shadow-primary transition-all duration-300">
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 mb-6">
                 <div className="p-3 bg-gradient-primary rounded-lg">
                   <Clock className="h-6 w-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-white mb-4">Horarios de Atención</h3>
-                  <div className="space-y-3">
-                    {scheduleData.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center py-2 border-b border-elegant last:border-b-0">
-                        <span className="text-gray-300 font-medium">{item.day}</span>
-                        <span className={`font-medium ${
-                          item.hours === 'Cerrado' ? 'text-red-400' : 'text-primary'
-                        }`}>
-                          {item.hours}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-sm text-gray-400 mt-4 italic">
-                    Horarios confirmados por la empresa
-                  </p>
+                  <h3 className="text-xl font-semibold text-white mb-2">Horarios de Atención</h3>
+                  <p className="text-gray-300">Nuestros horarios de servicio</p>
                 </div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3">
+                {scheduleData.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className={`p-4 rounded-xl transition-all duration-300 hover:scale-105 ${
+                      item.hours === 'Cerrado' 
+                        ? 'bg-red-900/20 border border-red-800/30 hover:bg-red-900/30' 
+                        : 'bg-gray-800/50 border border-gray-700/50 hover:bg-gray-800/70 hover:border-primary/30'
+                    }`}
+                  >
+                    <div className="flex flex-col space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-white font-semibold text-sm">{item.day}</span>
+                        <div className={`w-2 h-2 rounded-full ${
+                          item.hours === 'Cerrado' ? 'bg-red-400' : 'bg-green-400'
+                        }`}></div>
+                      </div>
+                      <span className={`text-sm font-medium ${
+                        item.hours === 'Cerrado' ? 'text-red-400' : 'text-primary'
+                      }`}>
+                        {item.hours}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-6 pt-4 border-t border-gray-700/50">
+                <p className="text-sm text-gray-400 text-center italic">
+                  Horarios confirmados por la empresa
+                </p>
               </div>
             </div>
           </div>
