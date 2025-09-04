@@ -4,6 +4,11 @@ import { AuthProvider } from './contexts/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
   return (
@@ -15,12 +20,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               {/* Placeholder routes for other pages */}
-              <Route path="/services" element={<div className="min-h-screen bg-dark-primary flex items-center justify-center"><h1 className="text-white text-2xl">Servicios - En construcción</h1></div>} />
+              <Route path="/services" element={<Services />} />
               <Route path="/gallery" element={<div className="min-h-screen bg-dark-primary flex items-center justify-center"><h1 className="text-white text-2xl">Galería - En construcción</h1></div>} />
               <Route path="/about" element={<div className="min-h-screen bg-dark-primary flex items-center justify-center"><h1 className="text-white text-2xl">Nosotros - En construcción</h1></div>} />
-              <Route path="/contact" element={<div className="min-h-screen bg-dark-primary flex items-center justify-center"><h1 className="text-white text-2xl">Contacto - En construcción</h1></div>} />
-              <Route path="/login" element={<div className="min-h-screen bg-dark-primary flex items-center justify-center"><h1 className="text-white text-2xl">Login - En construcción</h1></div>} />
-              <Route path="/register" element={<div className="min-h-screen bg-dark-primary flex items-center justify-center"><h1 className="text-white text-2xl">Registro - En construcción</h1></div>} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
             </Routes>
           </main>
           <Footer />
