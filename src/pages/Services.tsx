@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Zap, Settings, Gauge, Wrench, Fuel, Cog, Truck, Car } from 'lucide-react';
+import { Search, Settings, Gauge, Wrench, Cog, Truck, Car } from 'lucide-react';
 
 const Services = () => {
   const carTuningServices = [
@@ -591,7 +591,18 @@ const Services = () => {
     }
   ];
 
-  const renderServiceCard = (service: any) => (
+  const renderServiceCard = (service: {
+    id: number;
+    title: string;
+    subtitle: string;
+    price: string;
+    originalPrice?: string;
+    badge: string;
+    description: string;
+    features: string[];
+    image: string;
+    popular?: boolean;
+  }) => (
     <div
       key={service.id}
       className={`relative bg-dark-secondary rounded-2xl overflow-hidden border transition-all duration-300 hover:scale-105 hover:shadow-2xl group ${
