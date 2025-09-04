@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
-import { toast } from 'sonner'
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -25,12 +24,12 @@ const Register = () => {
     
     // Validation
     if (formData.password !== formData.confirmPassword) {
-      toast.error('Las contraseñas no coinciden')
+      console.log('Las contraseñas no coinciden')
       return
     }
 
     if (formData.password.length < 6) {
-      toast.error('La contraseña debe tener al menos 6 caracteres')
+      console.log('La contraseña debe tener al menos 6 caracteres')
       return
     }
 
@@ -38,10 +37,10 @@ const Register = () => {
       setIsSubmitting(true)
       // Simulación de registro sin funcionalidad real
       await new Promise(resolve => setTimeout(resolve, 1000))
-      toast.success('¡Cuenta creada exitosamente!')
+      console.log('¡Cuenta creada exitosamente!')
       console.log('Registro simulado:', formData)
     } catch (error) {
-      toast.error('Error inesperado al crear la cuenta')
+      console.log('Error inesperado al crear la cuenta')
     } finally {
       setIsSubmitting(false)
     }
@@ -49,7 +48,7 @@ const Register = () => {
 
   const handleGoogleSignIn = () => {
     console.log('Google sign in (sin funcionalidad)')
-    toast.info('Funcionalidad de Google no implementada')
+    console.log('Funcionalidad de Google no implementada')
   }
 
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, ArrowLeft } from 'lucide-react'
-import { toast } from 'sonner'
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -12,13 +11,13 @@ const ForgotPassword: React.FC = () => {
     e.preventDefault()
     
     if (!email.trim()) {
-      toast.error('Por favor ingresa tu correo electrónico')
+      console.log('Por favor ingresa tu correo electrónico')
       return
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
-      toast.error('Por favor ingresa un correo electrónico válido')
+      console.log('Por favor ingresa un correo electrónico válido')
       return
     }
 
@@ -27,10 +26,10 @@ const ForgotPassword: React.FC = () => {
       // Simulación de envío de email sin funcionalidad real
       await new Promise(resolve => setTimeout(resolve, 1000))
       setEmailSent(true)
-      toast.success('¡Enlace de recuperación enviado! Revisa tu correo electrónico.')
+      console.log('¡Enlace de recuperación enviado! Revisa tu correo electrónico.')
       console.log('Recuperación de contraseña simulada para:', email)
     } catch (error) {
-      toast.error('Error inesperado al enviar el enlace de recuperación')
+      console.log('Error inesperado al enviar el enlace de recuperación')
     } finally {
       setIsSubmitting(false)
     }

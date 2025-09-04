@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
-import { toast } from 'sonner'
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -13,7 +12,7 @@ const Login: React.FC = () => {
     e.preventDefault()
     
     if (!email.trim() || !password.trim()) {
-      toast.error('Por favor completa todos los campos')
+      console.log('Por favor completa todos los campos')
       return
     }
 
@@ -21,10 +20,10 @@ const Login: React.FC = () => {
       setIsSubmitting(true)
       // Simulación de login sin funcionalidad real
       await new Promise(resolve => setTimeout(resolve, 1000))
-      toast.success('¡Sesión iniciada exitosamente!')
+      console.log('¡Sesión iniciada exitosamente!')
       console.log('Login simulado:', { email, password })
     } catch (error) {
-      toast.error('Error inesperado al iniciar sesión')
+      console.log('Error inesperado al iniciar sesión')
     } finally {
       setIsSubmitting(false)
     }
@@ -32,7 +31,7 @@ const Login: React.FC = () => {
 
   const handleGoogleSignIn = () => {
     console.log('Google sign in (sin funcionalidad)')
-    toast.info('Funcionalidad de Google no implementada')
+    console.log('Funcionalidad de Google no implementada')
   }
 
   return (
