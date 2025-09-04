@@ -51,7 +51,7 @@ const Home: React.FC = () => {
     {
       icon: Clock,
       title: 'ENTREGA RÁPIDA',
-      description: 'Se entrega en menos de 24h - Servicio express para que disfrutes tu tuning al instante'
+      description: 'Se entrega en menos de 30min - Servicio express para que disfrutes tu tuning al instante'
     }
   ]
 
