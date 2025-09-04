@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Zap, Settings, Gauge, Shield, Cpu, Clock, MessageCircle, ChevronDown, ChevronUp, RotateCcw, RefreshCw, Wrench, Star, Quote, TrendingUp, BarChart3 } from 'lucide-react'
+import { ArrowRight, Zap, Settings, Gauge, Shield, Clock, MessageCircle, ChevronDown, ChevronUp, RotateCcw, RefreshCw, Wrench, Star, Quote, TrendingUp, BarChart3 } from 'lucide-react'
 
 interface FAQItemProps {
   question: string
