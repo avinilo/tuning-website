@@ -55,7 +55,7 @@ const Home: React.FC = () => {
           <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-accent rounded-full animate-pulse delay-500"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-display mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
             <span className="text-primary">TUNING</span><br /><span className="text-white animate-pulse">EXTREMO</span>
           </h1>
           <div className="h-1 w-32 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-12 animate-pulse"></div>
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
       <section className="py-20 bg-dark-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-display text-white mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
               <span className="text-primary">¿POR QUÉ</span> <span className="text-white">ELEGIRNOS?</span>
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
