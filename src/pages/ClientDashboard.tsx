@@ -587,79 +587,69 @@ const ClientDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       <div className="flex">
-        {/* Desktop Sidebar - Hidden on mobile */}
-        <div className="hidden lg:block w-64 bg-gray-800/50 backdrop-blur-sm border-r border-gray-700/50 min-h-screen">
+        {/* Desktop Sidebar */}
+        <div className="hidden lg:block w-64 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700 min-h-screen">
           <div className="p-6">
-            <h1 className="text-2xl font-bold text-white mb-8">Panel Cliente</h1>
+            <h1 className="text-2xl font-bold text-white mb-8">
+              <span className="text-primary">CLIENTE</span> PANEL
+            </h1>
             <nav className="space-y-2">
-              {sidebarItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveSection(item.id)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-primary text-white shadow-lg'
-                      : 'text-gray-300 hover:bg-gray-700/50 hover:text-white'
-                  }`}
-                >
-                  <item.icon className="w-5 h-5" />
-                  {item.label}
-                </button>
-              ))}
+              {sidebarItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveSection(item.id)}
+                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                      activeSection === item.id
+                        ? 'bg-primary/20 text-primary border border-primary/30'
+                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                    }`}
+                  >
+                    <Icon className="w-5 h-5" />
+                    <span className="font-medium">{item.label}</span>
+                  </button>
+                );
+              })}
             </nav>
           </div>
         </div>
 
         {/* Main Content */}
         <div className="flex-1">
-          {/* Mobile Navigation Bar - Only visible on mobile */}
-          <div className="lg:hidden sticky top-0 z-40 bg-gray-800/95 backdrop-blur-sm border-b border-gray-700/50">
+          {/* Mobile Navigation */}
+          <div className="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-30">
             <div className="px-4 py-3">
-              <h1 className="text-xl font-bold text-white mb-3">Panel Cliente</h1>
-              <div className="flex space-x-2 overflow-x-auto scrollbar-hide">
-                {sidebarItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => setActiveSection(item.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-all duration-300 touch-manipulation min-w-fit ${
-                      activeSection === item.id
-                        ? 'bg-primary text-white shadow-lg'
-                        : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50 hover:text-white'
-                    }`}
-                  >
-                    <item.icon className="w-4 h-4" />
-                    <span className="text-sm font-medium">{item.label}</span>
-                  </button>
-                ))}
+              <h1 className="text-lg font-bold text-white mb-3">
+                <span className="text-primary">CLIENTE</span> PANEL
+              </h1>
+              <div className="flex overflow-x-auto space-x-2 pb-2 scrollbar-hide">
+                {sidebarItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => setActiveSection(item.id)}
+                      className={`flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 touch-manipulation text-sm ${
+                        activeSection === item.id
+                          ? 'bg-primary text-white'
+                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span className="font-medium whitespace-nowrap">{item.label}</span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
 
           {/* Content Area */}
-          <div className="p-4 lg:p-8 pb-20 lg:pb-8">
+          <div className="p-4 lg:p-8">
             {renderContent()}
-          </div>
-
-          {/* Bottom Navigation Bar - Only visible on mobile */}
-          <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-gray-800/95 backdrop-blur-sm border-t border-gray-700/50">
-            <div className="flex justify-around py-2">
-              {sidebarItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveSection(item.id)}
-                  className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-all duration-300 touch-manipulation ${
-                    activeSection === item.id
-                      ? 'text-primary'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  <item.icon className="w-5 h-5" />
-                  <span className="text-xs font-medium">{item.label}</span>
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </div>

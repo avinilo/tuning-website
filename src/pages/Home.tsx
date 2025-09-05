@@ -90,7 +90,7 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-20 sm:pb-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
-            <span className="text-primary">TUNING</span><br /><span className="text-white animate-pulse">FILES</span>
+            <span className="text-primary">TUNING-REPAIR</span><br /><span className="text-white animate-pulse">FILES</span>
           </h1>
           <div className="h-1 w-32 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-12 animate-pulse"></div>
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-text-secondary leading-relaxed animate-fade-in-up">
