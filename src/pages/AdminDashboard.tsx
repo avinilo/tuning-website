@@ -75,7 +75,7 @@ const AdminDashboard: React.FC = () => {
                 <span className="text-primary">ADMIN</span> PANEL
               </h1>
               {/* Horizontal Scroll Container with Gradient Indicators */}
-              <div className="relative">
+              <div className="relative overflow-hidden" style={{ width: '100%' }}>
                 {/* Left Gradient Indicator */}
                 <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-gray-900/95 to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300" id="left-gradient"></div>
                 
@@ -84,11 +84,13 @@ const AdminDashboard: React.FC = () => {
                 
                 {/* Scrollable Buttons Container */}
                 <div 
-                  className="flex overflow-x-auto space-x-2 pb-2 scrollbar-hide scroll-smooth"
+                  className="flex overflow-x-auto overflow-y-hidden space-x-2 pb-2 scrollbar-hide scroll-smooth"
                   style={{
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none',
-                    WebkitOverflowScrolling: 'touch'
+                    WebkitOverflowScrolling: 'touch',
+                    width: '100%',
+                    maxWidth: '100vw'
                   }}
                   onScroll={(e) => {
                     const container = e.currentTarget;
