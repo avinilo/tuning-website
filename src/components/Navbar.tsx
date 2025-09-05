@@ -49,6 +49,10 @@ const Navbar: React.FC = () => {
               <span className="relative z-10">CONTACTO</span>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
+            <Link to="/admin" className="text-white hover:text-primary transition-all duration-300 font-medium relative group">
+              <span className="relative z-10">ADMIN</span>
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </Link>
             
             <Link to={user ? "/dashboard" : "/login"} className="btn-primary px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
               MI CUENTA
@@ -80,6 +84,9 @@ const Navbar: React.FC = () => {
             </Link>
             <Link to="/contact" className="text-white hover:text-primary block px-3 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-primary" onClick={() => setIsMenuOpen(false)}>
               CONTACTO
+            </Link>
+            <Link to="/admin" className="text-white hover:text-primary block px-3 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-primary" onClick={() => setIsMenuOpen(false)}>
+              ADMIN
             </Link>
             
             <Link to={user ? "/dashboard" : "/login"} className="btn-primary block px-3 py-2 rounded-lg font-medium mx-3 text-center transition-all duration-300" onClick={() => setIsMenuOpen(false)}>
