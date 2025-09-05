@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Users, Package, ShoppingCart, Upload, FileText, Settings, BarChart3, Download, ImageIcon, Star, Plus, Trash2, Eye, Menu, X } from 'lucide-react';
+import { Users, ShoppingCart, Upload, FileText, Settings, BarChart3, Download, ImageIcon, Star, Plus, Trash2, Eye } from 'lucide-react';
 
 type AdminSection = 'overview' | 'services' | 'clients' | 'orders' | 'upload-maps' | 'upload-invoices';
 
 const AdminDashboard: React.FC = () => {
   const [activeSection, setActiveSection] = useState<AdminSection>('overview');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sidebarItems = [
     { id: 'overview' as AdminSection, label: 'Resumen', icon: BarChart3 },

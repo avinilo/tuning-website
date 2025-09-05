@@ -1,6 +1,4 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const RefundPolicy: React.FC = () => {
@@ -47,7 +45,7 @@ const RefundPolicy: React.FC = () => {
                 {t('refundPolicy.section3.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('refundPolicy.section3.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('refundPolicy.section3.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -59,7 +57,7 @@ const RefundPolicy: React.FC = () => {
                 {t('refundPolicy.section4.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('refundPolicy.section4.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('refundPolicy.section4.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -71,7 +69,7 @@ const RefundPolicy: React.FC = () => {
                 {t('refundPolicy.section5.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('refundPolicy.section5.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('refundPolicy.section5.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -83,7 +81,7 @@ const RefundPolicy: React.FC = () => {
                 {t('refundPolicy.section6.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('refundPolicy.section6.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('refundPolicy.section6.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -95,7 +93,7 @@ const RefundPolicy: React.FC = () => {
                 {t('refundPolicy.section7.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('refundPolicy.section7.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('refundPolicy.section7.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -110,7 +108,7 @@ const RefundPolicy: React.FC = () => {
                 {t('refundPolicy.section8.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('refundPolicy.section8.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('refundPolicy.section8.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -125,7 +123,7 @@ const RefundPolicy: React.FC = () => {
                 {t('refundPolicy.section9.content')}
               </p>
               <ol className="list-decimal list-inside text-gray-300 space-y-2 ml-4">
-                {t('refundPolicy.section9.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('refundPolicy.section9.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ol>

@@ -1,6 +1,4 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const TermsOfService: React.FC = () => {
@@ -50,7 +48,7 @@ const TermsOfService: React.FC = () => {
                 <strong>{t('termsOfService.section4.disclaimer')}</strong>
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('termsOfService.section4.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('termsOfService.section4.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -62,7 +60,7 @@ const TermsOfService: React.FC = () => {
                 {t('termsOfService.section5.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('termsOfService.section5.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('termsOfService.section5.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -74,7 +72,7 @@ const TermsOfService: React.FC = () => {
                 {t('termsOfService.section6.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('termsOfService.section6.list', { returnObjects: true }).map((item: string, index: number) => (
+                {(t('termsOfService.section6.list', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>

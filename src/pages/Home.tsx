@@ -38,7 +38,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 }
 
 const Home: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
   // Agregar datos estructurados para SEO
   React.useEffect(() => {

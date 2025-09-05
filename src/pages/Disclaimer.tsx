@@ -46,8 +46,8 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section1.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section1.risks', { returnObjects: true }).map((risk: string, index: number) => (
-                  <li key={index}>{risk}</li>
+                {(t('disclaimer.section1.risks', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </section>
@@ -60,8 +60,8 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section2.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section2.exemptions', { returnObjects: true }).map((exemption: string, index: number) => (
-                  <li key={index}>{exemption}</li>
+                {(t('disclaimer.section2.exemptions', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </section>
@@ -74,8 +74,8 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section3.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section3.noGuarantees', { returnObjects: true }).map((guarantee: string, index: number) => (
-                  <li key={index}>{guarantee}</li>
+                {(t('disclaimer.section3.noGuarantees', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </section>
@@ -88,8 +88,8 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section4.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section4.responsibilities', { returnObjects: true }).map((responsibility: string, index: number) => (
-                  <li key={index}>{responsibility}</li>
+                {(t('disclaimer.section4.responsibilities', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </section>
@@ -102,8 +102,8 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section5.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section5.professionals', { returnObjects: true }).map((professional: string, index: number) => (
-                  <li key={index}>{professional}</li>
+                {(t('disclaimer.section5.professionals', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                   <li key={index}>{item}</li>
                 ))}
               </ul>
               <div className="bg-yellow-900/20 border border-yellow-500 p-4 rounded-lg mt-4">
@@ -121,7 +121,7 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section6.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section6.limitations', { returnObjects: true }).map((limitation: string, index: number) => (
+                {(t('disclaimer.section6.limitations', { returnObjects: true }) as string[]).map((limitation: string, index: number) => (
                   <li key={index}>{limitation}</li>
                 ))}
               </ul>
@@ -147,7 +147,7 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section8.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section8.modifications', { returnObjects: true }).map((modification: string, index: number) => (
+                {(t('disclaimer.section8.modifications', { returnObjects: true }) as string[]).map((modification: string, index: number) => (
                   <li key={index}>{modification}</li>
                 ))}
               </ul>
@@ -170,7 +170,7 @@ const Disclaimer: React.FC = () => {
                 {t('disclaimer.section10.content')}
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                {t('disclaimer.section10.acceptance', { returnObjects: true }).map((acceptance: string, index: number) => (
+                {(t('disclaimer.section10.acceptance', { returnObjects: true }) as string[]).map((acceptance: string, index: number) => (
                   <li key={index}>{acceptance}</li>
                 ))}
               </ul>

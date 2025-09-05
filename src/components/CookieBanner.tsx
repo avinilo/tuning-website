@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Cookie, X, Settings, Shield, BarChart3, Target, Check } from 'lucide-react';
+// Removed unused lucide-react imports
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCookieConsent } from '../hooks/useCookieConsent';
@@ -11,12 +11,10 @@ const CookieBanner: React.FC = () => {
     showBanner, 
     acceptAll, 
     rejectAll, 
-    saveCustomConsent,
-    isInitialized 
+    saveCustomConsent
   } = useCookieConsent();
   
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const [localConsent, setLocalConsent] = useState({
     necessary: true,
     analytics: false,
@@ -34,15 +32,7 @@ const CookieBanner: React.FC = () => {
     }
   }, [consent]);
 
-  // Mostrar banner con animación
-  useEffect(() => {
-    if (showBanner && isInitialized) {
-      const timer = setTimeout(() => setIsVisible(true), 100);
-      return () => clearTimeout(timer);
-    } else {
-      setIsVisible(false);
-    }
-  }, [showBanner, isInitialized]);
+  // Banner visibility is handled by showBanner prop
 
   if (!showBanner) {
     return null;

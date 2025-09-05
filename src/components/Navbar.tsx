@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
     try {
       await signOut()
       navigate('/')
-    } catch (error) {
+    } catch {
         // Error al cerrar sesión
       }
   }
