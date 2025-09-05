@@ -95,15 +95,18 @@ const Home: React.FC = () => {
   const features = [
     {
       icon: Gauge,
-      titleKey: 'calibration',
+      title: 'Calibración Precisa',
+      description: 'Mapas motor optimizados y verificados en banco de potencia'
     },
     {
       icon: Shield,
-      titleKey: 'guaranteed',
+      title: 'Ficheros Garantizados',
+      description: 'Cada tuning file es testado exhaustivamente antes de su entrega'
     },
     {
       icon: Clock,
-      titleKey: 'express',
+      title: 'Entrega Express',
+      description: 'Modificaciones listas en 30 minutos gracias a nuestra extensa base de datos'
     }
   ]
 
@@ -194,30 +197,30 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-20 sm:pb-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
-            <span className="text-primary">{t('home.hero.title')}</span><br /><span className="text-white animate-pulse">{t('home.hero.subtitle')}</span>
+            <span className="text-primary">FILESECUFB</span><br /><span className="text-white animate-pulse">Tuning Files Profesionales</span>
           </h1>
           <div className="h-1 w-32 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-12 animate-pulse"></div>
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-text-secondary leading-relaxed animate-fade-in-up">
-            {t('home.hero.description')}
+            <span className="text-primary font-semibold">Especialistas</span> en modificación de mapas y<span className="text-white font-semibold"> calibración de centralitas</span> con<span className="text-accent font-semibold"> resultados garantizados</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 animate-slide-in-left">
             <Link to="/products" className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant">
-              <Zap className="mr-3 h-6 w-6 group-hover:animate-pulse" />{t('home.hero.cta.services')}<ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              <Zap className="mr-3 h-6 w-6 group-hover:animate-pulse" />Ver Servicios<ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/register" className="btn-secondary px-10 py-4 btn-text-style btn-hover-effect shadow-subtle hover:shadow-elegant">{t('home.hero.cta.login')}</Link>
+            <Link to="/register" className="btn-secondary px-10 py-4 btn-text-style btn-hover-effect shadow-subtle hover:shadow-elegant">Iniciar Sesión</Link>
           </div>
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-8 sm:mt-12">
             <div className="section-center">
               <div className="stat-number text-primary">5000+</div>
-              <div className="stat-label text-white">{t('home.hero.stats.files')}</div>
+              <div className="stat-label text-white">Ficheros Entregados</div>
             </div>
             <div className="section-center">
               <div className="stat-number text-white">30min</div>
-              <div className="stat-label text-white">{t('home.hero.stats.delivery')}</div>
+              <div className="stat-label text-white">Tiempo de Entrega</div>
             </div>
             <div className="section-center">
               <div className="stat-number text-accent">10+</div>
-              <div className="stat-label text-white">{t('home.hero.stats.experience')}</div>
+              <div className="stat-label text-white">Años de Experiencia</div>
             </div>
           </div>
         </div>
@@ -233,11 +236,11 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              {t('home.features.title')}
+              <span className="text-primary">¿Por qué</span> <span className="text-white">elegirnos?</span>
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              {t('home.features.subtitle')}
+              Líderes en <span className="text-primary font-semibold">reprogramación de centralitas</span> con software profesional de última generación
             </p>
           </div>
           
@@ -248,10 +251,10 @@ const Home: React.FC = () => {
                   <feature.icon className="h-12 w-12" />
                 </div>
                 <h3 className="text-h4 text-white mb-4 group-hover:text-primary transition-colors">
-                  {t(`home.features.items.${feature.titleKey}.title`)}
+                  {feature.title}
                 </h3>
                 <p className="text-text-secondary group-hover:text-white transition-colors">
-                  {t(`home.features.items.${feature.titleKey}.description`)}
+                  {feature.description}
                 </p>
               </div>
             ))}
@@ -269,11 +272,11 @@ const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">{t('home.services.title.part1')}</span> <span className="text-white">{t('home.services.title.part2')}</span>
+              <span className="text-primary">Nuestros</span> <span className="text-white">Servicios</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              {t('home.services.subtitle')}
+              Catálogo profesional de <span className="text-white font-semibold">tuning files</span> para todas las marcas y modelos
             </p>
           </div>
           
@@ -293,10 +296,10 @@ const Home: React.FC = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
-                    {t(`home.services.items.${index}.name`)}
+                    {service.name}
                   </h3>
                   <p className="text-text-secondary mb-4 group-hover:text-white transition-colors">
-                    {t(`home.services.items.${index}.description`)}
+                    {service.description}
                   </p>
                   <div className="flex justify-between items-center mb-6">
                     <span className="text-3xl font-bold text-white">
@@ -310,7 +313,7 @@ const Home: React.FC = () => {
                     to="/products"
                     className="w-full btn-primary py-3 px-4 btn-text-style section-center block btn-hover-effect shadow-subtle hover:shadow-elegant"
                   >
-                    {t('home.services.viewDetails')}
+                    Ver Detalles
                   </Link>
                 </div>
               </div>
@@ -323,7 +326,7 @@ const Home: React.FC = () => {
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
             >
               <Settings className="mr-3 h-6 w-6 group-hover:animate-spin" />
-              {t('home.services.viewAll')}
+              Ver Todos los Ficheros
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -340,11 +343,11 @@ const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">{t('home.results.title.part1')}</span> <span className="text-white">{t('home.results.title.part2')}</span>
+              <span className="text-primary">Resultados</span> <span className="text-white">Comprobados</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              {t('home.results.subtitle')}
+              Resultados verificados en banco de potencia de nuestras <span className="text-primary font-semibold">reprogramaciones profesionales</span>
             </p>
           </div>
           
@@ -354,7 +357,7 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                    {t('home.results.bmw.model')}
+                    BMW 320i
                   </h3>
                   <TrendingUp className="h-6 w-6 text-primary group-hover:animate-pulse" />
                 </div>
@@ -362,19 +365,19 @@ const Home: React.FC = () => {
                 {/* Before/After Stats */}
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.power')}:</span>
+                    <span className="text-text-secondary">Potencia:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.bmw.originalPower')}</span>
+                      <span className="text-red-400">184 HP</span>
                       <ArrowRight className="h-4 w-4 text-primary" />
-                      <span className="text-green-400 font-bold">{t('home.results.bmw.tunedPower')}</span>
+                      <span className="text-green-400 font-bold">245 HP</span>
                     </div>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.torque')}:</span>
+                    <span className="text-text-secondary">Torque:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.bmw.originalTorque')}</span>
+                      <span className="text-red-400">300 Nm</span>
                       <ArrowRight className="h-4 w-4 text-primary" />
-                      <span className="text-green-400 font-bold">{t('home.results.bmw.tunedTorque')}</span>
+                      <span className="text-green-400 font-bold">420 Nm</span>
                     </div>
                   </div>
                 </div>
@@ -383,8 +386,8 @@ const Home: React.FC = () => {
                 <div className="space-y-3 mb-6">
                   <div>
                     <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.power')}</span>
-                      <span className="text-primary font-bold">{t('home.results.bmw.powerIncrease')}</span>
+                      <span className="text-text-secondary">Potencia</span>
+                      <span className="text-primary font-bold">+33%</span>
                     </div>
                     <div className="w-full bg-dark-secondary rounded-full h-2">
                       <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '75%'}}></div>
@@ -392,8 +395,8 @@ const Home: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.torque')}</span>
-                      <span className="text-primary font-bold">{t('home.results.bmw.torqueIncrease')}</span>
+                      <span className="text-text-secondary">Torque</span>
+                      <span className="text-primary font-bold">+40%</span>
                     </div>
                     <div className="w-full bg-dark-secondary rounded-full h-2">
                       <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '80%'}}></div>
@@ -402,7 +405,7 @@ const Home: React.FC = () => {
                 </div>
                 
                 <div className="bg-primary/10 rounded-lg p-3 text-center">
-                  <span className="text-primary font-bold text-lg">{t('home.results.bmw.powerGain')}</span>
+                  <span className="text-primary font-bold text-lg">+33% Potencia</span>
                 </div>
               </div>
             </div>
@@ -412,7 +415,7 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors">
-                    {t('home.results.audi.model')}
+                    Audi A4 2.0T
                   </h3>
                   <BarChart3 className="h-6 w-6 text-secondary group-hover:animate-pulse" />
                 </div>
@@ -420,19 +423,19 @@ const Home: React.FC = () => {
                 {/* Before/After Stats */}
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.power')}:</span>
+                    <span className="text-text-secondary">Potencia:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.audi.originalPower')}</span>
+                      <span className="text-red-400">190 HP</span>
                       <ArrowRight className="h-4 w-4 text-secondary" />
-                      <span className="text-green-400 font-bold">{t('home.results.audi.tunedPower')}</span>
+                      <span className="text-green-400 font-bold">265 HP</span>
                     </div>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.torque')}:</span>
+                    <span className="text-text-secondary">Torque:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.audi.originalTorque')}</span>
+                      <span className="text-red-400">320 Nm</span>
                       <ArrowRight className="h-4 w-4 text-secondary" />
-                      <span className="text-green-400 font-bold">{t('home.results.audi.tunedTorque')}</span>
+                      <span className="text-green-400 font-bold">450 Nm</span>
                     </div>
                   </div>
                 </div>
@@ -441,8 +444,8 @@ const Home: React.FC = () => {
                 <div className="space-y-3 mb-6">
                   <div>
                     <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.power')}</span>
-                      <span className="text-secondary font-bold">{t('home.results.audi.powerIncrease')}</span>
+                      <span className="text-text-secondary">Potencia</span>
+                      <span className="text-secondary font-bold">+39%</span>
                     </div>
                     <div className="w-full bg-dark-secondary rounded-full h-2">
                       <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '78%'}}></div>
@@ -450,8 +453,8 @@ const Home: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.torque')}</span>
-                      <span className="text-secondary font-bold">{t('home.results.audi.torqueIncrease')}</span>
+                      <span className="text-text-secondary">Torque</span>
+                      <span className="text-secondary font-bold">+41%</span>
                     </div>
                     <div className="w-full bg-dark-secondary rounded-full h-2">
                       <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '82%'}}></div>
@@ -460,7 +463,7 @@ const Home: React.FC = () => {
                 </div>
                 
                 <div className="bg-secondary/10 rounded-lg p-3 text-center">
-                  <span className="text-secondary font-bold text-lg">{t('home.results.audi.powerGain')}</span>
+                  <span className="text-secondary font-bold text-lg">+39% Potencia</span>
                 </div>
               </div>
             </div>
@@ -470,7 +473,7 @@ const Home: React.FC = () => {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors">
-                    {t('home.results.golf.model')}
+                    Golf GTI Mk7
                   </h3>
                   <TrendingUp className="h-6 w-6 text-accent group-hover:animate-pulse" />
                 </div>
@@ -478,19 +481,19 @@ const Home: React.FC = () => {
                 {/* Before/After Stats */}
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.power')}:</span>
+                    <span className="text-text-secondary">Potencia:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.golf.originalPower')}</span>
+                      <span className="text-red-400">220 HP</span>
                       <ArrowRight className="h-4 w-4 text-accent" />
-                      <span className="text-green-400 font-bold">{t('home.results.golf.tunedPower')}</span>
+                      <span className="text-green-400 font-bold">290 HP</span>
                     </div>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.torque')}:</span>
+                    <span className="text-text-secondary">Torque:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.golf.originalTorque')}</span>
+                      <span className="text-red-400">350 Nm</span>
                       <ArrowRight className="h-4 w-4 text-accent" />
-                      <span className="text-green-400 font-bold">{t('home.results.golf.tunedTorque')}</span>
+                      <span className="text-green-400 font-bold">480 Nm</span>
                     </div>
                   </div>
                 </div>
@@ -499,8 +502,8 @@ const Home: React.FC = () => {
                 <div className="space-y-3 mb-6">
                   <div>
                     <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.power')}</span>
-                      <span className="text-accent font-bold">{t('home.results.golf.powerIncrease')}</span>
+                      <span className="text-text-secondary">Potencia</span>
+                      <span className="text-accent font-bold">+32%</span>
                     </div>
                     <div className="w-full bg-dark-secondary rounded-full h-2">
                       <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '74%'}}></div>
@@ -508,8 +511,8 @@ const Home: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.torque')}</span>
-                      <span className="text-accent font-bold">{t('home.results.golf.torqueIncrease')}</span>
+                      <span className="text-text-secondary">Torque</span>
+                      <span className="text-accent font-bold">+37%</span>
                     </div>
                     <div className="w-full bg-dark-secondary rounded-full h-2">
                       <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '77%'}}></div>
@@ -518,7 +521,7 @@ const Home: React.FC = () => {
                 </div>
                 
                 <div className="bg-accent/10 rounded-lg p-3 text-center">
-                  <span className="text-accent font-bold text-lg">{t('home.results.golf.powerGain')}</span>
+                  <span className="text-accent font-bold text-lg">+32% Potencia</span>
                 </div>
               </div>
             </div>
@@ -532,7 +535,7 @@ const Home: React.FC = () => {
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
             >
               <MessageCircle className="mr-3 h-6 w-6 group-hover:animate-pulse" />
-              {t('home.results.contact')}
+              Contáctanos
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -550,11 +553,11 @@ const Home: React.FC = () => {
           {/* Header Section */}
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-blue-corporate">{t('home.process.title.part1')}</span> <span className="text-white">{t('home.process.title.part2')}</span>
+              <span className="text-blue-corporate">Nuestro</span> <span className="text-white">Proceso</span>
             </h2>
             <div className="h-1 w-32 bg-blue-corporate mx-auto mb-8 rounded-full"></div>
             <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-              {t('home.process.subtitle')}
+              Proceso <span className="text-blue-corporate font-semibold">técnico y profesional</span> en el desarrollo de tuning files
             </p>
           </div>
           
@@ -563,23 +566,23 @@ const Home: React.FC = () => {
             {[
               {
                 step: '1',
-                title: t('home.process.steps.reception.title'),
-                description: t('home.process.steps.reception.description')
+                title: 'Recepción',
+                description: 'Recibimos el fichero original de tu centralita'
               },
               {
                 step: '2',
-                title: t('home.process.steps.analysis.title'),
-                description: t('home.process.steps.analysis.description')
+                title: 'Análisis',
+                description: 'Estudiamos los parámetros con software especializado'
               },
               {
                 step: '3',
-                title: t('home.process.steps.optimization.title'),
-                description: t('home.process.steps.optimization.description')
+                title: 'Optimización',
+                description: 'Modificamos los mapas según especificaciones técnicas'
               },
               {
                 step: '4',
-                title: t('home.process.steps.delivery.title'),
-                description: t('home.process.steps.delivery.description')
+                title: 'Entrega',
+                description: 'Enviamos el tuning file listo para programar'
               }
             ].map((item, index) => (
               <div key={index} className="group text-center relative">
@@ -615,7 +618,7 @@ const Home: React.FC = () => {
           <div className="text-center mt-20">
             <div className="inline-flex items-center space-x-2 text-blue-corporate">
               <div className="w-8 h-0.5 bg-blue-corporate rounded-full"></div>
-              <span className="text-sm font-semibold uppercase tracking-widest">{t('home.process.professional')}</span>
+              <span className="text-sm font-semibold uppercase tracking-widest">Proceso Profesional</span>
               <div className="w-8 h-0.5 bg-blue-corporate rounded-full"></div>
             </div>
           </div>
@@ -632,11 +635,11 @@ const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">{t('home.support.title.part1')}</span> <span className="text-white">{t('home.support.title.part2')}</span>
+              <span className="text-primary">Soporte</span> <span className="text-white">Postventa</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              {t('home.support.subtitle')}
+              Asistencia técnica especializada y <span className="text-primary font-semibold">actualizaciones de mapas motor</span>
             </p>
           </div>
           
@@ -647,10 +650,10 @@ const Home: React.FC = () => {
                 <RotateCcw className="h-16 w-16" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-primary transition-colors">
-                {t('home.support.services.reversion.title')}
+                Reversión a Stock
               </h3>
               <p className="text-text-secondary group-hover:text-white transition-colors text-center leading-relaxed">
-                {t('home.support.services.reversion.description')}
+                Disponemos de ficheros originales para restaurar la configuración de serie cuando lo necesites.
               </p>
             </div>
             
@@ -660,10 +663,10 @@ const Home: React.FC = () => {
                 <RefreshCw className="h-16 w-16" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-secondary transition-colors">
-                {t('home.support.services.updates.title')}
+                Actualizaciones
               </h3>
               <p className="text-text-secondary group-hover:text-white transition-colors text-center leading-relaxed">
-                {t('home.support.services.updates.description')}
+                Actualizaciones continuas con las últimas calibraciones y mejoras en tuning files.
               </p>
             </div>
             
@@ -673,10 +676,10 @@ const Home: React.FC = () => {
                 <Wrench className="h-16 w-16" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-accent transition-colors">
-                {t('home.support.services.maintenance.title')}
+                Mantenimiento
               </h3>
               <p className="text-text-secondary group-hover:text-white transition-colors text-center leading-relaxed">
-                {t('home.support.services.maintenance.description')}
+                Soporte técnico especializado para la implementación de reprogramaciones.
               </p>
             </div>
           </div>
@@ -685,11 +688,11 @@ const Home: React.FC = () => {
           <div className="text-center mt-16">
             <div className="inline-flex items-center space-x-2 text-primary mb-8">
               <div className="w-8 h-0.5 bg-primary rounded-full"></div>
-              <span className="text-sm font-semibold uppercase tracking-widest">{t('home.support.complete')}</span>
+              <span className="text-sm font-semibold uppercase tracking-widest">Servicio Completo</span>
               <div className="w-8 h-0.5 bg-primary rounded-full"></div>
             </div>
             <p className="text-lg text-text-secondary mb-8">
-              {t('home.support.question')}
+              ¿Necesitas asistencia con tuning files? Contáctanos para soporte profesional
             </p>
             <a
               href="https://wa.me/34630841047"
@@ -698,7 +701,7 @@ const Home: React.FC = () => {
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
             >
               <MessageCircle className="mr-3 h-6 w-6 group-hover:animate-pulse" />
-              {t('home.support.contact')}
+              Contactar Soporte
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -724,9 +727,9 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-              {t('home.testimonials.title.part1')} <span className="text-primary">{t('home.testimonials.title.part2')}</span>
+              Lo que dicen nuestros <span className="text-primary">clientes</span>
             </h2>
-            <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-8">{t('home.testimonials.subtitle')}</p>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-8">Testimonios reales de conductores satisfechos</p>
             
             {/* Aggregate Rating - More Subtle */}
             <div className="inline-flex items-center bg-gradient-dark rounded-xl border border-elegant px-6 py-3 shadow-elegant">
@@ -740,7 +743,7 @@ const Home: React.FC = () => {
                 <span className="text-sm text-text-secondary">/5</span>
               </div>
               <div className="border-l border-elegant pl-4">
-                <span className="text-sm font-medium text-white">127 {t('home.testimonials.reviews')}</span>
+                <span className="text-sm font-medium text-white">127 reseñas</span>
               </div>
             </div>
           </div>
@@ -769,7 +772,7 @@ const Home: React.FC = () => {
                 <Quote className="h-4 w-4 text-primary" />
               </div>
               <p className="text-text-secondary text-sm mb-3 leading-relaxed">
-                "{t('home.testimonials.items.carlos.text')}"
+                "Excelente servicio FILESECUFB. El Stage 1 para mi BMW funciona perfectamente."
               </p>
               <div className="flex justify-between items-center text-xs">
                 <span className="font-semibold text-white">Carlos M.</span>
@@ -799,7 +802,7 @@ const Home: React.FC = () => {
                 <Quote className="h-4 w-4 text-secondary" />
               </div>
               <p className="text-text-secondary text-sm mb-3 leading-relaxed">
-                "{t('home.testimonials.items.ana.text')}"
+                "Mapas de calidad profesional. FILESECUFB cumple con la entrega rápida prometida."
               </p>
               <div className="flex justify-between items-center text-xs">
                 <span className="font-semibold text-white">Ana L.</span>
@@ -829,7 +832,7 @@ const Home: React.FC = () => {
                 <Quote className="h-4 w-4 text-accent" />
               </div>
               <p className="text-text-secondary text-sm mb-3 leading-relaxed">
-                "{t('home.testimonials.items.miguel.text')}"
+                "Los mejores tuning files del mercado. FILESECUFB transformó mi Golf GTI."
               </p>
               <div className="flex justify-between items-center text-xs">
                 <span className="font-semibold text-white">Miguel R.</span>
@@ -849,38 +852,38 @@ const Home: React.FC = () => {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">{t('home.faq.title.part1')}</span> <span className="text-white">{t('home.faq.title.part2')}</span>
+              <span className="text-primary">Preguntas</span> <span className="text-white">Frecuentes</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              {t('home.faq.subtitle.part1')} <span className="text-primary font-semibold">{t('home.faq.subtitle.part2')}</span>
+              Resolvemos todas tus dudas sobre <span className="text-primary font-semibold">modificación de centralitas y tuning files</span>
             </p>
           </div>
           
           <div className="space-y-4">
             <FAQItem 
-              question={t('home.faq.items.types.question')}
-              answer={t('home.faq.items.types.answer')}
+              question="¿Qué tipos de tuning files ofrecen?"
+              answer="Ofrecemos ficheros modificados para Stage 1, Stage 2, solución DPF, EGR off, AdBlue off, pop & bang, hard cut limiter y calibraciones personalizadas. Todos los mapas son verificados antes de su entrega."
             />
             <FAQItem 
-              question={t('home.faq.items.delivery.question')}
-              answer={t('home.faq.items.delivery.answer')}
+              question="¿Cuál es el tiempo de entrega?"
+              answer="La entrega de ficheros tuning es inmediata para modelos en nuestra base de datos (30 minutos máximo). Para calibraciones personalizadas, el tiempo varía entre 2-4 horas según la complejidad."
             />
             <FAQItem 
-              question={t('home.faq.items.warranty.question')}
-              answer={t('home.faq.items.warranty.answer')}
+              question="¿Qué garantías ofrecen?"
+              answer="Todos nuestros mapas están garantizados. Cada modificación es verificada en banco de potencia con soporte técnico incluido. Si surge algún problema, proporcionamos revisión sin costo adicional."
             />
             <FAQItem 
-              question={t('home.faq.items.ecus.question')}
-              answer={t('home.faq.items.ecus.answer')}
+              question="¿Qué centralitas soportan?"
+              answer="Trabajamos con todas las principales marcas: Bosch, Siemens, Delphi, Denso, Magneti Marelli, Continental y más. Nuestra base de datos incluye mapas para vehículos europeos, asiáticos y americanos."
             />
             <FAQItem 
-              question={t('home.faq.items.safety.question')}
-              answer={t('home.faq.items.safety.answer')}
+              question="¿Son seguros los tuning files?"
+              answer="Sí, todas nuestras reprogramaciones respetan los límites seguros del motor. Utilizamos herramientas profesionales como WinOLS, ECM Titanium y bancos de potencia para verificar cada calibración."
             />
             <FAQItem 
-              question={t('home.faq.items.request.question')}
-              answer={t('home.faq.items.request.answer')}
+              question="¿Cómo solicitar un fichero tuning?"
+              answer="Puedes solicitar tu mapa modificado vía WhatsApp enviando el fichero original de tu centralita. Necesitamos marca, modelo, año, tipo de ECU y el archivo en formato BIN, ORI o similar."
             />
           </div>
         </div>
@@ -899,14 +902,14 @@ const Home: React.FC = () => {
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-            <span className="text-primary">{t('home.whatsapp.title.part1')}</span><br />
-            <span className="text-white">{t('home.whatsapp.title.part2')}</span>
+            <span className="text-primary">Únete a nuestra</span><br />
+            <span className="text-white">comunidad de WhatsApp</span>
           </h2>
           
           <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
           
           <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
-            {t('home.whatsapp.description.part1')} <span className="text-primary font-semibold">{t('home.whatsapp.description.part2')}</span>. {t('home.whatsapp.description.part3')} <span className="text-white font-semibold">{t('home.whatsapp.description.part4')}</span>.
+            Comunidad profesional de <span className="text-primary font-semibold">especialistas en mapas motor</span>. Soporte técnico y <span className="text-white font-semibold">asistencia inmediata</span>.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8">
@@ -917,7 +920,7 @@ const Home: React.FC = () => {
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
             >
               <MessageCircle className="mr-3 h-6 w-6 group-hover:animate-pulse" />
-              {t('home.whatsapp.button')}
+              Unirse al Grupo
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

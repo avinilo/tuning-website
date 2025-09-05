@@ -3,12 +3,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Menu, X, Zap } from 'lucide-react'
 import useScrollDirection from '../hooks/useScrollDirection'
 import { useAuth } from '../contexts/AuthContext'
+import { useTranslation } from 'react-i18next'
+import LanguageSelector from './LanguageSelector'
 
 const Navbar: React.FC = () => {
   const { user, signOut, loading } = useAuth()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { isVisible } = useScrollDirection(10)
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const handleSignOut = async () => {
     try {
@@ -38,35 +41,38 @@ const Navbar: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-white hover:text-primary transition-all duration-300 font-medium relative group">
-              <span className="relative z-10">INICIO</span>
+              <span className="relative z-10">{t('navbar.links.home')}</span>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link to="/services" className="text-white hover:text-primary transition-all duration-300 font-medium relative group">
-              <span className="relative z-10">SERVICIOS</span>
+              <span className="relative z-10">{t('navbar.links.services')}</span>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link to="/contact" className="text-white hover:text-primary transition-all duration-300 font-medium relative group">
-              <span className="relative z-10">CONTACTO</span>
+              <span className="relative z-10">{t('navbar.links.contact')}</span>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link to="/admin" className="text-white hover:text-primary transition-all duration-300 font-medium relative group">
-              <span className="relative z-10">ADMIN</span>
+              <span className="relative z-10">{t('navbar.links.admin')}</span>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link to="/dashboard" className="text-white hover:text-primary transition-all duration-300 font-medium relative group">
-              <span className="relative z-10">CLIENTE</span>
+              <span className="relative z-10">{t('navbar.links.client')}</span>
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             
             <Link to={user ? "/dashboard" : "/login"} className="btn-primary px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105">
-              MI CUENTA
-            </Link>
+               {t('navbar.buttons.account')}
+              </Link>
             
             {user && (
               <button onClick={handleSignOut} disabled={loading} className="btn-secondary px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 disabled:opacity-50">
-                {loading ? 'CERRANDO...' : 'SALIR'}
-              </button>
+                 {loading ? t('navbar.buttons.closing') : t('navbar.buttons.logout')}
+                </button>
             )}
+            
+            {/* Language Selector */}
+            <LanguageSelector />
           </div>
 
           <div className="md:hidden flex items-center">
@@ -81,29 +87,32 @@ const Navbar: React.FC = () => {
         <div className="md:hidden animate-slide-up">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gradient-dark border-t border-elegant">
             <Link to="/" className="text-white hover:text-primary block px-3 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-primary" onClick={() => setIsMenuOpen(false)}>
-              INICIO
+              {t('navbar.links.home')}
             </Link>
             <Link to="/services" className="text-white hover:text-primary block px-3 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-primary" onClick={() => setIsMenuOpen(false)}>
-              SERVICIOS
+              {t('navbar.links.services')}
             </Link>
             <Link to="/contact" className="text-white hover:text-primary block px-3 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-primary" onClick={() => setIsMenuOpen(false)}>
-              CONTACTO
+              {t('navbar.links.contact')}
             </Link>
             <Link to="/admin" className="text-white hover:text-primary block px-3 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-primary" onClick={() => setIsMenuOpen(false)}>
-              ADMIN
+              {t('navbar.links.admin')}
             </Link>
             <Link to="/dashboard" className="text-white hover:text-primary block px-3 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gradient-primary" onClick={() => setIsMenuOpen(false)}>
-              CLIENTE
+              {t('navbar.links.client')}
             </Link>
             
+            {/* Language Selector Mobile */}
+            <LanguageSelector />
+            
             <Link to={user ? "/dashboard" : "/login"} className="btn-primary block px-3 py-2 rounded-lg font-medium mx-3 text-center transition-all duration-300" onClick={() => setIsMenuOpen(false)}>
-              MI CUENTA
-            </Link>
+               {t('navbar.buttons.account')}
+              </Link>
             
             {user && (
               <button onClick={() => { handleSignOut(); setIsMenuOpen(false) }} disabled={loading} className="text-white hover:text-secondary block px-3 py-2 rounded-lg font-medium w-full text-left transition-all duration-300 hover:bg-gray-800 disabled:opacity-50">
-                {loading ? 'CERRANDO...' : 'SALIR'}
-              </button>
+                 {loading ? t('navbar.buttons.closing') : t('navbar.buttons.logout')}
+                </button>
             )}
           </div>
         </div>
