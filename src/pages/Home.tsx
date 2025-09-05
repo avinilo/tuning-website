@@ -745,10 +745,10 @@ const Home: React.FC = () => {
             </div>
           </div>
           
-          {/* Testimonials Grid - Compact Design */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Testimonials Grid - Mobile Optimized */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Testimonio 1 */}
-            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 hover:border-primary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 sm:p-6 hover:border-primary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <script type="application/ld+json">
                 {JSON.stringify({
                   "@context": "https://schema.org",
@@ -760,25 +760,25 @@ const Home: React.FC = () => {
                   "datePublished": "2024-01-15"
                 })}
               </script>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-3 w-3 text-yellow-400 fill-current" />
+                    <Star key={star} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-4 w-4 text-primary" />
+                <Quote className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
               </div>
-              <p className="text-text-secondary text-sm mb-3 leading-relaxed">
+              <p className="text-text-secondary text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
                 "{t('home.testimonials.items.carlos.text')}"
               </p>
-              <div className="flex justify-between items-center text-xs">
+              <div className="flex justify-between items-center text-xs sm:text-sm">
                 <span className="font-semibold text-white">Carlos M.</span>
                 <span className="text-text-secondary">BMW 320i</span>
               </div>
             </div>
             
             {/* Testimonio 2 */}
-            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 hover:border-secondary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 sm:p-6 hover:border-secondary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <script type="application/ld+json">
                 {JSON.stringify({
                   "@context": "https://schema.org",
@@ -790,25 +790,25 @@ const Home: React.FC = () => {
                   "datePublished": "2024-02-03"
                 })}
               </script>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-3 w-3 text-yellow-400 fill-current" />
+                    <Star key={star} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-4 w-4 text-secondary" />
+                <Quote className="h-4 w-4 sm:h-5 sm:w-5 text-secondary flex-shrink-0" />
               </div>
-              <p className="text-text-secondary text-sm mb-3 leading-relaxed">
+              <p className="text-text-secondary text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
                 "{t('home.testimonials.items.ana.text')}"
               </p>
-              <div className="flex justify-between items-center text-xs">
+              <div className="flex justify-between items-center text-xs sm:text-sm">
                 <span className="font-semibold text-white">Ana L.</span>
                 <span className="text-text-secondary">Audi A4</span>
               </div>
             </div>
             
             {/* Testimonio 3 */}
-            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 hover:border-accent hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 sm:p-6 hover:border-accent hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <script type="application/ld+json">
                 {JSON.stringify({
                   "@context": "https://schema.org",
@@ -820,18 +820,18 @@ const Home: React.FC = () => {
                   "datePublished": "2024-01-28"
                 })}
               </script>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-3 w-3 text-yellow-400 fill-current" />
+                    <Star key={star} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-4 w-4 text-accent" />
+                <Quote className="h-4 w-4 sm:h-5 sm:w-5 text-accent flex-shrink-0" />
               </div>
-              <p className="text-text-secondary text-sm mb-3 leading-relaxed">
+              <p className="text-text-secondary text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
                 "{t('home.testimonials.items.miguel.text')}"
               </p>
-              <div className="flex justify-between items-center text-xs">
+              <div className="flex justify-between items-center text-xs sm:text-sm">
                 <span className="font-semibold text-white">Miguel R.</span>
                 <span className="text-text-secondary">Golf GTI</span>
               </div>
