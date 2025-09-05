@@ -41,7 +41,7 @@ const Home: React.FC = () => {
     {
       icon: Gauge,
       title: 'MÁXIMO RENDIMIENTO',
-      description: 'Optimización extrema para liberar todo el potencial oculto de tu máquina'
+      description: 'Optimización extrema para liberar todo el potencial oculto de tu ECU'
     },
     {
       icon: Shield,
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
           </h1>
           <div className="h-1 w-32 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-12 animate-pulse"></div>
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-text-secondary leading-relaxed animate-fade-in-up">
-            <span className="text-primary font-semibold">LIBERA EL PODER OCULTO</span> de tu máquina con nuestros servicios de<span className="text-white font-semibold"> reprogramación extrema</span> y<span className="text-accent font-semibold"> optimización profesional</span>
+            <span className="text-primary font-semibold">LIBERA EL PODER OCULTO</span> de tu ECU con nuestros servicios de<span className="text-white font-semibold"> reprogramación extrema</span> y<span className="text-accent font-semibold"> optimización profesional</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 animate-slide-in-left">
             <Link to="/products" className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant">
@@ -457,7 +457,7 @@ const Home: React.FC = () => {
               {
                 step: '1',
                 title: 'CONSULTA',
-                description: 'Analizamos tu máquina y tus ambiciones de velocidad'
+                description: 'Analizamos tu ECU y tus ambiciones de velocidad'
               },
               {
                 step: '2',
