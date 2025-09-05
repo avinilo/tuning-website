@@ -715,10 +715,16 @@ const OrdersSection: React.FC = () => {
 
 // Upload Maps Section
 const UploadMapsSection: React.FC = () => {
+  const [comments, setComments] = useState<{[key: string]: string}>({});
+  
   const pendingUploads = [
     { orderId: '2024001', client: 'Juan Pérez', service: 'Stage 2' },
     { orderId: '2024002', client: 'María García', service: 'Stage 1' },
   ];
+
+  const handleCommentChange = (orderId: string, value: string) => {
+    setComments(prev => ({ ...prev, [orderId]: value }));
+  };
 
   return (
     <div>
@@ -742,7 +748,7 @@ const UploadMapsSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-primary/50 transition-colors">
+            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-primary/50 transition-colors mb-6">
               <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
               <p className="text-gray-300 mb-2">Arrastra el mapa tuneado aquí o</p>
               <button className="text-primary hover:text-primary/80 font-medium">
@@ -751,7 +757,20 @@ const UploadMapsSection: React.FC = () => {
               <p className="text-sm text-gray-500 mt-2">Formatos soportados: .bin, .hex, .ori</p>
             </div>
             
-            <div className="flex justify-end mt-6 space-x-4">
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                Comentarios
+              </label>
+              <textarea
+                value={comments[upload.orderId] || ''}
+                onChange={(e) => handleCommentChange(upload.orderId, e.target.value)}
+                placeholder="Añade comentarios sobre el mapa tuneado, modificaciones realizadas, recomendaciones de uso..."
+                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors resize-vertical min-h-[100px]"
+                rows={4}
+              />
+            </div>
+            
+            <div className="flex justify-end space-x-4">
               <button className="px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors">
                 Cancelar
               </button>
