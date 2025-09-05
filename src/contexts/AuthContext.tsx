@@ -30,7 +30,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const signOut = async () => {
     // Implementación simplificada
-    console.log('Sign out');
   };
 
   const contextValue = {

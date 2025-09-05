@@ -84,9 +84,10 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-accent">
-            {t('contact.header.title')}
-          </h1>
+          <h1 
+            className="text-4xl md:text-5xl font-bold text-white mb-6 font-accent"
+            dangerouslySetInnerHTML={{ __html: t('contact.header.title') }}
+          />
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('contact.header.subtitle')}
           </p>

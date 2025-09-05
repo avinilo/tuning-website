@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Register = () => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -24,12 +26,10 @@ const Register = () => {
     
     // Validation
     if (formData.password !== formData.confirmPassword) {
-      console.log('Las contraseñas no coinciden')
       return
     }
 
     if (formData.password.length < 6) {
-      console.log('La contraseña debe tener al menos 6 caracteres')
       return
     }
 
@@ -37,18 +37,16 @@ const Register = () => {
       setIsSubmitting(true)
       // Simulación de registro sin funcionalidad real
       await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('¡Cuenta creada exitosamente!')
-      console.log('Registro simulado:', formData)
+      // Registro simulado exitoso
     } catch (error) {
-      console.log('Error inesperado al crear la cuenta')
+      // Error inesperado al crear la cuenta
     } finally {
       setIsSubmitting(false)
     }
   }
 
   const handleGoogleSignIn = () => {
-    console.log('Google sign in (sin funcionalidad)')
-    console.log('Funcionalidad de Google no implementada')
+    // Google sign in (sin funcionalidad)
   }
 
   return (
@@ -61,8 +59,8 @@ const Register = () => {
       <div className="max-w-md w-full space-y-8 relative z-10">
         <div className="bg-gradient-dark backdrop-blur-sm rounded-2xl border border-elegant shadow-elegant p-8">
           <div className="text-center mb-8">
-            <h2 className="text-h1 text-white mb-2 uppercase tracking-wider">CREAR <span className="text-primary">CUENTA</span></h2>
-            <p className="text-text-secondary uppercase tracking-wide">ÚNETE A LA COMUNIDAD DE TUNING</p>
+            <h2 className="text-h1 text-white mb-2 uppercase tracking-wider" dangerouslySetInnerHTML={{ __html: t('auth.register.title') }}></h2>
+            <p className="text-text-secondary uppercase tracking-wide">{t('auth.register.subtitle')}</p>
           </div>
 
           {/* Google Sign In Button */}
@@ -77,13 +75,13 @@ const Register = () => {
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            <span>CONTINUAR CON GOOGLE</span>
+            <span>{t('auth.register.google')}</span>
           </button>
 
           {/* Divider */}
           <div className="mb-6 flex items-center">
             <div className="flex-1 border-t border-elegant"></div>
-            <span className="px-4 text-text-secondary uppercase tracking-wider text-sm">O</span>
+            <span className="px-4 text-text-secondary uppercase tracking-wider text-sm">{t('auth.register.divider')}</span>
             <div className="flex-1 border-t border-elegant"></div>
           </div>
 
@@ -91,7 +89,7 @@ const Register = () => {
             {/* Email Field */}
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm font-medium text-primary uppercase tracking-wider">
-                CORREO ELECTRÓNICO
+                {t('auth.register.form.email.label')}
               </label>
               <div className="flex items-center space-x-3 bg-dark-tertiary border border-elegant rounded-lg p-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
@@ -103,7 +101,7 @@ const Register = () => {
                   onChange={handleChange}
                   required
                   className="flex-1 bg-transparent text-white placeholder-text-secondary uppercase tracking-wider focus:outline-none"
-                  placeholder="TU@EMAIL.COM"
+                  placeholder={t('auth.register.form.email.placeholder')}
                 />
               </div>
             </div>
@@ -111,7 +109,7 @@ const Register = () => {
             {/* Password Field */}
             <div className="space-y-2">
               <label htmlFor="password" className="block text-sm font-medium text-primary uppercase tracking-wider">
-                CONTRASEÑA
+                {t('auth.register.form.password.label')}
               </label>
               <div className="flex items-center space-x-3 bg-dark-tertiary border border-elegant rounded-lg p-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20">
                 <Lock className="h-5 w-5 text-primary flex-shrink-0" />
@@ -123,7 +121,7 @@ const Register = () => {
                   onChange={handleChange}
                   required
                   className="flex-1 bg-transparent text-white placeholder-text-secondary focus:outline-none"
-                  placeholder="••••••••"
+                  placeholder={t('auth.register.form.password.placeholder')}
                 />
                 <button
                   type="button"
@@ -138,7 +136,7 @@ const Register = () => {
             {/* Confirm Password Field */}
             <div className="space-y-2">
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-primary uppercase tracking-wider">
-                CONFIRMAR CONTRASEÑA
+                {t('auth.register.form.confirmPassword.label')}
               </label>
               <div className="flex items-center space-x-3 bg-dark-tertiary border border-elegant rounded-lg p-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20">
                 <Lock className="h-5 w-5 text-primary flex-shrink-0" />
@@ -150,7 +148,7 @@ const Register = () => {
                   onChange={handleChange}
                   required
                   className="flex-1 bg-transparent text-white placeholder-text-secondary focus:outline-none"
-                  placeholder="••••••••"
+                  placeholder={t('auth.register.form.confirmPassword.placeholder')}
                 />
                 <button
                   type="button"
@@ -167,15 +165,15 @@ const Register = () => {
               disabled={isSubmitting}
               className="btn-primary w-full py-3 px-4 font-semibold uppercase tracking-wider hover:scale-105 shadow-subtle hover:shadow-elegant transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              {isSubmitting ? 'CREANDO CUENTA...' : 'CREAR CUENTA'}
+              {isSubmitting ? t('auth.register.form.submitting') : t('auth.register.form.submit')}
             </button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-text-secondary uppercase tracking-wide">
-              ¿YA TIENES CUENTA?{' '}
+              {t('auth.register.login.text')}{' '}
               <Link to="/login" className="text-primary hover:text-blue-dark font-medium transition-colors uppercase tracking-wider">
-                INICIA SESIÓN
+                {t('auth.register.login.link')}
               </Link>
             </p>
           </div>

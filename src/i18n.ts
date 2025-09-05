@@ -44,7 +44,7 @@ const detectUserLanguage = (): string => {
       return 'es';
     }
   } catch (e) {
-    console.log('Could not detect timezone');
+    // Could not detect timezone
   }
 
   // 5. Por defecto, inglés

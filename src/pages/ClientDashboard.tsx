@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { User, Package, FileText, Receipt, Download, Eye, EyeOff, Edit, Lock, CreditCard, ShoppingCart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface TunedFile {
   id: string;
@@ -51,14 +52,15 @@ interface BillingInfo {
 type ClientSection = 'orders' | 'profile';
 
 const ClientDashboard: React.FC = () => {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState<ClientSection>('orders');
   const [showPasswordForm, setShowPasswordForm] = useState(false);
   const [showProfileEdit, setShowProfileEdit] = useState(false);
   const [showBillingEdit, setShowBillingEdit] = useState(false);
 
   const sidebarItems = [
-    { id: 'orders' as ClientSection, label: 'Pedidos', icon: ShoppingCart },
-    { id: 'profile' as ClientSection, label: 'Perfil', icon: User },
+    { id: 'orders' as ClientSection, label: t('clientDashboard.sidebar.orders'), icon: ShoppingCart },
+    { id: 'profile' as ClientSection, label: t('clientDashboard.sidebar.profile'), icon: User },
   ];
 
   // Mock data
@@ -160,15 +162,15 @@ const ClientDashboard: React.FC = () => {
   const getStatusText = (status: string) => {
     switch (status) {
       case 'pending':
-        return 'Pendiente';
+        return t('clientDashboard.orders.status.pending');
       case 'in_progress':
-        return 'En Proceso';
+        return t('clientDashboard.orders.status.inProgress');
       case 'completed':
-        return 'Completado';
+        return t('clientDashboard.orders.status.completed');
       case 'delivered':
-        return 'Entregado';
+        return t('clientDashboard.orders.status.delivered');
       case 'paid':
-        return 'Pagado';
+        return t('clientDashboard.orders.status.paid');
       default:
         return status;
     }
@@ -184,7 +186,7 @@ const ClientDashboard: React.FC = () => {
 
   const renderOrders = () => (
     <div>
-      <h2 className="text-3xl font-bold text-white mb-8">Mis Pedidos</h2>
+      <h2 className="text-3xl font-bold text-white mb-8">{t('clientDashboard.orders.title')}</h2>
       <div className="space-y-6">
         {orders.map((order) => (
           <div key={order.id} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-primary/50 transition-all duration-300">
@@ -205,7 +207,7 @@ const ClientDashboard: React.FC = () => {
             {order.estimatedDelivery && (
               <div className="bg-gray-700/30 rounded-lg p-3 mt-4">
                 <p className="text-sm text-gray-300">
-                  Entrega estimada: {new Date(order.estimatedDelivery).toLocaleDateString('es-ES')}
+                  {t('clientDashboard.orders.estimatedDelivery')}: {new Date(order.estimatedDelivery).toLocaleDateString('es-ES')}
                 </p>
               </div>
             )}
@@ -217,7 +219,7 @@ const ClientDashboard: React.FC = () => {
                 <div className="bg-gray-700/20 rounded-lg p-4">
                   <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
                     <FileText className="w-5 h-5" />
-                    Archivos Tuneados
+                    {t('clientDashboard.orders.tunedFiles')}
                   </h4>
                   <div className="space-y-3">
                     {order.files.map((file) => (
@@ -226,7 +228,7 @@ const ClientDashboard: React.FC = () => {
                           <div className="flex-1 min-w-0">
                             <p className="text-white font-medium break-words">{file.fileName}</p>
                             <p className="text-gray-400 text-sm break-words">
-                              Subido: {new Date(file.uploadDate).toLocaleDateString('es-ES')} • {file.size}
+                              {t('clientDashboard.orders.uploaded')}: {new Date(file.uploadDate).toLocaleDateString('es-ES')} • {file.size}
                             </p>
                           </div>
                           <button
@@ -234,13 +236,13 @@ const ClientDashboard: React.FC = () => {
                             className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base touch-manipulation flex-shrink-0 w-full sm:w-auto"
                           >
                             <Download className="w-4 h-4" />
-                            <span className="sm:hidden">Descargar</span>
-                            <span className="hidden sm:inline">Descargar</span>
+                            <span className="sm:hidden">{t('clientDashboard.orders.download')}</span>
+                            <span className="hidden sm:inline">{t('clientDashboard.orders.download')}</span>
                           </button>
                         </div>
                         {file.comments && (
                           <div className="bg-gray-700/40 rounded-lg p-3 border-l-4 border-primary/50">
-                            <p className="text-gray-300 text-sm font-medium mb-1">Comentarios del técnico:</p>
+                            <p className="text-gray-300 text-sm font-medium mb-1">{t('clientDashboard.orders.techComments')}:</p>
                             <p className="text-gray-200 text-sm leading-relaxed">{file.comments}</p>
                           </div>
                         )}
@@ -255,7 +257,7 @@ const ClientDashboard: React.FC = () => {
                 <div className="bg-gray-700/20 rounded-lg p-4">
                   <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
                     <Receipt className="w-5 h-5" />
-                    Facturas
+                    {t('clientDashboard.orders.invoices')}
                   </h4>
                   <div className="space-y-2">
                     {order.invoices.map((invoice) => (
@@ -274,8 +276,8 @@ const ClientDashboard: React.FC = () => {
                               className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base touch-manipulation flex-1 sm:flex-initial"
                             >
                               <Download className="w-4 h-4" />
-                              <span className="hidden sm:inline">Descargar</span>
-                              <span className="sm:hidden">Descargar</span>
+                              <span className="hidden sm:inline">{t('clientDashboard.orders.download')}</span>
+                              <span className="sm:hidden">{t('clientDashboard.orders.download')}</span>
                             </button>
                           </div>
                         </div>
@@ -295,25 +297,25 @@ const ClientDashboard: React.FC = () => {
 
   const renderProfile = () => (
     <div>
-      <h2 className="text-3xl font-bold text-white mb-8">Mi Perfil</h2>
+      <h2 className="text-3xl font-bold text-white mb-8">{t('clientDashboard.profile.title')}</h2>
       <div className="space-y-6">
         {/* Profile Information */}
         <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold text-white">Información Personal</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-white">{t('clientDashboard.profile.personalInfo')}</h3>
           <button
             onClick={() => setShowProfileEdit(!showProfileEdit)}
             className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto touch-manipulation"
           >
             <Edit className="w-4 h-4" />
-            Editar
+            {t('clientDashboard.profile.edit')}
           </button>
         </div>
         
         {showProfileEdit ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-gray-300 mb-2">Nombre</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.name')}</label>
               <input
                 type="text"
                 value={userProfile.name}
@@ -322,7 +324,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Email</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.email')}</label>
               <input
                 type="email"
                 value={userProfile.email}
@@ -331,7 +333,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Teléfono</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.phone')}</label>
               <input
                 type="tel"
                 value={userProfile.phone}
@@ -340,7 +342,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Dirección</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.address')}</label>
               <input
                 type="text"
                 value={userProfile.address}
@@ -349,7 +351,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Ciudad</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.city')}</label>
               <input
                 type="text"
                 value={userProfile.city}
@@ -358,7 +360,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Código Postal</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.postalCode')}</label>
               <input
                 type="text"
                 value={userProfile.postalCode}
@@ -371,40 +373,40 @@ const ClientDashboard: React.FC = () => {
                 onClick={() => setShowProfileEdit(false)}
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base touch-manipulation"
               >
-                Guardar Cambios
+                {t('clientDashboard.common.save')}
               </button>
               <button
                 onClick={() => setShowProfileEdit(false)}
                 className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base touch-manipulation"
               >
-                Cancelar
+                {t('clientDashboard.common.cancel')}
               </button>
             </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Nombre</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.name')}</p>
               <p className="text-white text-base sm:text-lg break-words font-semibold">{userProfile.name}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Email</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.email')}</p>
               <p className="text-white text-base sm:text-lg break-all font-semibold">{userProfile.email}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Teléfono</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.phone')}</p>
               <p className="text-white text-base sm:text-lg font-semibold">{userProfile.phone}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Dirección</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.address')}</p>
               <p className="text-white text-base sm:text-lg break-words font-semibold">{userProfile.address}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Ciudad</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.city')}</p>
               <p className="text-white text-base sm:text-lg break-words font-semibold">{userProfile.city}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Código Postal</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.postalCode')}</p>
               <p className="text-white text-base sm:text-lg font-semibold">{userProfile.postalCode}</p>
             </div>
           </div>
@@ -414,34 +416,34 @@ const ClientDashboard: React.FC = () => {
         {/* Password Change */}
         <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-semibold text-white">Cambiar Contraseña</h3>
+          <h3 className="text-xl font-semibold text-white">{t('clientDashboard.profile.changePassword')}</h3>
           <button
             onClick={() => setShowPasswordForm(!showPasswordForm)}
             className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2"
           >
             <Lock className="w-4 h-4" />
-            {showPasswordForm ? 'Cancelar' : 'Cambiar'}
+            {showPasswordForm ? t('clientDashboard.common.cancel') : t('clientDashboard.common.change')}
           </button>
         </div>
         
         {showPasswordForm && (
           <div className="space-y-4">
             <div>
-              <label className="block text-gray-300 mb-2">Contraseña Actual</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.currentPassword')}</label>
               <input
                 type="password"
                 className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Nueva Contraseña</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.newPassword')}</label>
               <input
                 type="password"
                 className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Confirmar Nueva Contraseña</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.confirmPassword')}</label>
               <input
                 type="password"
                 className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none"
@@ -449,7 +451,7 @@ const ClientDashboard: React.FC = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base touch-manipulation">
-                Actualizar Contraseña
+                {t('clientDashboard.profile.updatePassword')}
               </button>
               <button
                 onClick={() => setShowPasswordForm(false)}
@@ -465,20 +467,20 @@ const ClientDashboard: React.FC = () => {
         {/* Billing Information */}
         <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold text-white">Información de Facturación</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-white">{t('clientDashboard.profile.billingInfo')}</h3>
           <button
             onClick={() => setShowBillingEdit(!showBillingEdit)}
             className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto touch-manipulation"
           >
             <Edit className="w-4 h-4" />
-            {showBillingEdit ? 'Cancelar' : 'Editar'}
+            {showBillingEdit ? t('clientDashboard.common.cancel') : t('clientDashboard.profile.edit')}
           </button>
         </div>
         
         {showBillingEdit ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-gray-300 mb-2">Nombre de la Empresa</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.companyName')}</label>
               <input
                 type="text"
                 value={billingInfo.companyName}
@@ -487,7 +489,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">NIF/CIF</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.taxId')}</label>
               <input
                 type="text"
                 value={billingInfo.taxId}
@@ -496,7 +498,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Dirección de Facturación</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.billingAddress')}</label>
               <input
                 type="text"
                 value={billingInfo.billingAddress}
@@ -505,7 +507,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Ciudad</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.city')}</label>
               <input
                 type="text"
                 value={billingInfo.billingCity}
@@ -514,7 +516,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">Código Postal</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.postalCode')}</label>
               <input
                 type="text"
                 value={billingInfo.billingPostalCode}
@@ -523,7 +525,7 @@ const ClientDashboard: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-300 mb-2">País</label>
+              <label className="block text-gray-300 mb-2">{t('clientDashboard.profile.country')}</label>
               <input
                 type="text"
                 value={billingInfo.billingCountry}
@@ -536,28 +538,28 @@ const ClientDashboard: React.FC = () => {
                 onClick={() => setShowBillingEdit(false)}
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base touch-manipulation"
               >
-                Guardar Cambios
+                {t('clientDashboard.common.save')}
               </button>
               <button
                 onClick={() => setShowBillingEdit(false)}
                 className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base touch-manipulation"
               >
-                Cancelar
+                {t('clientDashboard.common.cancel')}
               </button>
             </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Nombre de la Empresa</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.companyName')}</p>
               <p className="text-white text-base sm:text-lg break-words font-semibold">{billingInfo.companyName}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">NIF/CIF</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.taxId')}</p>
               <p className="text-white text-base sm:text-lg font-semibold">{billingInfo.taxId}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">Dirección de Facturación</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.billingAddress')}</p>
               <p className="text-white text-base sm:text-lg break-words font-semibold">{billingInfo.billingAddress}</p>
             </div>
             <div className="space-y-2">
@@ -569,7 +571,7 @@ const ClientDashboard: React.FC = () => {
               <p className="text-white text-base sm:text-lg font-semibold">{billingInfo.billingPostalCode}</p>
             </div>
             <div className="space-y-2">
-              <p className="text-gray-400 text-sm font-medium">País</p>
+              <p className="text-gray-400 text-sm font-medium">{t('clientDashboard.profile.country')}</p>
               <p className="text-white text-base sm:text-lg break-words font-semibold">{billingInfo.billingCountry}</p>
             </div>
           </div>
@@ -596,8 +598,7 @@ const ClientDashboard: React.FC = () => {
         {/* Desktop Sidebar */}
         <div className="hidden lg:block w-64 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700 min-h-screen">
           <div className="p-6">
-            <h1 className="text-2xl font-bold text-white mb-8">
-              <span className="text-primary">CLIENTE</span> PANEL
+            <h1 className="text-2xl font-bold text-white mb-8" dangerouslySetInnerHTML={{ __html: t('clientDashboard.title') }}>
             </h1>
             <nav className="space-y-2">
               {sidebarItems.map((item) => {
@@ -626,8 +627,7 @@ const ClientDashboard: React.FC = () => {
           {/* Mobile Navigation */}
           <div className="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-30">
             <div className="px-4 py-3">
-              <h1 className="text-lg font-bold text-white mb-3">
-                <span className="text-primary">CLIENTE</span> PANEL
+              <h1 className="text-lg font-bold text-white mb-3" dangerouslySetInnerHTML={{ __html: t('clientDashboard.title') }}>
               </h1>
               <div className="overflow-x-auto scrollbar-hide">
                 <div className="flex space-x-2 pb-2 min-w-max">

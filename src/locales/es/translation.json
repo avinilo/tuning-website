@@ -47,7 +47,7 @@
   },
   "contact": {
     "header": {
-      "title": "Contacta con Nosotros",
+      "title": "CONTACTA CON <span class='text-primary'>NOSOTROS</span>",
       "subtitle": "Estamos aquí para ayudarte con tus proyectos de tuning"
     },
     "methods": {
@@ -414,10 +414,10 @@
     "services": {
       "title": "Servicios",
       "links": {
-        "ecu": "Reprogramación ECU",
-        "tuning": "Tuning Extremo",
-        "optimization": "Optimización de Rendimiento",
-        "diagnostic": "Diagnóstico Avanzado"
+        "carTuning": "CAR TUNING",
+        "trucks": "CAMIONES Y AGRICULTURA",
+        "tcuTuning": "TCU TUNING",
+        "others": "OTROS SERVICIOS"
       }
     },
     "contact": {
@@ -431,6 +431,208 @@
       "privacy": "Política de Privacidad",
       "terms": "Términos de Servicio",
       "cookies": "Cookies"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "INICIAR <span class='text-primary'>SESIÓN</span>",
+      "subtitle": "ACCEDE A TU CUENTA DE FILESECUFB",
+      "form": {
+        "email": {
+          "label": "CORREO ELECTRÓNICO",
+          "placeholder": "TU@EMAIL.COM"
+        },
+        "password": {
+          "label": "CONTRASEÑA",
+          "placeholder": "••••••••"
+        },
+        "forgotPassword": "¿OLVIDASTE TU CONTRASEÑA?",
+        "submit": "INICIAR SESIÓN",
+        "submitting": "INICIANDO SESIÓN..."
+      },
+      "google": "CONTINUAR CON GOOGLE",
+      "divider": "O",
+      "register": {
+        "text": "¿NO TIENES CUENTA?",
+        "link": "REGÍSTRATE AQUÍ"
+      },
+      "messages": {
+        "fillFields": "Por favor completa todos los campos",
+        "success": "¡Sesión iniciada correctamente!",
+        "error": "Error inesperado al iniciar sesión",
+        "googleNotImplemented": "Funcionalidad de Google no implementada"
+      }
+    },
+    "register": {
+      "title": "CREAR <span class='text-primary'>CUENTA</span>",
+      "subtitle": "ÚNETE A LA COMUNIDAD FILESECUFB",
+      "form": {
+        "email": {
+          "label": "CORREO ELECTRÓNICO",
+          "placeholder": "TU@EMAIL.COM"
+        },
+        "password": {
+          "label": "CONTRASEÑA",
+          "placeholder": "••••••••"
+        },
+        "confirmPassword": {
+          "label": "CONFIRMAR CONTRASEÑA",
+          "placeholder": "••••••••"
+        },
+        "submit": "CREAR CUENTA",
+        "submitting": "CREANDO CUENTA..."
+      },
+      "google": "CONTINUAR CON GOOGLE",
+      "divider": "O",
+      "login": {
+        "text": "¿YA TIENES CUENTA?",
+        "link": "INICIAR SESIÓN"
+      },
+      "messages": {
+        "passwordMismatch": "Las contraseñas no coinciden",
+        "passwordLength": "La contraseña debe tener al menos 6 caracteres",
+        "success": "¡Cuenta creada correctamente!",
+        "error": "Error inesperado al crear la cuenta",
+        "googleNotImplemented": "Funcionalidad de Google no implementada"
+      }
+    },
+    "forgotPassword": {
+      "title": "RECUPERAR <span class='text-primary'>CONTRASEÑA</span>",
+      "subtitle": "INGRESA TU EMAIL PARA RECUPERAR TU CUENTA",
+      "form": {
+        "email": {
+          "label": "CORREO ELECTRÓNICO",
+          "placeholder": "TU@EMAIL.COM"
+        },
+        "submit": "ENVIAR ENLACE DE RECUPERACIÓN",
+        "submitting": "ENVIANDO...",
+        "sent": "ENLACE ENVIADO"
+      },
+      "backToLogin": "VOLVER AL INICIO DE SESIÓN",
+      "messages": {
+        "enterEmail": "Por favor ingresa tu correo electrónico",
+        "invalidEmail": "Por favor ingresa un correo electrónico válido",
+        "success": "¡Enlace de recuperación enviado! Revisa tu email.",
+        "error": "Error inesperado al enviar el enlace de recuperación"
+      }
+    }
+  },
+  "services": {
+    "title": "SERVICIOS <span class='text-primary'>TUNING</span>",
+    "subtitle": "DESCUBRE NUESTRA GAMA COMPLETA DE SERVICIOS DE OPTIMIZACIÓN EXTREMA",
+    "searchPlaceholder": "BUSCAR SERVICIOS...",
+    "carTuning": {
+      "title": "SERVICIOS DE TUNING PARA AUTOMÓVILES"
+    },
+    "truckAgriculture": {
+      "title": "CAMIONES Y <span class='text-primary'>AGRICULTURA</span>",
+      "subtitle": "SERVICIOS ESPECIALIZADOS PARA VEHÍCULOS COMERCIALES Y AGRÍCOLAS"
+    },
+    "tcuTuning": {
+      "subtitle": "OPTIMIZACIÓN DE TRANSMISIÓN CON TORQUE INTERNO Y VELOCIDAD DE CAMBIO"
+    },
+    "otherServices": {
+      "title": "OTROS <span class='text-primary'>SERVICIOS</span>",
+      "subtitle": "SERVICIOS ESPECIALIZADOS ADICIONALES"
+    }
+  },
+  "clientDashboard": {
+    "title": "CLIENTE <span class='text-primary'>PANEL</span>",
+    "sidebar": {
+      "orders": "Pedidos",
+      "profile": "Perfil"
+    },
+    "orders": {
+      "title": "Mis Pedidos",
+      "estimatedDelivery": "Entrega estimada",
+      "tunedFiles": "Archivos Tuneados",
+      "invoices": "Facturas",
+      "download": "Descargar",
+      "techComments": "Comentarios del técnico",
+      "uploaded": "Subido",
+      "status": {
+        "pending": "Pendiente",
+        "inProgress": "En Proceso",
+        "completed": "Completado",
+        "delivered": "Entregado",
+        "paid": "Pagado"
+      }
+    },
+    "profile": {
+      "title": "Mi Perfil",
+      "personalInfo": "Información Personal",
+      "edit": "Editar",
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "address": "Dirección",
+      "city": "Ciudad",
+      "postalCode": "Código Postal",
+      "country": "País",
+      "changePassword": "Cambiar Contraseña",
+      "currentPassword": "Contraseña Actual",
+      "newPassword": "Nueva Contraseña",
+      "confirmPassword": "Confirmar Nueva Contraseña",
+      "updatePassword": "Actualizar Contraseña",
+      "billingInfo": "Información de Facturación",
+      "companyName": "Nombre de la Empresa",
+      "taxId": "NIF/CIF",
+      "billingAddress": "Dirección de Facturación"
+    },
+    "common": {
+      "save": "Guardar Cambios",
+      "cancel": "Cancelar",
+      "change": "Cambiar"
+    }
+  },
+  "cookies": {
+    "banner": {
+      "title": "Configuración de Cookies",
+      "description": "Utilizamos cookies para mejorar tu experiencia de navegación, analizar el tráfico del sitio y personalizar el contenido. Al hacer clic en 'Aceptar todas', consientes el uso de todas las cookies.",
+      "acceptAll": "Aceptar todas",
+      "rejectAll": "Rechazar todas",
+      "configure": "Configurar",
+      "moreInfo": "Más información en nuestra",
+      "privacyPolicy": "Política de Privacidad"
+    },
+    "settings": {
+      "title": "Configuración de Cookies",
+      "description": "Personaliza qué cookies quieres aceptar. Puedes cambiar estas preferencias en cualquier momento.",
+      "savePreferences": "Guardar Preferencias",
+      "acceptAll": "Aceptar Todas",
+      "rejectAll": "Rechazar Todas",
+      "close": "Cerrar",
+      "categories": {
+        "necessary": {
+          "title": "Cookies Técnicas",
+          "description": "Estas cookies son esenciales para el funcionamiento del sitio web y no se pueden desactivar. Incluyen cookies de sesión, autenticación y preferencias básicas.",
+          "duration": "Duración: Sesión y hasta 1 año",
+          "purpose": "Finalidad: Funcionamiento básico del sitio web",
+          "always": "Siempre activas"
+        },
+        "analytics": {
+          "title": "Cookies Analíticas",
+          "description": "Nos ayudan a entender cómo los visitantes interactúan con el sitio web, recopilando información de forma anónima para mejorar nuestros servicios.",
+          "duration": "Duración: Hasta 2 años",
+          "purpose": "Finalidad: Análisis de tráfico y comportamiento",
+          "provider": "Proveedor: Google Analytics"
+        },
+        "marketing": {
+          "title": "Cookies de Marketing",
+          "description": "Se utilizan para mostrar anuncios relevantes y medir la efectividad de nuestras campañas publicitarias en diferentes plataformas.",
+          "duration": "Duración: Hasta 2 años",
+          "purpose": "Finalidad: Publicidad personalizada y remarketing",
+          "provider": "Proveedor: Google Ads, Facebook Pixel"
+        }
+      },
+      "rights": {
+        "title": "Tus Derechos",
+        "description": "Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición contactando con nosotros. También puedes retirar tu consentimiento en cualquier momento."
+      }
+    },
+    "floatingButton": {
+      "tooltip": "Configurar Cookies",
+      "ariaLabel": "Abrir configuración de cookies"
     }
   }
 }

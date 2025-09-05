@@ -1,7 +1,9 @@
 import React from 'react';
 import { Search, Settings, Gauge, Wrench, Cog, Truck, Car } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
   const carTuningServices = [
     {
       id: 1,
@@ -700,11 +702,10 @@ const Services = () => {
         <div className="absolute inset-0 bg-black/60" />
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            SERVICIOS <span className="text-primary">TUNING</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: t('services.title') }}>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            DESCUBRE NUESTRA GAMA COMPLETA DE SERVICIOS DE OPTIMIZACIÓN EXTREMA
+            {t('services.subtitle')}
           </p>
         </div>
       </div>
@@ -716,7 +717,7 @@ const Services = () => {
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="BUSCAR SERVICIOS..."
+              placeholder={t('services.searchPlaceholder')}
               className="w-full bg-gray-900/80 border border-gray-700 rounded-lg py-4 pl-12 pr-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
             />
           </div>
@@ -724,7 +725,7 @@ const Services = () => {
       </div>
 
       {/* Car Tuning Section */}
-      <div className="py-20 px-4">
+      <div id="car-tuning" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
@@ -734,7 +735,7 @@ const Services = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-lg">
-              SERVICIOS DE TUNING PARA AUTOMÓVILES
+              {t('services.carTuning.title')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -744,17 +745,16 @@ const Services = () => {
       </div>
 
       {/* Truck/Agriculture Section */}
-      <div className="py-20 px-4 bg-gray-900/30">
+      <div id="trucks-agriculture" className="py-20 px-4 bg-gray-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
               <Truck className="text-primary w-8 h-8 mr-3" />
-              <h2 className="text-4xl md:text-5xl font-bold">
-                TRUCK & <span className="text-primary">AGRICULTURE</span>
+              <h2 className="text-4xl md:text-5xl font-bold" dangerouslySetInnerHTML={{ __html: t('services.truckAgriculture.title') }}>
               </h2>
             </div>
             <p className="text-gray-400 text-lg">
-              SERVICIOS ESPECIALIZADOS PARA VEHÍCULOS COMERCIALES Y AGRÍCOLAS
+              {t('services.truckAgriculture.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -764,7 +764,7 @@ const Services = () => {
       </div>
 
       {/* TCU Tuning Section */}
-      <div className="py-20 px-4">
+      <div id="tcu-tuning" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
@@ -774,7 +774,7 @@ const Services = () => {
               </h2>
             </div>
             <p className="text-gray-400 text-lg">
-              OPTIMIZACIÓN DE TRANSMISIÓN CON TORQUE INTERNO Y VELOCIDAD DE CAMBIO
+              {t('services.tcuTuning.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -784,17 +784,16 @@ const Services = () => {
       </div>
 
       {/* Otros Servicios Section */}
-      <div className="py-20 px-4 bg-gray-900/30">
+      <div id="other-services" className="py-20 px-4 bg-gray-900/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
               <Wrench className="text-primary w-8 h-8 mr-3" />
-              <h2 className="text-4xl md:text-5xl font-bold">
-                OTROS <span className="text-primary">SERVICIOS</span>
+              <h2 className="text-4xl md:text-5xl font-bold" dangerouslySetInnerHTML={{ __html: t('services.otherServices.title') }}>
               </h2>
             </div>
             <p className="text-gray-400 text-lg">
-              SERVICIOS ESPECIALIZADOS ADICIONALES
+              {t('services.otherServices.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

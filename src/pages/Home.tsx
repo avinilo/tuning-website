@@ -540,7 +540,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Process Section - Completely Redesigned */}
-      <section className="py-16 sm:py-20 md:py-24 bg-dark-secondary relative overflow-hidden">
+      <section id="process" className="py-16 sm:py-20 md:py-24 bg-dark-secondary relative overflow-hidden">
         {/* Clean Background Pattern */}
         <div className="absolute inset-0 opacity-3">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-corporate/5 via-transparent to-blue-corporate/5"></div>

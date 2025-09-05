@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Login: React.FC = () => {
+  const { t } = useTranslation()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -12,7 +14,6 @@ const Login: React.FC = () => {
     e.preventDefault()
     
     if (!email.trim() || !password.trim()) {
-      console.log('Por favor completa todos los campos')
       return
     }
 
@@ -20,18 +21,16 @@ const Login: React.FC = () => {
       setIsSubmitting(true)
       // Simulación de login sin funcionalidad real
       await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('¡Sesión iniciada exitosamente!')
-      console.log('Login simulado:', { email, password })
+      // Login simulado exitoso
     } catch (error) {
-      console.log('Error inesperado al iniciar sesión')
+      // Error inesperado al iniciar sesión
     } finally {
       setIsSubmitting(false)
     }
   }
 
   const handleGoogleSignIn = () => {
-    console.log('Google sign in (sin funcionalidad)')
-    console.log('Funcionalidad de Google no implementada')
+    // Google sign in (sin funcionalidad)
   }
 
   return (
@@ -44,8 +43,8 @@ const Login: React.FC = () => {
       <div className="max-w-md w-full space-y-8 relative z-10">
         <div className="bg-gradient-dark backdrop-blur-sm rounded-2xl border border-elegant shadow-elegant p-8">
           <div className="text-center mb-8">
-            <h2 className="text-h1 text-white mb-2 uppercase tracking-wider">INICIAR <span className="text-primary">SESIÓN</span></h2>
-            <p className="text-text-secondary uppercase tracking-wide">ACCEDE A TU CUENTA DE TUNING</p>
+            <h2 className="text-h1 text-white mb-2 uppercase tracking-wider" dangerouslySetInnerHTML={{ __html: t('auth.login.title') }}></h2>
+            <p className="text-text-secondary uppercase tracking-wide">{t('auth.login.subtitle')}</p>
           </div>
 
           {/* Google Sign In Button */}
@@ -60,13 +59,13 @@ const Login: React.FC = () => {
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            <span>CONTINUAR CON GOOGLE</span>
+            <span>{t('auth.login.google')}</span>
           </button>
 
           {/* Divider */}
           <div className="mb-6 flex items-center">
             <div className="flex-1 border-t border-elegant"></div>
-            <span className="px-4 text-text-secondary uppercase tracking-wider text-sm">O</span>
+            <span className="px-4 text-text-secondary uppercase tracking-wider text-sm">{t('auth.login.divider')}</span>
             <div className="flex-1 border-t border-elegant"></div>
           </div>
 
@@ -74,7 +73,7 @@ const Login: React.FC = () => {
             {/* Email Field */}
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm font-medium text-primary uppercase tracking-wider">
-                CORREO ELECTRÓNICO
+                {t('auth.login.form.email.label')}
               </label>
               <div className="flex items-center space-x-3 bg-dark-tertiary border border-elegant rounded-lg p-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
@@ -85,7 +84,7 @@ const Login: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="flex-1 bg-transparent text-white placeholder-text-secondary uppercase tracking-wider focus:outline-none"
-                  placeholder="TU@EMAIL.COM"
+                  placeholder={t('auth.login.form.email.placeholder')}
                 />
               </div>
             </div>
@@ -93,7 +92,7 @@ const Login: React.FC = () => {
             {/* Password Field */}
             <div className="space-y-2">
               <label htmlFor="password" className="block text-sm font-medium text-primary uppercase tracking-wider">
-                CONTRASEÑA
+                {t('auth.login.form.password.label')}
               </label>
               <div className="flex items-center space-x-3 bg-dark-tertiary border border-elegant rounded-lg p-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20">
                 <Lock className="h-5 w-5 text-primary flex-shrink-0" />
@@ -104,7 +103,7 @@ const Login: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   className="flex-1 bg-transparent text-white placeholder-text-secondary focus:outline-none"
-                  placeholder="••••••••"
+                  placeholder={t('auth.login.form.password.placeholder')}
                 />
                 <button
                   type="button"
@@ -117,7 +116,7 @@ const Login: React.FC = () => {
               {/* Forgot Password Link */}
               <div className="text-right mt-2">
                 <Link to="/forgot-password" className="text-primary hover:text-blue-dark font-medium transition-colors uppercase tracking-wider text-sm">
-                  ¿OLVIDASTE TU CONTRASEÑA?
+                  {t('auth.login.form.forgotPassword')}
                 </Link>
               </div>
             </div>
@@ -127,15 +126,15 @@ const Login: React.FC = () => {
               disabled={isSubmitting}
               className="btn-primary w-full py-3 px-4 font-semibold uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 shadow-subtle hover:shadow-elegant transition-all duration-300 disabled:hover:scale-100"
             >
-              {isSubmitting ? 'INICIANDO SESIÓN...' : 'INICIAR SESIÓN'}
+              {isSubmitting ? t('auth.login.form.submitting') : t('auth.login.form.submit')}
             </button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-text-secondary uppercase tracking-wide">
-              ¿NO TIENES CUENTA?{' '}
+              {t('auth.login.register.text')}{' '}
               <Link to="/register" className="text-primary hover:text-blue-dark font-medium transition-colors uppercase tracking-wider">
-                REGÍSTRATE AQUÍ
+                {t('auth.login.register.link')}
               </Link>
             </p>
           </div>

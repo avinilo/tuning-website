@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, ArrowLeft } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const ForgotPassword: React.FC = () => {
+  const { t } = useTranslation()
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
@@ -10,14 +12,12 @@ const ForgotPassword: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!email.trim()) {
-      console.log('Por favor ingresa tu correo electrónico')
+    if (!email) {
       return
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
-      console.log('Por favor ingresa un correo electrónico válido')
       return
     }
 
@@ -26,10 +26,9 @@ const ForgotPassword: React.FC = () => {
       // Simulación de envío de email sin funcionalidad real
       await new Promise(resolve => setTimeout(resolve, 1000))
       setEmailSent(true)
-      console.log('¡Enlace de recuperación enviado! Revisa tu correo electrónico.')
-      console.log('Recuperación de contraseña simulada para:', email)
+      // Recuperación de contraseña simulada exitosa
     } catch (error) {
-      console.log('Error inesperado al enviar el enlace de recuperación')
+      // Error inesperado al enviar el enlace de recuperación
     } finally {
       setIsSubmitting(false)
     }
@@ -45,15 +44,15 @@ const ForgotPassword: React.FC = () => {
       <div className="max-w-md w-full space-y-8 relative z-10">
         <div className="bg-gradient-dark backdrop-blur-sm rounded-2xl border border-elegant shadow-elegant p-8">
           <div className="text-center mb-8">
-            <h2 className="text-h1 text-white mb-2 uppercase tracking-wider">RECUPERAR <span className="text-primary">CONTRASEÑA</span></h2>
-            <p className="text-text-secondary uppercase tracking-wide">INGRESA TU EMAIL PARA RECUPERAR TU CUENTA</p>
+            <h2 className="text-h1 text-white mb-2 uppercase tracking-wider" dangerouslySetInnerHTML={{ __html: t('auth.forgotPassword.title') }}></h2>
+            <p className="text-text-secondary uppercase tracking-wide">{t('auth.forgotPassword.subtitle')}</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email Field */}
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm font-medium text-primary uppercase tracking-wider">
-                CORREO ELECTRÓNICO
+                {t('auth.forgotPassword.form.email.label')}
               </label>
               <div className="flex items-center space-x-3 bg-dark-tertiary border border-elegant rounded-lg p-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/20">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
@@ -64,7 +63,7 @@ const ForgotPassword: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="flex-1 bg-transparent text-white placeholder-text-secondary uppercase tracking-wider focus:outline-none"
-                  placeholder="TU@EMAIL.COM"
+                  placeholder={t('auth.forgotPassword.form.email.placeholder')}
                 />
               </div>
             </div>
@@ -74,7 +73,7 @@ const ForgotPassword: React.FC = () => {
               disabled={isSubmitting || emailSent}
               className="btn-primary w-full py-3 px-4 font-semibold uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 shadow-subtle hover:shadow-elegant transition-all duration-300 disabled:hover:scale-100"
             >
-              {isSubmitting ? 'ENVIANDO...' : emailSent ? 'ENLACE ENVIADO' : 'ENVIAR ENLACE DE RECUPERACIÓN'}
+              {isSubmitting ? t('auth.forgotPassword.form.submitting') : emailSent ? t('auth.forgotPassword.form.sent') : t('auth.forgotPassword.form.submit')}
             </button>
           </form>
 
@@ -84,7 +83,7 @@ const ForgotPassword: React.FC = () => {
               className="inline-flex items-center space-x-2 text-primary hover:text-blue-dark font-medium transition-colors uppercase tracking-wider"
             >
               <ArrowLeft className="h-4 w-4" />
-              <span>VOLVER AL LOGIN</span>
+              <span>{t('auth.forgotPassword.backToLogin')}</span>
             </Link>
           </div>
         </div>

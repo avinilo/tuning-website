@@ -47,7 +47,7 @@
   },
   "contact": {
     "header": {
-      "title": "Contact Us",
+      "title": "CONTACT <span class='text-primary'>US</span>",
       "subtitle": "We're here to help you with your tuning projects"
     },
     "methods": {
@@ -420,10 +420,10 @@
     "services": {
       "title": "Services",
       "links": {
-        "ecu": "ECU Remapping",
-        "tuning": "Extreme Tuning",
-        "optimization": "Performance Optimization",
-        "diagnostic": "Advanced Diagnostics"
+        "carTuning": "CAR TUNING",
+        "trucks": "TRUCKS & AGRICULTURE",
+        "tcuTuning": "TCU TUNING",
+        "others": "OTHER SERVICES"
       }
     },
     "contact": {
@@ -437,6 +437,158 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "cookies": "Cookies"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "SIGN <span class='text-primary'>IN</span>",
+      "subtitle": "ACCESS YOUR FILESECUFB ACCOUNT",
+      "form": {
+        "email": {
+          "label": "EMAIL ADDRESS",
+          "placeholder": "YOUR@EMAIL.COM"
+        },
+        "password": {
+          "label": "PASSWORD",
+          "placeholder": "••••••••"
+        },
+        "forgotPassword": "FORGOT YOUR PASSWORD?",
+        "submit": "SIGN IN",
+        "submitting": "SIGNING IN..."
+      },
+      "google": "CONTINUE WITH GOOGLE",
+      "divider": "OR",
+      "register": {
+        "text": "DON'T HAVE AN ACCOUNT?",
+        "link": "SIGN UP HERE"
+      },
+      "messages": {
+        "fillFields": "Please fill in all fields",
+        "success": "Successfully signed in!",
+        "error": "Unexpected error signing in",
+        "googleNotImplemented": "Google functionality not implemented"
+      }
+    },
+    "register": {
+      "title": "CREATE <span class='text-primary'>ACCOUNT</span>",
+      "subtitle": "JOIN THE FILESECUFB COMMUNITY",
+      "form": {
+        "email": {
+          "label": "EMAIL ADDRESS",
+          "placeholder": "YOUR@EMAIL.COM"
+        },
+        "password": {
+          "label": "PASSWORD",
+          "placeholder": "••••••••"
+        },
+        "confirmPassword": {
+          "label": "CONFIRM PASSWORD",
+          "placeholder": "••••••••"
+        },
+        "submit": "CREATE ACCOUNT",
+        "submitting": "CREATING ACCOUNT..."
+      },
+      "google": "CONTINUE WITH GOOGLE",
+      "divider": "OR",
+      "login": {
+        "text": "ALREADY HAVE AN ACCOUNT?",
+        "link": "SIGN IN"
+      },
+      "messages": {
+        "passwordMismatch": "Passwords do not match",
+        "passwordLength": "Password must be at least 6 characters",
+        "success": "Account created successfully!",
+        "error": "Unexpected error creating account",
+        "googleNotImplemented": "Google functionality not implemented"
+      }
+    },
+    "forgotPassword": {
+      "title": "RECOVER <span class='text-primary'>PASSWORD</span>",
+      "subtitle": "ENTER YOUR EMAIL TO RECOVER YOUR ACCOUNT",
+      "form": {
+        "email": {
+          "label": "EMAIL ADDRESS",
+          "placeholder": "YOUR@EMAIL.COM"
+        },
+        "submit": "SEND RECOVERY LINK",
+        "submitting": "SENDING...",
+        "sent": "LINK SENT"
+      },
+      "backToLogin": "BACK TO LOGIN",
+      "messages": {
+        "enterEmail": "Please enter your email address",
+        "invalidEmail": "Please enter a valid email address",
+        "success": "Recovery link sent! Check your email.",
+        "error": "Unexpected error sending recovery link"
+      }
+    }
+  },
+  "services": {
+    "title": "TUNING <span class='text-primary'>SERVICES</span>",
+    "subtitle": "DISCOVER OUR COMPLETE RANGE OF EXTREME OPTIMIZATION SERVICES",
+    "searchPlaceholder": "SEARCH SERVICES...",
+    "carTuning": {
+      "title": "AUTOMOTIVE TUNING SERVICES"
+    },
+    "truckAgriculture": {
+      "title": "TRUCK & <span class='text-primary'>AGRICULTURE</span>",
+      "subtitle": "SPECIALIZED SERVICES FOR COMMERCIAL AND AGRICULTURAL VEHICLES"
+    },
+    "tcuTuning": {
+      "subtitle": "TRANSMISSION OPTIMIZATION WITH INTERNAL TORQUE AND SHIFT SPEED"
+    },
+    "otherServices": {
+      "title": "OTHER <span class='text-primary'>SERVICES</span>",
+      "subtitle": "ADDITIONAL SPECIALIZED SERVICES"
+    }
+  },
+  "clientDashboard": {
+    "title": "CLIENT <span class='text-primary'>PANEL</span>",
+    "sidebar": {
+      "orders": "Orders",
+      "profile": "Profile"
+    },
+    "orders": {
+      "title": "My Orders",
+      "estimatedDelivery": "Estimated delivery",
+      "tunedFiles": "Tuned Files",
+      "invoices": "Invoices",
+      "download": "Download",
+      "techComments": "Technician comments",
+      "uploaded": "Uploaded",
+      "status": {
+        "pending": "Pending",
+        "inProgress": "In Progress",
+        "completed": "Completed",
+        "delivered": "Delivered",
+        "paid": "Paid"
+      }
+    },
+    "profile": {
+      "title": "My Profile",
+      "personalInfo": "Personal Information",
+      "edit": "Edit",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "city": "City",
+      "postalCode": "Postal Code",
+      "country": "Country",
+      "changePassword": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "updatePassword": "Update Password",
+      "billingInfo": "Billing Information",
+      "companyName": "Company Name",
+      "taxId": "Tax ID",
+      "billingAddress": "Billing Address"
+    },
+    "common": {
+      "save": "Save Changes",
+      "cancel": "Cancel",
+      "change": "Change"
     }
   }
 }
