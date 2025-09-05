@@ -37,27 +37,27 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-      <div className="flex">
+      <div className="flex w-full max-w-full overflow-hidden">
         {/* Desktop Sidebar */}
-        <div className="hidden lg:block w-64 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700 min-h-screen">
-          <div className="p-6">
-            <h1 className="text-2xl font-bold text-white mb-8">
+        <div className="hidden lg:block w-64 flex-shrink-0 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700 min-h-screen">
+          <div className="p-4 xl:p-6">
+            <h1 className="text-xl xl:text-2xl font-bold text-white mb-6 xl:mb-8">
               <span className="text-primary">ADMIN</span> PANEL
             </h1>
-            <nav className="space-y-2">
+            <nav className="space-y-1 xl:space-y-2">
               {sidebarItems.map((item) => {
                 const Icon = item.icon;
                 return (
                   <button
                     key={item.id}
                     onClick={() => setActiveSection(item.id)}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                    className={`w-full flex items-center space-x-2 xl:space-x-3 px-3 xl:px-4 py-2 xl:py-3 rounded-lg transition-all duration-200 text-sm xl:text-base ${
                       activeSection === item.id
                         ? 'bg-primary/20 text-primary border border-primary/30'
                         : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4 xl:w-5 xl:h-5" />
                     <span className="font-medium">{item.label}</span>
                   </button>
                 );
@@ -67,11 +67,11 @@ const AdminDashboard: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0 overflow-hidden">
           {/* Mobile Navigation */}
           <div className="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-30">
-            <div className="px-4 py-3">
-              <h1 className="text-lg font-bold text-white mb-3">
+            <div className="px-3 sm:px-4 py-2 sm:py-3">
+              <h1 className="text-base sm:text-lg font-bold text-white mb-2 sm:mb-3">
                 <span className="text-primary">ADMIN</span> PANEL
               </h1>
               {/* Horizontal Scroll Container with Gradient Indicators */}
@@ -141,7 +141,7 @@ const AdminDashboard: React.FC = () => {
           </div>
 
           {/* Content Area */}
-          <div className="p-4 lg:p-8">
+          <div className="p-3 sm:p-4 md:p-6 lg:p-8 max-w-full overflow-hidden">
             {renderContent()}
           </div>
         </div>
@@ -160,31 +160,36 @@ const OverviewSection: React.FC = () => {
   ];
 
   return (
-    <div>
-      <h2 className="text-3xl font-bold text-white mb-8">Panel de Control</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">Panel de Control</h2>
+        <div className="text-xs sm:text-sm text-gray-400">
+          Última actualización: {new Date().toLocaleString()}
+        </div>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
         {stats.map((stat, index) => (
-          <div key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-            <h3 className="text-gray-400 text-sm font-medium mb-2">{stat.label}</h3>
-            <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+          <div key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-3 sm:p-4 lg:p-6 hover:border-primary/50 transition-all duration-300">
+            <h3 className="text-gray-400 text-xs sm:text-sm font-medium mb-2 truncate">{stat.label}</h3>
+            <p className={`text-lg sm:text-xl lg:text-2xl font-bold ${stat.color} truncate`}>{stat.value}</p>
           </div>
         ))}
       </div>
       
-      <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-        <h3 className="text-xl font-bold text-white mb-4">Actividad Reciente</h3>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between py-2 border-b border-gray-700">
-            <span className="text-gray-300">Nuevo pedido de Stage 2 - Cliente #1234</span>
-            <span className="text-sm text-gray-500">Hace 2 horas</span>
+      <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-3 sm:p-4 lg:p-6">
+        <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-3 sm:mb-4">Actividad Reciente</h3>
+        <div className="space-y-2 sm:space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-2 border-b border-gray-700 space-y-1 sm:space-y-0">
+            <span className="text-gray-300 text-sm sm:text-base">Nuevo pedido de Stage 2 - Cliente #1234</span>
+            <span className="text-xs sm:text-sm text-gray-500">Hace 2 horas</span>
           </div>
-          <div className="flex items-center justify-between py-2 border-b border-gray-700">
-            <span className="text-gray-300">Mapa tuneado subido para Cliente #1230</span>
-            <span className="text-sm text-gray-500">Hace 4 horas</span>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-2 border-b border-gray-700 space-y-1 sm:space-y-0">
+            <span className="text-gray-300 text-sm sm:text-base">Mapa tuneado subido para Cliente #1230</span>
+            <span className="text-xs sm:text-sm text-gray-500">Hace 4 horas</span>
           </div>
-          <div className="flex items-center justify-between py-2">
-            <span className="text-gray-300">Factura generada para Cliente #1228</span>
-            <span className="text-sm text-gray-500">Hace 6 horas</span>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-2 space-y-1 sm:space-y-0">
+            <span className="text-gray-300 text-sm sm:text-base">Factura generada para Cliente #1228</span>
+            <span className="text-xs sm:text-sm text-gray-500">Hace 6 horas</span>
           </div>
         </div>
       </div>
@@ -257,9 +262,9 @@ const ServicesSection: React.FC = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold text-white">Gestión de Servicios</h2>
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+      <div className="flex flex-col mb-4 sm:mb-6 lg:mb-8">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">Gestión de Servicios</h2>
+        <div className="flex flex-row space-x-2">
           <button
             onClick={() => setActiveTab('create')}
             className={`px-4 py-3 rounded-lg transition-colors touch-manipulation text-sm sm:text-base ${
@@ -284,28 +289,28 @@ const ServicesSection: React.FC = () => {
       </div>
 
       {activeTab === 'create' ? (
-        <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-          <form className="space-y-6">
+        <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 sm:p-6 lg:p-8">
+          <form className="space-y-4 sm:space-y-6">
             {/* Título y Subtítulo */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                   Título del Servicio
                 </label>
                 <input
                   type="text"
                   placeholder="Ej: CAR TUNING"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                   Subtítulo
                 </label>
                 <input
                   type="text"
                   placeholder="Ej: (STAGE 1)"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -483,15 +488,15 @@ const ServicesSection: React.FC = () => {
       ) : (
         /* Vista de Servicios Creados */
         <div className="space-y-6">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
             <p className="text-gray-300">Servicios creados: {createdServices.length}</p>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <input
                 type="text"
                 placeholder="Buscar servicios..."
-                className="px-4 py-2 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary"
+                className="w-full sm:w-auto px-4 py-2 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base"
               />
-              <select className="px-4 py-2 bg-gray-900/50 border border-gray-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary">
+              <select className="w-full sm:w-auto px-4 py-2 bg-gray-900/50 border border-gray-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base">
                 <option>Todas las categorías</option>
                 <option>Car Tuning</option>
                 <option>Truck/Agriculture</option>
@@ -599,25 +604,26 @@ const ClientsSection: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-white mb-8">Gestión de Clientes</h2>
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 lg:mb-8">Gestión de Clientes</h2>
       <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden">
-        <div className="p-6 border-b border-gray-700">
-          <div className="flex justify-between items-center">
-            <h3 className="text-xl font-bold text-white">Lista de Clientes</h3>
-            <div className="flex space-x-4">
+        <div className="p-4 sm:p-6 border-b border-gray-700">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-4 sm:space-y-0">
+            <h3 className="text-lg sm:text-xl font-bold text-white">Lista de Clientes</h3>
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
               <input
                 type="text"
                 placeholder="Buscar cliente..."
-                className="px-4 py-2 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary"
+                className="px-4 py-2 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base"
               />
-              <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors">
+              <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-sm sm:text-base">
                 Exportar
               </button>
             </div>
           </div>
         </div>
         
-        <div className="overflow-x-auto">
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-900/50">
               <tr>
@@ -654,6 +660,34 @@ const ClientsSection: React.FC = () => {
               ))}
             </tbody>
           </table>
+        </div>
+        
+        {/* Mobile Cards */}
+        <div className="md:hidden p-4 space-y-3">
+          {clients.map((client) => (
+            <div key={client.id} className="bg-gray-700/30 border border-gray-600 rounded-lg p-4">
+              <div className="flex items-start justify-between mb-3">
+                <div>
+                  <h4 className="text-white font-medium text-sm mb-1">{client.name}</h4>
+                  <p className="text-gray-400 text-xs">#{client.id}</p>
+                </div>
+                <span className={`px-2 py-1 text-xs rounded-full ${
+                  client.status === 'Activo' 
+                    ? 'bg-green-500/20 text-green-400' 
+                    : 'bg-red-500/20 text-red-400'
+                }`}>
+                  {client.status}
+                </span>
+              </div>
+              <div className="space-y-1 mb-3">
+                <p className="text-gray-300 text-xs">{client.email}</p>
+                <p className="text-gray-300 text-xs">{client.orders} pedidos</p>
+              </div>
+              <button className="text-primary hover:text-primary/80 text-xs font-medium">
+                Ver Detalles
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -694,14 +728,14 @@ const OrdersSection: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-white mb-8">Gestión de Pedidos</h2>
-      <div className="space-y-6">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 lg:mb-8">Gestión de Pedidos</h2>
+      <div className="space-y-4 sm:space-y-6">
         {orders.map((order) => (
-          <div key={order.id} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h3 className="text-xl font-bold text-white mb-2">Pedido #{order.id}</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div key={order.id} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 space-y-3 sm:space-y-0">
+              <div className="flex-1">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Pedido #{order.id}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 text-xs sm:text-sm">
                   <div>
                     <span className="text-gray-400">Cliente:</span>
                     <p className="text-white font-medium">{order.client}</p>
@@ -720,7 +754,7 @@ const OrdersSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <span className={`px-3 py-1 text-sm rounded-full ${
+              <span className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-full self-start ${
                 order.status === 'Pendiente' ? 'bg-yellow-500/20 text-yellow-400' :
                 order.status === 'En Proceso' ? 'bg-blue-500/20 text-blue-400' :
                 'bg-green-500/20 text-green-400'
@@ -730,22 +764,22 @@ const OrdersSection: React.FC = () => {
             </div>
             
             <div className="mb-4">
-              <span className="text-gray-400 text-sm">Comentarios del cliente:</span>
-              <p className="text-gray-300 mt-1">{order.comments}</p>
+              <span className="text-gray-400 text-xs sm:text-sm">Comentarios del cliente:</span>
+              <p className="text-gray-300 mt-1 text-sm sm:text-base">{order.comments}</p>
             </div>
             
-            <div className="flex justify-between items-center pt-4 border-t border-gray-700">
-              <div className="flex space-x-4">
-                <button className="flex items-center space-x-2 px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-lg hover:bg-primary/30 transition-colors">
-                  <Download className="w-4 h-4" />
+            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center pt-4 border-t border-gray-700 space-y-3 lg:space-y-0">
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                <button className="flex items-center justify-center space-x-2 px-3 sm:px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-lg hover:bg-primary/30 transition-colors text-xs sm:text-sm">
+                  <Download className="w-3 h-3 sm:w-4 sm:h-4" />
                   <span>Descargar Mapa Original</span>
                 </button>
               </div>
-              <div className="flex space-x-2">
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                <button className="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm font-medium">
                   Marcar En Proceso
                 </button>
-                <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                <button className="px-3 sm:px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm font-medium">
                   Completar
                 </button>
               </div>
@@ -772,14 +806,14 @@ const UploadMapsSection: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-white mb-8">Subir Mapas Tuneados</h2>
-      <div className="space-y-6">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 lg:mb-8">Subir Mapas Tuneados</h2>
+      <div className="space-y-4 sm:space-y-6 lg:space-y-8">
         {pendingUploads.map((upload) => (
-          <div key={upload.orderId} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-            <div className="flex justify-between items-start mb-6">
+          <div key={upload.orderId} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-3 sm:p-4 lg:p-6">
+            <div className="flex justify-between items-start mb-4 sm:mb-6">
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Pedido #{upload.orderId}</h3>
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Pedido #{upload.orderId}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-sm">
                   <div>
                     <span className="text-gray-400">Cliente:</span>
                     <p className="text-white font-medium">{upload.client}</p>
@@ -792,33 +826,33 @@ const UploadMapsSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-primary/50 transition-colors mb-6">
-              <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-300 mb-2">Arrastra el mapa tuneado aquí o</p>
-              <button className="text-primary hover:text-primary/80 font-medium">
+            <div className="border-2 border-dashed border-gray-600 rounded-lg p-4 sm:p-6 lg:p-8 text-center hover:border-primary/50 transition-colors mb-4 sm:mb-6">
+              <Upload className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gray-400 mx-auto mb-2 sm:mb-4" />
+              <p className="text-sm sm:text-base text-gray-300 mb-2">Arrastra el mapa tuneado aquí o</p>
+              <button className="text-primary hover:text-primary/80 font-medium text-xs sm:text-sm lg:text-base">
                 selecciona el archivo
               </button>
-              <p className="text-sm text-gray-500 mt-2">Formatos soportados: .bin, .hex, .ori</p>
+              <p className="text-xs sm:text-sm text-gray-500 mt-2">Formatos soportados: .bin, .hex, .ori</p>
             </div>
             
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+            <div className="mb-4 sm:mb-6">
+              <label className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-2">
                 Comentarios
               </label>
               <textarea
                 value={comments[upload.orderId] || ''}
                 onChange={(e) => handleCommentChange(upload.orderId, e.target.value)}
                 placeholder="Añade comentarios sobre el mapa tuneado, modificaciones realizadas, recomendaciones de uso..."
-                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors resize-vertical min-h-[100px]"
-                rows={4}
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors resize-vertical min-h-[80px] sm:min-h-[100px] text-xs sm:text-sm lg:text-base"
+                rows={3}
               />
             </div>
             
-            <div className="flex justify-end space-x-4">
-              <button className="px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors">
+            <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4">
+              <button className="px-4 sm:px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors text-xs sm:text-sm font-medium">
                 Cancelar
               </button>
-              <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors">
+              <button className="px-4 sm:px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-xs sm:text-sm font-medium">
                 Subir Mapa
               </button>
             </div>
@@ -838,14 +872,14 @@ const UploadInvoicesSection: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-white mb-8">Subir Facturas</h2>
-      <div className="space-y-6">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 lg:mb-8">Subir Facturas</h2>
+      <div className="space-y-4 sm:space-y-6 lg:space-y-8">
         {completedOrders.map((order) => (
-          <div key={order.orderId} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-            <div className="flex justify-between items-start mb-6">
+          <div key={order.orderId} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-3 sm:p-4 lg:p-6">
+            <div className="flex justify-between items-start mb-4 sm:mb-6">
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Pedido #{order.orderId}</h3>
-                <div className="grid grid-cols-3 gap-4 text-sm">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Pedido #{order.orderId}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 text-sm">
                   <div>
                     <span className="text-gray-400">Cliente:</span>
                     <p className="text-white font-medium">{order.client}</p>
@@ -862,42 +896,42 @@ const UploadInvoicesSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-2">
                   Número de Factura
                 </label>
                 <input
                   type="text"
                   placeholder="FAC-2024-001"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary text-xs sm:text-sm lg:text-base"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs sm:text-sm lg:text-base font-medium text-gray-300 mb-2">
                   Fecha de Emisión
                 </label>
                 <input
                   type="date"
-                  className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white focus:border-primary focus:ring-1 focus:ring-primary text-xs sm:text-sm lg:text-base"
                 />
               </div>
             </div>
             
-            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-primary/50 transition-colors mb-6">
-              <FileText className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-300 mb-2">Arrastra la factura aquí o</p>
-              <button className="text-primary hover:text-primary/80 font-medium">
+            <div className="border-2 border-dashed border-gray-600 rounded-lg p-4 sm:p-6 lg:p-8 text-center hover:border-primary/50 transition-colors mb-4 sm:mb-6">
+              <FileText className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gray-400 mx-auto mb-2 sm:mb-4" />
+              <p className="text-sm sm:text-base text-gray-300 mb-2">Arrastra la factura aquí o</p>
+              <button className="text-primary hover:text-primary/80 font-medium text-xs sm:text-sm lg:text-base">
                 selecciona el archivo
               </button>
-              <p className="text-sm text-gray-500 mt-2">Formatos soportados: PDF, JPG, PNG</p>
+              <p className="text-xs sm:text-sm text-gray-500 mt-2">Formatos soportados: PDF, JPG, PNG</p>
             </div>
             
-            <div className="flex justify-end space-x-4">
-              <button className="px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors">
+            <div className="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4">
+              <button className="px-4 sm:px-6 py-2 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors text-xs sm:text-sm font-medium">
                 Cancelar
               </button>
-              <button className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors">
+              <button className="px-4 sm:px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-xs sm:text-sm font-medium">
                 Subir Factura
               </button>
             </div>
