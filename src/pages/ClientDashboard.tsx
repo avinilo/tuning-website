@@ -187,19 +187,19 @@ const ClientDashboard: React.FC = () => {
       <h2 className="text-3xl font-bold text-white mb-8">Mis Pedidos</h2>
       <div className="space-y-6">
         {orders.map((order) => (
-          <div key={order.id} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-primary/50 transition-all duration-300">
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">{order.service}</h3>
-                <p className="text-gray-300 mb-1">Pedido: {order.id}</p>
-                <p className="text-gray-300 mb-1">Vehículo: {order.vehicle}</p>
-                <p className="text-gray-300">Fecha: {new Date(order.date).toLocaleDateString('es-ES')}</p>
+          <div key={order.id} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50 hover:border-primary/50 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 break-words">{order.service}</h3>
+                <p className="text-gray-300 mb-1 text-sm sm:text-base">Pedido: {order.id}</p>
+                <p className="text-gray-300 mb-1 text-sm sm:text-base break-words">Vehículo: {order.vehicle}</p>
+                <p className="text-gray-300 text-sm sm:text-base">Fecha: {new Date(order.date).toLocaleDateString('es-ES')}</p>
               </div>
-              <div className="text-right">
-                <p className={`text-lg font-semibold mb-2 ${getStatusColor(order.status)}`}>
+              <div className="flex sm:flex-col justify-between sm:justify-start items-center sm:items-end gap-2 sm:gap-0 sm:text-right flex-shrink-0">
+                <p className={`text-base sm:text-lg font-semibold sm:mb-2 ${getStatusColor(order.status)}`}>
                   {getStatusText(order.status)}
                 </p>
-                <p className="text-2xl font-bold text-primary">€{order.price}</p>
+                <p className="text-xl sm:text-2xl font-bold text-primary">€{order.price}</p>
               </div>
             </div>
             {order.estimatedDelivery && (
@@ -222,20 +222,20 @@ const ClientDashboard: React.FC = () => {
                   <div className="space-y-3">
                     {order.files.map((file) => (
                       <div key={file.id} className="bg-gray-600/30 rounded-lg p-3">
-                        <div className="flex justify-between items-center mb-3">
-                          <div>
-                            <p className="text-white font-medium">{file.fileName}</p>
-                            <p className="text-gray-400 text-sm">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-3">
+                          <div className="flex-1 min-w-0">
+                            <p className="text-white font-medium break-words">{file.fileName}</p>
+                            <p className="text-gray-400 text-sm break-words">
                               Subido: {new Date(file.uploadDate).toLocaleDateString('es-ES')} • {file.size}
                             </p>
                           </div>
                           <button
                             onClick={() => handleDownload(file.fileName)}
-                            className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 text-sm sm:text-base touch-manipulation"
+                            className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base touch-manipulation flex-shrink-0 w-full sm:w-auto"
                           >
                             <Download className="w-4 h-4" />
+                            <span className="sm:hidden">Descargar</span>
                             <span className="hidden sm:inline">Descargar</span>
-                            <span className="sm:hidden">DL</span>
                           </button>
                         </div>
                         {file.comments && (
@@ -259,22 +259,26 @@ const ClientDashboard: React.FC = () => {
                   </h4>
                   <div className="space-y-2">
                     {order.invoices.map((invoice) => (
-                      <div key={invoice.id} className="flex justify-between items-center bg-gray-600/30 rounded-lg p-3">
-                        <div>
-                          <p className="text-white font-medium">Factura {invoice.invoiceNumber}</p>
-                          <p className="text-gray-400 text-sm">
-                            {new Date(invoice.date).toLocaleDateString('es-ES')} • €{invoice.amount} • 
-                            <span className={getStatusColor(invoice.status)}> {getStatusText(invoice.status)}</span>
-                          </p>
+                      <div key={invoice.id} className="bg-gray-600/30 rounded-lg p-3">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-3">
+                          <div className="flex-1 min-w-0">
+                            <p className="text-white font-medium">Factura {invoice.invoiceNumber}</p>
+                            <p className="text-gray-400 text-sm">
+                              {new Date(invoice.date).toLocaleDateString('es-ES')} • €{invoice.amount} • 
+                              <span className={getStatusColor(invoice.status)}> {getStatusText(invoice.status)}</span>
+                            </p>
+                          </div>
+                          <div className="flex gap-2 w-full sm:w-auto flex-shrink-0">
+                            <button
+                              onClick={() => handleDownload(`factura_${invoice.invoiceNumber}.pdf`)}
+                              className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base touch-manipulation flex-1 sm:flex-initial"
+                            >
+                              <Download className="w-4 h-4" />
+                              <span className="hidden sm:inline">Descargar</span>
+                              <span className="sm:hidden">Descargar</span>
+                            </button>
+                          </div>
                         </div>
-                        <button
-                          onClick={() => handleDownload(`factura_${invoice.invoiceNumber}.pdf`)}
-                          className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 text-sm sm:text-base touch-manipulation"
-                        >
-                          <Download className="w-4 h-4" />
-                          <span className="hidden sm:inline">Descargar</span>
-                          <span className="sm:hidden">DL</span>
-                        </button>
                       </div>
                     ))}
                   </div>
@@ -294,12 +298,12 @@ const ClientDashboard: React.FC = () => {
       <h2 className="text-3xl font-bold text-white mb-8">Mi Perfil</h2>
       <div className="space-y-6">
         {/* Profile Information */}
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-semibold text-white">Información Personal</h3>
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-white">Información Personal</h3>
           <button
             onClick={() => setShowProfileEdit(!showProfileEdit)}
-            className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2"
+            className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto touch-manipulation"
           >
             <Edit className="w-4 h-4" />
             Editar
@@ -378,30 +382,30 @@ const ClientDashboard: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <p className="text-gray-400 text-sm">Nombre</p>
-              <p className="text-white font-semibold">{userProfile.name}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Nombre</p>
+              <p className="text-white text-base sm:text-lg break-words font-semibold">{userProfile.name}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Email</p>
-              <p className="text-white font-semibold">{userProfile.email}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Email</p>
+              <p className="text-white text-base sm:text-lg break-all font-semibold">{userProfile.email}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Teléfono</p>
-              <p className="text-white font-semibold">{userProfile.phone}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Teléfono</p>
+              <p className="text-white text-base sm:text-lg font-semibold">{userProfile.phone}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Dirección</p>
-              <p className="text-white font-semibold">{userProfile.address}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Dirección</p>
+              <p className="text-white text-base sm:text-lg break-words font-semibold">{userProfile.address}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Ciudad</p>
-              <p className="text-white font-semibold">{userProfile.city}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Ciudad</p>
+              <p className="text-white text-base sm:text-lg break-words font-semibold">{userProfile.city}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Código Postal</p>
-              <p className="text-white font-semibold">{userProfile.postalCode}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Código Postal</p>
+              <p className="text-white text-base sm:text-lg font-semibold">{userProfile.postalCode}</p>
             </div>
           </div>
         )}
@@ -459,15 +463,15 @@ const ClientDashboard: React.FC = () => {
         </div>
 
         {/* Billing Information */}
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-semibold text-white">Datos de Facturación</h3>
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-700/50">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-white">Información de Facturación</h3>
           <button
             onClick={() => setShowBillingEdit(!showBillingEdit)}
-            className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2"
+            className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto touch-manipulation"
           >
-            <CreditCard className="w-4 h-4" />
-            Editar
+            <Edit className="w-4 h-4" />
+            {showBillingEdit ? 'Cancelar' : 'Editar'}
           </button>
         </div>
         
@@ -543,30 +547,30 @@ const ClientDashboard: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <p className="text-gray-400 text-sm">Nombre de la Empresa</p>
-              <p className="text-white font-semibold">{billingInfo.companyName}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Nombre de la Empresa</p>
+              <p className="text-white text-base sm:text-lg break-words font-semibold">{billingInfo.companyName}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">NIF/CIF</p>
-              <p className="text-white font-semibold">{billingInfo.taxId}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">NIF/CIF</p>
+              <p className="text-white text-base sm:text-lg font-semibold">{billingInfo.taxId}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Dirección de Facturación</p>
-              <p className="text-white font-semibold">{billingInfo.billingAddress}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Dirección de Facturación</p>
+              <p className="text-white text-base sm:text-lg break-words font-semibold">{billingInfo.billingAddress}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Ciudad</p>
-              <p className="text-white font-semibold">{billingInfo.billingCity}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Ciudad</p>
+              <p className="text-white text-base sm:text-lg break-words font-semibold">{billingInfo.billingCity}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">Código Postal</p>
-              <p className="text-white font-semibold">{billingInfo.billingPostalCode}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">Código Postal</p>
+              <p className="text-white text-base sm:text-lg font-semibold">{billingInfo.billingPostalCode}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm">País</p>
-              <p className="text-white font-semibold">{billingInfo.billingCountry}</p>
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm font-medium">País</p>
+              <p className="text-white text-base sm:text-lg break-words font-semibold">{billingInfo.billingCountry}</p>
             </div>
           </div>
         )}
@@ -587,7 +591,7 @@ const ClientDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-x-hidden">
       <div className="flex">
         {/* Desktop Sidebar */}
         <div className="hidden lg:block w-64 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700 min-h-screen">
@@ -602,7 +606,7 @@ const ClientDashboard: React.FC = () => {
                   <button
                     key={item.id}
                     onClick={() => setActiveSection(item.id)}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 touch-manipulation ${
                       activeSection === item.id
                         ? 'bg-primary/20 text-primary border border-primary/30'
                         : 'text-gray-300 hover:bg-gray-800 hover:text-white'
@@ -618,37 +622,39 @@ const ClientDashboard: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           {/* Mobile Navigation */}
           <div className="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-30">
             <div className="px-4 py-3">
               <h1 className="text-lg font-bold text-white mb-3">
                 <span className="text-primary">CLIENTE</span> PANEL
               </h1>
-              <div className="flex overflow-x-auto space-x-2 pb-2 scrollbar-hide">
-                {sidebarItems.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => setActiveSection(item.id)}
-                      className={`flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 touch-manipulation text-sm ${
-                        activeSection === item.id
-                          ? 'bg-primary text-white'
-                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                      }`}
-                    >
-                      <Icon className="w-4 h-4" />
-                      <span className="font-medium whitespace-nowrap">{item.label}</span>
-                    </button>
-                  );
-                })}
+              <div className="overflow-x-auto scrollbar-hide">
+                <div className="flex space-x-2 pb-2 min-w-max">
+                  {sidebarItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => setActiveSection(item.id)}
+                        className={`flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 touch-manipulation text-sm min-w-fit ${
+                          activeSection === item.id
+                            ? 'bg-primary text-white'
+                            : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                        }`}
+                      >
+                        <Icon className="w-4 h-4" />
+                        <span className="font-medium whitespace-nowrap">{item.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
 
           {/* Content Area */}
-          <div className="p-4 lg:p-8">
+          <div className="p-4 lg:p-8 w-full max-w-full overflow-x-hidden">
             {renderContent()}
           </div>
         </div>
