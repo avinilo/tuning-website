@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Users, Package, ShoppingCart, Upload, FileText, Settings, BarChart3, Download, ImageIcon, Star, Plus, Trash2, Eye } from 'lucide-react';
+import { Users, Package, ShoppingCart, Upload, FileText, Settings, BarChart3, Download, ImageIcon, Star, Plus, Trash2, Eye, Menu, X } from 'lucide-react';
 
 type AdminSection = 'overview' | 'services' | 'clients' | 'orders' | 'upload-maps' | 'upload-invoices';
 
 const AdminDashboard: React.FC = () => {
   const [activeSection, setActiveSection] = useState<AdminSection>('overview');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const sidebarItems = [
     { id: 'overview' as AdminSection, label: 'Resumen', icon: BarChart3 },
@@ -37,8 +38,8 @@ const AdminDashboard: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
       <div className="flex">
-        {/* Sidebar */}
-        <div className="w-64 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700 min-h-screen">
+        {/* Desktop Sidebar */}
+        <div className="hidden lg:block w-64 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700 min-h-screen">
           <div className="p-6">
             <h1 className="text-2xl font-bold text-white mb-8">
               <span className="text-primary">ADMIN</span> PANEL
@@ -66,8 +67,39 @@ const AdminDashboard: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-8">
-          {renderContent()}
+        <div className="flex-1">
+          {/* Mobile Navigation */}
+          <div className="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 sticky top-0 z-30">
+            <div className="px-4 py-3">
+              <h1 className="text-lg font-bold text-white mb-3">
+                <span className="text-primary">ADMIN</span> PANEL
+              </h1>
+              <div className="flex overflow-x-auto space-x-2 pb-2 scrollbar-hide">
+                {sidebarItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => setActiveSection(item.id)}
+                      className={`flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 touch-manipulation text-sm ${
+                        activeSection === item.id
+                          ? 'bg-primary text-white'
+                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span className="font-medium whitespace-nowrap">{item.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Content Area */}
+          <div className="p-4 lg:p-8">
+            {renderContent()}
+          </div>
         </div>
       </div>
     </div>
@@ -86,7 +118,7 @@ const OverviewSection: React.FC = () => {
   return (
     <div>
       <h2 className="text-3xl font-bold text-white mb-8">Panel de Control</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8">
         {stats.map((stat, index) => (
           <div key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
             <h3 className="text-gray-400 text-sm font-medium mb-2">{stat.label}</h3>
@@ -183,10 +215,10 @@ const ServicesSection: React.FC = () => {
     <div>
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold text-white">Gestión de Servicios</h2>
-        <div className="flex space-x-2">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
           <button
             onClick={() => setActiveTab('create')}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            className={`px-4 py-3 rounded-lg transition-colors touch-manipulation text-sm sm:text-base ${
               activeTab === 'create'
                 ? 'bg-primary text-white'
                 : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -196,7 +228,7 @@ const ServicesSection: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveTab('view')}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            className={`px-4 py-3 rounded-lg transition-colors touch-manipulation text-sm sm:text-base ${
               activeTab === 'view'
                 ? 'bg-primary text-white'
                 : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -211,7 +243,7 @@ const ServicesSection: React.FC = () => {
         <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
           <form className="space-y-6">
             {/* Título y Subtítulo */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Título del Servicio
@@ -235,7 +267,7 @@ const ServicesSection: React.FC = () => {
             </div>
 
             {/* Precios y Badge */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Precio Actual (€)
@@ -269,7 +301,7 @@ const ServicesSection: React.FC = () => {
             </div>
 
             {/* Categoría y Configuraciones */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Categoría
@@ -316,7 +348,7 @@ const ServicesSection: React.FC = () => {
               <label className="block text-sm font-medium text-gray-300 mb-2">
                 Imagen del Servicio
               </label>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                 <div>
                   <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-primary/50 transition-colors">
                     <input
