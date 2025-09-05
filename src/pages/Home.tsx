@@ -164,8 +164,8 @@ const Home: React.FC = () => {
               <div className="stat-label text-white">Tiempo de Entrega</div>
             </div>
             <div className="section-center">
-              <div className="stat-number text-accent">500+</div>
-              <div className="stat-label text-white">Centralitas Modificadas</div>
+              <div className="stat-number text-accent">10+</div>
+              <div className="stat-label text-white">Años de Experiencia</div>
             </div>
           </div>
         </div>
