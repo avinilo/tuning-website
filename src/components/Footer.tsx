@@ -142,13 +142,13 @@ const Footer = () => {
                 {t('footer.legal.terms')}
               </Link>
               <Link to="/cookie-policy" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">
-                Política de Cookies
+                {t('footer.legal.cookies')}
               </Link>
               <Link to="/refund-policy" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">
-                Política de Devoluciones
+                {t('footer.legal.refund')}
               </Link>
               <Link to="/disclaimer" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">
-                Descargo de Responsabilidad
+                {t('footer.legal.disclaimer')}
               </Link>
             </div>
           </div>

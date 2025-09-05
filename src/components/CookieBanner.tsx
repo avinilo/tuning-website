@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Cookie, X, Settings, Shield, BarChart3, Target, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useCookieConsent } from '../hooks/useCookieConsent';
 
 const CookieBanner: React.FC = () => {
+  const { t } = useTranslation();
   const { 
     consent, 
     showBanner, 
@@ -94,10 +96,10 @@ const CookieBanner: React.FC = () => {
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-sm font-semibold text-gray-900 mb-1">
-                  Configuración de Cookies
+                  {t('cookies.banner.title')}
                 </h3>
                 <p className="text-xs text-gray-600 leading-relaxed">
-                  Utilizamos cookies para mejorar tu experiencia. Configura tus preferencias.
+                  {t('cookies.banner.description')}
                 </p>
               </div>
             </div>
@@ -108,20 +110,20 @@ const CookieBanner: React.FC = () => {
                    onClick={handleRejectAll}
                    className="flex-1 px-3 py-2 text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 hover:shadow-md rounded-lg transition-all duration-200 transform hover:scale-105"
                  >
-                   Rechazar
+                   {t('cookies.banner.reject')}
                  </button>
                  <button
                    onClick={() => setIsExpanded(true)}
                    className="flex-1 px-3 py-2 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 hover:shadow-md rounded-lg transition-all duration-200 transform hover:scale-105"
                  >
-                   Configurar
+                   {t('cookies.banner.configure')}
                  </button>
               </div>
               <button
                  onClick={handleAcceptAll}
                  className="w-full px-3 py-2 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 hover:shadow-lg rounded-lg transition-all duration-200 transform hover:scale-105"
                >
-                 Aceptar Todo
+                 {t('cookies.banner.acceptAll')}
                </button>
             </div>
           </div>
@@ -131,7 +133,7 @@ const CookieBanner: React.FC = () => {
             {/* Header con título y botón X */}
             <div className="flex items-center justify-between pb-3 border-b border-gray-200">
               <h2 className="text-lg font-semibold text-gray-900">
-                Gestionar consentimiento
+                {t('cookies.banner.manageConsent')}
               </h2>
               <button
                  onClick={() => setIsExpanded(false)}
@@ -146,11 +148,7 @@ const CookieBanner: React.FC = () => {
             {/* Texto descriptivo */}
             <div className="text-sm text-gray-600 leading-relaxed">
               <p>
-                Para ofrecer las mejores experiencias, utilizamos tecnologías como las cookies 
-                para almacenar y/o acceder a la información del dispositivo. El consentimiento 
-                de estas tecnologías nos permitirá procesar datos como el comportamiento de 
-                navegación o las identificaciones únicas en este sitio. No consentir o retirar el 
-                consentimiento, puede afectar negativamente a ciertas características y funciones.
+                {t('cookies.banner.expandedDescription')}
               </p>
             </div>
 
@@ -159,10 +157,10 @@ const CookieBanner: React.FC = () => {
               {/* Funcional - Siempre activo */}
               <div className="flex items-center justify-between py-3 border-b border-gray-100">
                 <div className="flex-1">
-                  <h3 className="font-medium text-gray-900">Funcional</h3>
+                  <h3 className="font-medium text-gray-900">{t('cookies.banner.functional')}</h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-green-600 font-medium">Siempre activo</span>
+                  <span className="text-sm text-green-600 font-medium">{t('cookies.banner.alwaysActive')}</span>
                   <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -172,7 +170,7 @@ const CookieBanner: React.FC = () => {
               {/* Estadísticas con toggle naranja */}
               <div className="flex items-center justify-between py-3 border-b border-gray-100">
                 <div className="flex-1">
-                  <h3 className="font-medium text-gray-900">Estadísticas</h3>
+                  <h3 className="font-medium text-gray-900">{t('cookies.banner.statistics')}</h3>
                 </div>
                 <button
                   onClick={() => handleToggle('analytics')}
@@ -191,7 +189,7 @@ const CookieBanner: React.FC = () => {
               {/* Marketing con toggle naranja */}
               <div className="flex items-center justify-between py-3">
                 <div className="flex-1">
-                  <h3 className="font-medium text-gray-900">Marketing</h3>
+                  <h3 className="font-medium text-gray-900">{t('cookies.banner.marketing')}</h3>
                 </div>
                 <button
                   onClick={() => handleToggle('marketing')}
@@ -214,27 +212,27 @@ const CookieBanner: React.FC = () => {
                 onClick={handleAcceptAll}
                 className="w-full sm:w-auto px-4 sm:px-6 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-200"
               >
-                Aceptar
+                {t('cookies.banner.accept')}
               </button>
               <button
                 onClick={handleRejectAll}
                 className="w-full sm:w-auto px-4 sm:px-6 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-all duration-200"
               >
-                Denegar
+                {t('cookies.banner.reject')}
               </button>
               <button
                 onClick={handleSavePreferences}
                 className="w-full sm:w-auto px-4 sm:px-6 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-all duration-200"
               >
-                Guardar preferencias
+                {t('cookies.banner.savePreferences')}
               </button>
             </div>
 
             {/* Enlaces de políticas en la parte inferior */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-2 text-xs text-blue-600">
-              <Link to="/cookie-policy" className="hover:underline text-center sm:text-left">Política de cookies</Link>
-              <Link to="/privacy-policy" className="hover:underline text-center sm:text-left">Declaración de privacidad</Link>
-              <Link to="/disclaimer" className="hover:underline text-center sm:text-left">Aviso Legal</Link>
+              <Link to="/cookie-policy" className="hover:underline text-center sm:text-left">{t('cookies.banner.cookiePolicy')}</Link>
+              <Link to="/privacy-policy" className="hover:underline text-center sm:text-left">{t('cookies.banner.privacyPolicy')}</Link>
+              <Link to="/disclaimer" className="hover:underline text-center sm:text-left">{t('cookies.banner.legalNotice')}</Link>
             </div>
           </div>
         )}

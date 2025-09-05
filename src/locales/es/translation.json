@@ -42,7 +42,9 @@
       "copyright": "© 2024 FILESECUFB. Todos los derechos reservados.",
       "privacy": "Política de Privacidad",
       "terms": "Términos de Servicio",
-      "cookies": "Cookies"
+      "cookies": "Política de Cookies",
+      "refund": "Política de Devoluciones",
+      "disclaimer": "Descargo de Responsabilidad"
     }
   },
   "contact": {
@@ -430,7 +432,9 @@
       "copyright": "© 2024 FILESECUFB. Todos los derechos reservados.",
       "privacy": "Política de Privacidad",
       "terms": "Términos de Servicio",
-      "cookies": "Cookies"
+      "cookies": "Cookies",
+      "refund": "Política de Devoluciones",
+      "disclaimer": "Descargo de Responsabilidad"
     }
   },
   "auth": {
@@ -585,6 +589,226 @@
       "change": "Cambiar"
     }
   },
+  "privacyPolicy": {
+    "title": "POLÍTICA DE <span class='text-primary'>PRIVACIDAD</span>",
+    "sections": {
+      "generalInfo": {
+        "title": "1. INFORMACIÓN GENERAL",
+        "content": "En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales, informamos sobre el tratamiento de sus datos personales."
+      },
+      "dataController": {
+        "title": "2. RESPONSABLE DEL TRATAMIENTO",
+        "content": "Los datos personales recogidos a través de este sitio web son tratados bajo la responsabilidad de nuestra empresa, con domicilio en España y sujeta a la legislación española y europea en materia de protección de datos."
+      },
+      "dataCollection": {
+        "title": "3. DATOS QUE RECOPILAMOS",
+        "intro": "Recopilamos los siguientes tipos de datos:",
+        "items": {
+          "identification": "Datos de identificación: Nombre, apellidos, email",
+          "contact": "Datos de contacto: Dirección de correo electrónico, teléfono",
+          "navigation": "Datos de navegación: Dirección IP, cookies, datos de uso del sitio web",
+          "transaction": "Datos de transacción: Información de compra y descarga de archivos",
+          "technical": "Datos técnicos: Información del vehículo para personalización de archivos"
+        }
+      },
+      "purpose": {
+        "title": "4. FINALIDAD DEL TRATAMIENTO",
+        "intro": "Tratamos sus datos personales para las siguientes finalidades:",
+        "items": {
+          "orders": "Gestión de pedidos y entrega de archivos digitales",
+          "communication": "Comunicación comercial y atención al cliente",
+          "legal": "Cumplimiento de obligaciones legales y fiscales",
+          "improvement": "Mejora de nuestros servicios y experiencia de usuario",
+          "security": "Prevención de fraude y seguridad"
+        }
+      },
+      "legalBasis": {
+        "title": "5. BASE LEGAL",
+        "intro": "El tratamiento de sus datos se basa en:",
+        "items": {
+          "contract": "Ejecución contractual: Para la prestación de nuestros servicios",
+          "consent": "Consentimiento: Para comunicaciones comerciales",
+          "interest": "Interés legítimo: Para la mejora de servicios y prevención de fraude",
+          "obligation": "Obligación legal: Para el cumplimiento de normativas fiscales"
+        }
+      },
+      "retention": {
+        "title": "6. CONSERVACIÓN DE DATOS",
+        "content": "Conservaremos sus datos personales durante el tiempo necesario para cumplir con las finalidades para las que fueron recogidos y, en todo caso, durante los plazos establecidos por la legislación aplicable (mínimo 6 años para datos fiscales y contables)."
+      },
+      "recipients": {
+        "title": "7. DESTINATARIOS DE LOS DATOS",
+        "intro": "Sus datos pueden ser comunicados a:",
+        "items": {
+          "providers": "Proveedores de servicios tecnológicos (hosting, email, etc.)",
+          "financial": "Entidades financieras para el procesamiento de pagos",
+          "authorities": "Autoridades competentes cuando sea legalmente requerido",
+          "advisors": "Asesores legales y fiscales"
+        },
+        "confidentiality": "Todos los destinatarios están sujetos a estrictas obligaciones de confidencialidad."
+      },
+      "transfers": {
+        "title": "8. TRANSFERENCIAS INTERNACIONALES",
+        "content": "En caso de transferencias de datos fuera del Espacio Económico Europeo, garantizamos que se realizan con las debidas garantías y salvaguardas apropiadas conforme al RGPD."
+      },
+      "rights": {
+        "title": "9. SUS DERECHOS",
+        "intro": "Conforme al RGPD, usted tiene derecho a:",
+        "items": {
+          "access": "Acceso: Conocer qué datos tratamos sobre usted",
+          "rectification": "Rectificación: Corregir datos inexactos o incompletos",
+          "erasure": "Supresión: Solicitar la eliminación de sus datos",
+          "restriction": "Limitación: Restringir el tratamiento de sus datos",
+          "portability": "Portabilidad: Recibir sus datos en formato estructurado",
+          "objection": "Oposición: Oponerse al tratamiento de sus datos",
+          "withdrawal": "Retirada del consentimiento: En cualquier momento"
+        },
+        "contact": "Para ejercer estos derechos, puede contactarnos a través de los medios proporcionados en nuestro sitio web."
+      },
+      "cookies": {
+        "title": "10. COOKIES",
+        "intro": "Utilizamos cookies y tecnologías similares para:",
+        "items": {
+          "functionality": "Funcionamiento básico del sitio web",
+          "analytics": "Análisis de uso y mejora de la experiencia",
+          "personalization": "Personalización de contenidos",
+          "measurement": "Medición de efectividad de campañas"
+        },
+        "management": "Puede gestionar sus preferencias de cookies a través de la configuración de su navegador."
+      },
+      "security": {
+        "title": "11. SEGURIDAD",
+        "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso, alteración, divulgación o destrucción no autorizados."
+      },
+      "authority": {
+        "title": "12. AUTORIDAD DE CONTROL",
+        "content": "Tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) si considera que el tratamiento de sus datos no se ajusta a la normativa vigente."
+      },
+      "modifications": {
+        "title": "13. MODIFICACIONES",
+        "content": "Nos reservamos el derecho de modificar esta política de privacidad. Las modificaciones serán comunicadas a través de nuestro sitio web con la debida antelación."
+      }
+    },
+    "lastUpdated": "Última actualización:"
+  },
+  "termsOfService": {
+    "title": "Términos y Condiciones",
+    "lastUpdated": "Última actualización: 15 de enero de 2025",
+    "section1": {
+      "title": "1. Aceptación de los Términos",
+      "content": "Al acceder y utilizar este sitio web, usted acepta estar sujeto a estos términos y condiciones de uso. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestro sitio web."
+    },
+    "section2": {
+      "title": "2. Uso del Sitio Web",
+      "content": "Usted puede utilizar nuestro sitio web para fines legales únicamente. Está prohibido utilizar el sitio para cualquier propósito ilegal o no autorizado.",
+      "additionalContent": "No debe transmitir gusanos, virus o cualquier código de naturaleza destructiva. Cualquier violación de la seguridad del sistema o de la red puede resultar en responsabilidad civil o penal."
+    },
+    "section3": {
+      "title": "3. Política de Devoluciones",
+      "content": "Debido a la naturaleza digital de nuestros servicios, generalmente no ofrecemos reembolsos una vez que se ha proporcionado el servicio.",
+      "noReturns": "No se aceptan devoluciones para servicios digitales completados.",
+      "legalBasis": "Esta política se basa en las regulaciones de comercio electrónico aplicables.",
+      "consent": "Al realizar una compra, usted acepta esta política de no devolución."
+    },
+    "section4": {
+      "title": "4. Limitación de Responsabilidad",
+      "content": "En ningún caso seremos responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles.",
+      "disclaimer": "Los servicios se proporcionan 'tal como están' sin garantías de ningún tipo, ya sean expresas o implícitas.",
+      "list": [
+        "Pérdida de beneficios o ingresos",
+        "Daños a la reputación comercial",
+        "Pérdida de datos o información",
+        "Interrupción del negocio",
+        "Daños consecuentes o indirectos"
+      ]
+    },
+    "section5": {
+      "title": "5. Modificaciones",
+      "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web.",
+      "list": [
+        "Cambios en la legislación aplicable",
+        "Mejoras en nuestros servicios",
+        "Actualizaciones de seguridad",
+        "Modificaciones en las políticas de la empresa"
+      ]
+    },
+    "section6": {
+      "title": "6. Contacto",
+      "content": "Si tiene alguna pregunta sobre estos términos y condiciones, puede contactarnos a través de nuestro formulario de contacto.",
+      "list": [
+        "Formulario de contacto en el sitio web",
+        "Correo electrónico de atención al cliente",
+        "Teléfono de soporte técnico",
+        "Dirección postal para consultas legales"
+      ]
+    },
+    "section7": {
+      "title": "7. Ley Aplicable",
+      "content": "Estos términos y condiciones se rigen por las leyes de España. Cualquier disputa relacionada con estos términos será sometida a la jurisdicción exclusiva de los tribunales españoles."
+    },
+    "section8": {
+      "title": "8. Divisibilidad",
+      "content": "Si alguna disposición de estos términos se considera inválida o inaplicable, las disposiciones restantes seguirán siendo válidas y aplicables en la máxima medida permitida por la ley."
+    },
+    "section9": {
+      "title": "9. Renuncia",
+      "content": "Ninguna renuncia por nuestra parte a cualquier término o condición establecido en estos términos se considerará una renuncia adicional o continua de dicho término o condición o una renuncia de cualquier otro término o condición."
+    },
+    "section10": {
+      "title": "10. Acuerdo Completo",
+      "content": "Estos términos constituyen el acuerdo completo entre usted y nosotros con respecto al uso del sitio web y reemplazan todos los acuerdos y entendimientos anteriores, ya sean escritos u orales."
+    }
+  },
+  "cookiePolicy": {
+    "title": "Política de Cookies",
+    "lastUpdated": "Última actualización: 15 de enero de 2025",
+    "whatAreCookies": {
+      "title": "¿Qué son las cookies?",
+      "content": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Nos ayudan a mejorar su experiencia de navegación y a proporcionar funcionalidades personalizadas."
+    },
+    "typesOfCookies": {
+      "title": "Tipos de cookies que utilizamos",
+      "functional": {
+        "title": "Cookies funcionales",
+        "content": "Estas cookies son esenciales para el funcionamiento del sitio web y no se pueden desactivar. Incluyen cookies de sesión y preferencias de usuario."
+      },
+      "analytics": {
+        "title": "Cookies de análisis",
+        "content": "Utilizamos estas cookies para entender cómo los visitantes interactúan con nuestro sitio web, lo que nos ayuda a mejorarlo."
+      },
+      "marketing": {
+        "title": "Cookies de marketing",
+        "content": "Estas cookies se utilizan para mostrar anuncios relevantes y medir la efectividad de nuestras campañas publicitarias."
+      }
+    },
+    "howToManage": {
+      "title": "Cómo gestionar las cookies",
+      "content": "Puede controlar y/o eliminar las cookies como desee. Puede eliminar todas las cookies que ya están en su dispositivo y configurar la mayoría de los navegadores para evitar que se coloquen.",
+      "browserSettings": "La mayoría de los navegadores web permiten cierto control de las cookies a través de la configuración del navegador.",
+      "moreInfo": "Para obtener más información sobre las cookies, incluido cómo ver qué cookies se han configurado y cómo administrarlas y eliminarlas, visite www.aboutcookies.org o www.allaboutcookies.org."
+    },
+    "thirdPartyCookies": {
+      "title": "Cookies de terceros",
+      "content": "Algunos de nuestros socios comerciales pueden usar cookies en nuestro sitio (por ejemplo, anunciantes). Sin embargo, no tenemos acceso ni control sobre estas cookies."
+    },
+    "cookieDuration": {
+      "title": "Duración de las cookies",
+      "session": "Cookies de sesión: Se eliminan cuando cierra su navegador.",
+      "persistent": "Cookies persistentes: Permanecen en su dispositivo durante un período determinado o hasta que las elimine manualmente."
+    },
+    "consent": {
+      "title": "Su consentimiento",
+      "content": "Al utilizar nuestro sitio web, usted consiente el uso de cookies de acuerdo con esta política de cookies."
+    },
+    "rights": {
+      "title": "Sus derechos",
+      "content": "Tiene derecho a retirar su consentimiento en cualquier momento. También puede solicitar información sobre qué datos personales tenemos sobre usted y cómo los procesamos."
+    },
+    "contact": {
+      "title": "Contacto",
+      "content": "Si tiene alguna pregunta sobre esta política de cookies, puede contactarnos a través de nuestro formulario de contacto."
+    }
+  },
   "cookies": {
     "banner": {
       "title": "Configuración de Cookies",
@@ -634,5 +858,245 @@
       "tooltip": "Configurar Cookies",
       "ariaLabel": "Abrir configuración de cookies"
     }
+  },
+  "refundPolicy": {
+    "title": "POLÍTICA DE",
+    "titleHighlight": "DEVOLUCIONES",
+    "section1": {
+      "title": "1. POLÍTICA GENERAL",
+      "warning": "⚠️ NO SE ADMITEN DEVOLUCIONES NI REEMBOLSOS",
+      "content": "Debido a la naturaleza digital de nuestros productos (archivos de reprogramación ECU), NO SE ADMITEN DEVOLUCIONES NI REEMBOLSOS una vez completada la descarga del archivo."
+    },
+    "section2": {
+      "title": "2. FUNDAMENTO LEGAL",
+      "content": "Esta política se basa en la legislación española vigente:",
+      "legalTitle": "Artículo 103.m) del Real Decreto Legislativo 1/2007:",
+      "legalText": "El derecho de desistimiento no será aplicable a los contratos de suministro de contenido digital que no se preste en un soporte material cuando la ejecución haya comenzado con el previo consentimiento expreso del consumidor y usuario con el reconocimiento por su parte de que pierde su derecho de desistimiento."
+    },
+    "section3": {
+      "title": "3. CONSENTIMIENTO EXPRESO",
+      "content": "Al proceder con la compra y descarga de nuestros archivos digitales, usted:",
+      "list": [
+        "Otorga su consentimiento expreso para la entrega inmediata del contenido digital",
+        "Reconoce que pierde su derecho de desistimiento una vez iniciada la descarga",
+        "Acepta que no podrá solicitar devolución ni reembolso por ningún motivo",
+        "Confirma haber leído y entendido esta política antes de la compra"
+      ]
+    },
+    "section4": {
+      "title": "4. PRODUCTOS AFECTADOS",
+      "content": "Esta política se aplica a TODOS nuestros productos digitales, incluyendo:",
+      "list": [
+        "Archivos de reprogramación ECU (Stage 1, Stage 2, etc.)",
+        "Archivos de eliminación de sistemas (DPF, EGR, AdBlue, etc.)",
+        "Archivos de optimización TCU",
+        "Cualquier otro archivo digital de tuning",
+        "Servicios de personalización de archivos"
+      ]
+    },
+    "section5": {
+      "title": "5. MOTIVOS NO VÁLIDOS PARA DEVOLUCIÓN",
+      "content": "Los siguientes motivos NO constituyen base para solicitar devolución:",
+      "list": [
+        "Cambio de opinión después de la descarga",
+        "Incompatibilidad con el vehículo (responsabilidad del cliente verificar)",
+        "Resultados de rendimiento no esperados",
+        "Problemas técnicos durante la instalación",
+        "Daños en el vehículo derivados del uso del archivo",
+        "Pérdida de garantía del fabricante",
+        "Problemas con la legalidad en su jurisdicción",
+        "Dificultades técnicas del usuario"
+      ]
+    },
+    "section6": {
+      "title": "6. VERIFICACIÓN PREVIA A LA COMPRA",
+      "content": "Es responsabilidad exclusiva del cliente verificar antes de la compra:",
+      "list": [
+        "Compatibilidad del archivo con su vehículo específico",
+        "Especificaciones técnicas requeridas",
+        "Legalidad del uso en su país/región",
+        "Capacidad técnica para la instalación",
+        "Aceptación de los riesgos asociados"
+      ]
+    },
+    "section7": {
+      "title": "7. SOPORTE TÉCNICO",
+      "content": "Aunque no ofrecemos devoluciones, sí proporcionamos:",
+      "list": [
+        "Soporte técnico básico para la instalación",
+        "Información sobre compatibilidad (antes de la compra)",
+        "Guías de instalación cuando estén disponibles",
+        "Respuesta a consultas técnicas razonables"
+      ],
+      "important": "Importante: El soporte técnico no incluye garantía de funcionamiento ni responsabilidad por daños."
+    },
+    "section8": {
+      "title": "8. CASOS EXCEPCIONALES",
+      "content": "En casos muy excepcionales, podríamos considerar:",
+      "list": [
+        "Error técnico en la entrega del archivo correcto",
+        "Archivo corrupto o dañado (se proporcionará reenvío, no reembolso)",
+        "Doble cobro por error del sistema de pago"
+      ],
+      "note": "Estos casos serán evaluados individualmente y la decisión final será a nuestra discreción."
+    },
+    "section9": {
+      "title": "9. PROCESO DE RECLAMACIÓN",
+      "content": "Si considera que su caso entra en las excepciones mencionadas:",
+      "list": [
+        "Contacte con nosotros dentro de las 24 horas posteriores a la compra",
+        "Proporcione evidencia clara del problema técnico",
+        "Incluya todos los detalles de la transacción",
+        "Aguarde nuestra evaluación (máximo 5 días laborables)"
+      ]
+    },
+    "section10": {
+      "title": "10. ACEPTACIÓN DE TÉRMINOS",
+      "content": "Al realizar una compra en nuestro sitio web, usted confirma que ha leído, entendido y acepta completamente esta Política de Devoluciones, así como nuestros Términos de Servicio."
+    },
+    "lastUpdated": "Última actualización:"
+  },
+  "cookies": {
+    "banner": {
+      "title": "Configuración de Cookies",
+      "description": "Utilizamos cookies para mejorar tu experiencia. Configura tus preferencias.",
+      "reject": "Rechazar",
+      "configure": "Configurar",
+      "acceptAll": "Aceptar Todo",
+      "manageConsent": "Gestionar consentimiento",
+      "expandedDescription": "Utilizamos cookies y tecnologías similares para mejorar tu experiencia de navegación, personalizar contenido y anuncios, proporcionar funciones de redes sociales y analizar nuestro tráfico. Al hacer clic en 'Aceptar todo', consientes el uso de todas las cookies. También puedes gestionar tus preferencias de cookies seleccionando las categorías que deseas permitir.",
+      "functional": "Funcional",
+      "functionalDescription": "Cookies esenciales para el funcionamiento básico del sitio web.",
+      "alwaysActive": "Siempre activo",
+      "statistics": "Estadísticas",
+      "statisticsDescription": "Cookies para analizar el uso del sitio web y mejorar el rendimiento.",
+      "marketing": "Marketing",
+      "marketingDescription": "Cookies para personalizar anuncios y contenido promocional.",
+      "accept": "Aceptar",
+      "deny": "Denegar",
+      "savePreferences": "Guardar preferencias",
+      "cookiePolicy": "Política de cookies",
+      "privacyPolicy": "Declaración de privacidad",
+      "legalNotice": "Aviso Legal"
+    }
+  },
+  "disclaimer": {
+    "title": "DESCARGO DE",
+    "titleHighlight": "RESPONSABILIDAD",
+    "warning": {
+      "title": "⚠️ ADVERTENCIA IMPORTANTE",
+      "content": "La modificación de la ECU de su vehículo conlleva riesgos significativos. Al utilizar nuestros archivos, usted asume TODA LA RESPONSABILIDAD por cualquier consecuencia que pueda derivarse."
+    },
+    "section1": {
+      "title": "1. NATURALEZA DE LOS RIESGOS",
+      "content": "La reprogramación ECU implica modificar los parámetros de funcionamiento del motor y otros sistemas del vehículo. Esto puede resultar en:",
+      "risks": [
+        "Daños mecánicos: Rotura de motor, turbo, embrague, transmisión",
+        "Daños eléctricos: Fallos en la ECU, sensores, actuadores",
+        "Pérdida de garantía: Anulación completa de la garantía del fabricante",
+        "Problemas de emisiones: Incumplimiento de normativas ambientales",
+        "Fallos de seguridad: Comportamiento impredecible del vehículo",
+        "Problemas legales: Infracciones de tráfico o normativas locales"
+      ]
+    },
+    "section2": {
+      "title": "2. EXENCIÓN TOTAL DE RESPONSABILIDAD",
+      "content": "DECLARAMOS EXPRESAMENTE que NO nos hacemos responsables de:",
+      "exemptions": [
+        "Cualquier daño directo, indirecto, incidental o consecuencial",
+        "Pérdidas económicas de cualquier naturaleza",
+        "Daños a personas o bienes",
+        "Accidentes de tráfico o incidentes relacionados",
+        "Multas, sanciones o procedimientos legales",
+        "Costes de reparación o reemplazo de componentes",
+        "Pérdida de tiempo, beneficios o oportunidades",
+        "Daños a terceros o sus propiedades"
+      ]
+    },
+    "section3": {
+      "title": "3. SIN GARANTÍAS DE RENDIMIENTO",
+      "content": "NO GARANTIZAMOS:",
+      "noGuarantees": [
+        "Incrementos específicos de potencia o par motor",
+        "Mejoras en el consumo de combustible",
+        "Funcionamiento correcto en todos los vehículos",
+        "Compatibilidad con modificaciones existentes",
+        "Durabilidad a largo plazo del motor",
+        "Cumplimiento de normativas de emisiones",
+        "Mantenimiento de la fiabilidad original"
+      ]
+    },
+    "section4": {
+      "title": "4. RESPONSABILIDAD DEL USUARIO",
+      "content": "Al utilizar nuestros archivos, usted acepta que es su EXCLUSIVA RESPONSABILIDAD:",
+      "responsibilities": [
+        "Verificar la compatibilidad con su vehículo específico",
+        "Realizar copias de seguridad de la programación original",
+        "Contratar instalación profesional cualificada",
+        "Verificar el cumplimiento de normativas locales",
+        "Asumir todos los riesgos asociados",
+        "Informar a su seguro sobre las modificaciones",
+        "Realizar mantenimiento adicional si es necesario",
+        "Monitorizar el funcionamiento del vehículo tras la instalación"
+      ]
+    },
+    "section5": {
+      "title": "5. INSTALACIÓN PROFESIONAL RECOMENDADA",
+      "content": "RECOMENDAMOS ENCARECIDAMENTE que la instalación sea realizada por:",
+      "professionals": [
+        "Profesionales con experiencia en reprogramación ECU",
+        "Talleres especializados en tuning",
+        "Técnicos con equipamiento adecuado",
+        "Personas con conocimientos de mecánica avanzada"
+      ],
+      "warning": "ADVERTENCIA: La instalación incorrecta puede causar daños irreversibles y peligrosos."
+    },
+    "section6": {
+      "title": "6. LIMITACIONES LEGALES",
+      "content": "IMPORTANTE: El uso de nuestros archivos puede:",
+      "limitations": [
+        "Ser ilegal en ciertas jurisdicciones",
+        "Violar normativas de emisiones locales",
+        "Incumplir regulaciones de tráfico",
+        "Afectar la homologación del vehículo",
+        "Invalidar permisos de circulación"
+      ],
+      "note": "Es su responsabilidad verificar y cumplir con todas las leyes aplicables en su ubicación."
+    },
+    "section7": {
+      "title": "7. USO EXCLUSIVO EN CIRCUITO CERRADO",
+      "content": "Nuestros archivos están diseñados para USO EXCLUSIVO EN COMPETICIÓN Y CIRCUITOS CERRADOS. El uso en vía pública puede ser ilegal y peligroso. El usuario asume toda responsabilidad por el uso que haga de los archivos."
+    },
+    "section8": {
+      "title": "8. MODIFICACIONES DEL VEHÍCULO",
+      "content": "Las modificaciones realizadas con nuestros archivos:",
+      "modifications": [
+        "Son IRREVERSIBLES en algunos casos",
+        "Pueden requerir modificaciones físicas adicionales",
+        "Pueden afectar otros sistemas del vehículo",
+        "Pueden requerir combustibles específicos",
+        "Pueden alterar el comportamiento de conducción"
+      ]
+    },
+    "section9": {
+      "title": "9. SEGURO Y COBERTURA",
+      "content": "ADVERTENCIA: Las modificaciones ECU pueden anular su póliza de seguro. Es su responsabilidad informar a su compañía de seguros sobre cualquier modificación y verificar que mantiene cobertura adecuada."
+    },
+    "section10": {
+      "title": "10. ACEPTACIÓN DE RIESGOS",
+      "content": "Al descargar y utilizar nuestros archivos, usted declara expresamente que:",
+      "acceptance": [
+        "Ha leído y comprendido completamente este descargo de responsabilidad",
+        "Acepta todos los riesgos asociados con las modificaciones ECU",
+        "Renuncia a cualquier reclamación contra nuestra empresa",
+        "Asume toda responsabilidad por las consecuencias de su uso",
+        "Tiene la capacidad legal para asumir estos riesgos"
+      ]
+    },
+    "finalReminder": {
+      "title": "RECORDATORIO FINAL",
+      "content": "Si no está dispuesto a asumir TODOS los riesgos mencionados en este documento, NO UTILICE NUESTROS ARCHIVOS. Su uso implica aceptación total de estos términos."
+    },
+    "lastUpdated": "Última actualización:"
   }
 }
