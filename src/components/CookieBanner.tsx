@@ -232,7 +232,7 @@ const CookieBanner: React.FC = () => {
 
             {/* Enlaces de políticas en la parte inferior */}
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-2 text-xs text-blue-600">
-              <Link to="/privacy-policy" className="hover:underline text-center sm:text-left">Política de cookies</Link>
+              <Link to="/cookie-policy" className="hover:underline text-center sm:text-left">Política de cookies</Link>
               <Link to="/privacy-policy" className="hover:underline text-center sm:text-left">Declaración de privacidad</Link>
               <Link to="/disclaimer" className="hover:underline text-center sm:text-left">Aviso Legal</Link>
             </div>

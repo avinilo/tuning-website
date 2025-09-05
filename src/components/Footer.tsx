@@ -134,12 +134,15 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               {t('footer.legal.copyright')}
             </p>
-            <div className="flex space-x-6">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6">
               <Link to="/privacy-policy" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">
                 {t('footer.legal.privacy')}
               </Link>
               <Link to="/terms-of-service" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">
                 {t('footer.legal.terms')}
+              </Link>
+              <Link to="/cookie-policy" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">
+                Política de Cookies
               </Link>
               <Link to="/refund-policy" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">
                 Política de Devoluciones

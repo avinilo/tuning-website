@@ -19,6 +19,7 @@ import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import Disclaimer from './pages/Disclaimer';
+import CookiePolicy from './pages/CookiePolicy';
 
 // Componente para el botón flotante de cookies
 const CookieFloatingButton: React.FC = () => {
@@ -73,6 +74,7 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/refund-policy" element={<RefundPolicy />} />
               <Route path="/disclaimer" element={<Disclaimer />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
             </Routes>
           </main>
           <Footer />
