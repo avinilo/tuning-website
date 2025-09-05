@@ -37,44 +37,96 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 }
 
 const Home: React.FC = () => {
+  // Agregar datos estructurados para SEO
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "FILESECUFB",
+      "description": "Servicio profesional de modificación de mapas ECU y tuning files. Especialistas en Stage 1, Stage 2, DPF, EGR, AdBlue.",
+      "url": "https://filesecufb.com",
+      "telephone": "+34630841047",
+      "priceRange": "€€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES"
+      },
+      "sameAs": [
+        "https://wa.me/34630841047"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Stage 1 Tuning Files",
+          "description": "Mapas optimizados para vehículos de serie",
+          "price": "299.00",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "name": "Stage 2 Performance Maps",
+          "description": "Ficheros tuning para vehículos con hardware mejorado",
+          "price": "499.00",
+          "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "name": "DPF/EGR Solutions",
+          "description": "Modificaciones especializadas para sistemas de emisiones",
+          "price": "399.00",
+          "priceCurrency": "EUR"
+        }
+      ]
+    });
+    document.head.appendChild(script);
+    
+    return () => {
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
   const features = [
     {
       icon: Gauge,
-      title: 'MÁXIMO RENDIMIENTO',
-      description: 'Optimización extrema para liberar todo el potencial oculto de tu ECU'
+      title: 'Calibración Precisa',
+      description: 'Mapas motor optimizados y verificados en banco de potencia'
     },
     {
       icon: Shield,
-      title: 'SEGURIDAD ABSOLUTA',
-      description: 'Modificaciones profesionales que mantienen la integridad del motor'
+      title: 'Ficheros Garantizados',
+      description: 'Cada tuning file es testado exhaustivamente antes de su entrega'
     },
     {
       icon: Clock,
-      title: 'ENTREGA RÁPIDA',
-      description: 'Se entrega en menos de 30min - Servicio express para que disfrutes tu tuning al instante'
+      title: 'Entrega Express',
+      description: 'Modificaciones listas en 30 minutos gracias a nuestra extensa base de datos'
     }
   ]
 
   const services = [
     {
-      name: 'STAGE 1 TUNING',
-      description: 'Despertar inicial de la bestia',
+      name: 'Stage 1 Remap',
+      description: 'Calibración óptima para vehículos de serie',
       price: '€299.00',
-      badge: 'MÁS POPULAR',
+      badge: 'Más Popular',
       image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop&crop=center'
     },
     {
-      name: 'STAGE 2 TUNING',
-      description: 'Potencia extrema sin límites',
+      name: 'Stage 2 Performance',
+      description: 'Ficheros tuning para vehículos con hardware mejorado',
       price: '€499.00',
-      badge: 'AVANZADO',
+      badge: 'Avanzado',
       image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop&crop=center'
     },
     {
-      name: 'TCU TUNING',
-      description: 'Control total de la transmisión',
+      name: 'Soluciones DPF/EGR',
+      description: 'Modificaciones especializadas para sistemas de emisiones',
       price: '€399.00',
-      badge: 'ESPECIALIZADO',
+      badge: 'Técnico',
       image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop&crop=center'
     }
   ]
@@ -82,7 +134,7 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-dark-primary">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1920&h=1080&fit=crop&crop=center')`}}></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1920&h=1080&fit=crop&crop=center')`}} role="img" aria-label="Vehículo deportivo de alto rendimiento"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-dark-primary/90 via-dark-primary/70 to-transparent">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
           <div className="absolute top-3/4 right-1/3 w-1 h-1 bg-secondary rounded-full animate-pulse delay-1000"></div>
@@ -90,30 +142,30 @@ const Home: React.FC = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-20 sm:pb-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in tracking-tight">
-            <span className="text-primary">TUNING-REPAIR</span><br /><span className="text-white animate-pulse">FILES</span>
+            <span className="text-primary">FILESECUFB</span><br /><span className="text-white animate-pulse">Tuning Files Profesionales</span>
           </h1>
           <div className="h-1 w-32 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-12 animate-pulse"></div>
           <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-text-secondary leading-relaxed animate-fade-in-up">
-            <span className="text-primary font-semibold">LIBERA EL PODER OCULTO</span> de tu ECU con nuestros servicios de<span className="text-white font-semibold"> reprogramación extrema</span> y<span className="text-accent font-semibold"> optimización profesional</span>
+            <span className="text-primary font-semibold">Especialistas</span> en modificación de mapas y<span className="text-white font-semibold"> calibración de centralitas</span> con<span className="text-accent font-semibold"> resultados garantizados</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 animate-slide-in-left">
             <Link to="/products" className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant">
-              <Zap className="mr-3 h-6 w-6 group-hover:animate-pulse" />EXPLORAR SERVICIOS<ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              <Zap className="mr-3 h-6 w-6 group-hover:animate-pulse" />Solicitar Tuning Files<ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/register" className="btn-secondary px-10 py-4 btn-text-style btn-hover-effect shadow-subtle hover:shadow-elegant">UNIRSE AHORA</Link>
+            <Link to="/register" className="btn-secondary px-10 py-4 btn-text-style btn-hover-effect shadow-subtle hover:shadow-elegant">Acceso Profesional</Link>
           </div>
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-8 sm:mt-12">
             <div className="section-center">
-              <div className="stat-number text-primary">1000+</div>
-              <div className="stat-label text-white">Vehículos Tuneados</div>
+              <div className="stat-number text-primary">5000+</div>
+              <div className="stat-label text-white">Ficheros Entregados</div>
             </div>
             <div className="section-center">
-              <div className="stat-number text-white">+40%</div>
-              <div className="stat-label text-white">Potencia Extra</div>
+              <div className="stat-number text-white">30min</div>
+              <div className="stat-label text-white">Tiempo de Entrega</div>
             </div>
             <div className="section-center">
-              <div className="stat-number text-accent">10+</div>
-              <div className="stat-label text-white">Años Experiencia</div>
+              <div className="stat-number text-accent">500+</div>
+              <div className="stat-label text-white">Centralitas Modificadas</div>
             </div>
           </div>
         </div>
@@ -129,11 +181,11 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">¿POR QUÉ</span> <span className="text-white">ELEGIRNOS?</span>
+              <span className="text-primary">¿Por qué</span> <span className="text-white">elegirnos?</span>
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Somos los <span className="text-primary font-semibold">MAESTROS</span> de la optimización extrema con tecnología de vanguardia
+              Líderes en <span className="text-primary font-semibold">reprogramación de centralitas</span> con software profesional de última generación
             </p>
           </div>
           
@@ -165,11 +217,11 @@ const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">NUESTROS</span> <span className="text-white">SERVICIOS</span>
+              <span className="text-primary">Nuestros</span> <span className="text-white">Servicios</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Servicios de <span className="text-white font-semibold">TUNING EXTREMO</span> adaptados a tu sed de velocidad
+              Catálogo profesional de <span className="text-white font-semibold">tuning files</span> para todas las marcas y modelos
             </p>
           </div>
           
@@ -179,8 +231,9 @@ const Home: React.FC = () => {
                 <div className="relative overflow-hidden">
                   <img
                     src={service.image}
-                    alt={service.name}
+                    alt={`Servicio de ${service.name} - Optimización profesional de ECU`}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/80 to-transparent"></div>
                 </div>
@@ -203,7 +256,7 @@ const Home: React.FC = () => {
                     to="/products"
                     className="w-full btn-primary py-3 px-4 btn-text-style section-center block btn-hover-effect shadow-subtle hover:shadow-elegant"
                   >
-                    VER DETALLES
+                    Ver Detalles
                   </Link>
                 </div>
               </div>
@@ -216,7 +269,7 @@ const Home: React.FC = () => {
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
             >
               <Settings className="mr-3 h-6 w-6 group-hover:animate-spin" />
-              TODOS LOS SERVICIOS
+              Ver Todos los Ficheros
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -233,11 +286,11 @@ const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">RESULTADOS</span> <span className="text-white">REALES</span>
+              <span className="text-primary">Resultados</span> <span className="text-white">Comprobados</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Gráficas de banco <span className="text-primary font-semibold">ANTES/DESPUÉS</span> que demuestran el poder real de nuestro tuning
+              Resultados verificados en banco de potencia de nuestras <span className="text-primary font-semibold">reprogramaciones profesionales</span>
             </p>
           </div>
           
@@ -295,7 +348,7 @@ const Home: React.FC = () => {
                 </div>
                 
                 <div className="bg-primary/10 rounded-lg p-3 text-center">
-                  <span className="text-primary font-bold text-lg">+33% POTENCIA</span>
+                  <span className="text-primary font-bold text-lg">+33% Potencia</span>
                 </div>
               </div>
             </div>
@@ -353,7 +406,7 @@ const Home: React.FC = () => {
                 </div>
                 
                 <div className="bg-secondary/10 rounded-lg p-3 text-center">
-                  <span className="text-secondary font-bold text-lg">+39% POTENCIA</span>
+                  <span className="text-secondary font-bold text-lg">+39% Potencia</span>
                 </div>
               </div>
             </div>
@@ -411,7 +464,7 @@ const Home: React.FC = () => {
                 </div>
                 
                 <div className="bg-accent/10 rounded-lg p-3 text-center">
-                  <span className="text-accent font-bold text-lg">+32% POTENCIA</span>
+                  <span className="text-accent font-bold text-lg">+32% Potencia</span>
                 </div>
               </div>
             </div>
@@ -419,7 +472,7 @@ const Home: React.FC = () => {
           
           <div className="section-center mt-16">
             <a
-              href="https://wa.me/34123456789?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20resultados%20de%20tuning"
+              href="https://wa.me/34630841047?text=Hola,%20necesito%20información%20sobre%20tuning%20files%20profesionales"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
@@ -443,11 +496,11 @@ const Home: React.FC = () => {
           {/* Header Section */}
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-blue-corporate">NUESTRO</span> <span className="text-white">PROCESO</span>
+              <span className="text-blue-corporate">Nuestro</span> <span className="text-white">Proceso</span>
             </h2>
             <div className="h-1 w-32 bg-blue-corporate mx-auto mb-8 rounded-full"></div>
             <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
-              Un proceso <span className="text-blue-corporate font-semibold">EXTREMO</span> y profesional para desatar la bestia en tu vehículo
+              Proceso <span className="text-blue-corporate font-semibold">técnico y profesional</span> en el desarrollo de tuning files
             </p>
           </div>
           
@@ -456,23 +509,23 @@ const Home: React.FC = () => {
             {[
               {
                 step: '1',
-                title: 'CONSULTA',
-                description: 'Analizamos tu ECU y tus ambiciones de velocidad'
+                title: 'Recepción',
+                description: 'Recibimos el fichero original de tu centralita'
               },
               {
                 step: '2',
-                title: 'DIAGNÓSTICO',
-                description: 'Evaluamos cada componente para maximizar el potencial'
+                title: 'Análisis',
+                description: 'Estudiamos los parámetros con software especializado'
               },
               {
                 step: '3',
-                title: 'OPTIMIZACIÓN',
-                description: 'Reprogramación extrema de ECU para rendimiento brutal'
+                title: 'Optimización',
+                description: 'Modificamos los mapas según especificaciones técnicas'
               },
               {
                 step: '4',
-                title: 'ENTREGA',
-                description: 'Tu bestia lista para dominar las calles'
+                title: 'Entrega',
+                description: 'Enviamos el tuning file listo para programar'
               }
             ].map((item, index) => (
               <div key={index} className="group text-center relative">
@@ -508,7 +561,7 @@ const Home: React.FC = () => {
           <div className="text-center mt-20">
             <div className="inline-flex items-center space-x-2 text-blue-corporate">
               <div className="w-8 h-0.5 bg-blue-corporate rounded-full"></div>
-              <span className="text-sm font-semibold uppercase tracking-widest">PROCESO PROFESIONAL</span>
+              <span className="text-sm font-semibold uppercase tracking-widest">Proceso Profesional</span>
               <div className="w-8 h-0.5 bg-blue-corporate rounded-full"></div>
             </div>
           </div>
@@ -525,11 +578,11 @@ const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">SOPORTE</span> <span className="text-white">POSTVENTA</span>
+              <span className="text-primary">Soporte</span> <span className="text-white">Postventa</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Servicio completo y <span className="text-primary font-semibold">SOPORTE TÉCNICO ESPECIALIZADO</span> para mantener tu tuning en perfecto estado
+              Asistencia técnica especializada y <span className="text-primary font-semibold">actualizaciones de mapas motor</span>
             </p>
           </div>
           
@@ -540,10 +593,10 @@ const Home: React.FC = () => {
                 <RotateCcw className="h-16 w-16" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-primary transition-colors">
-                REVERSIÓN A STOCK
+                Reversión a Stock
               </h3>
               <p className="text-text-secondary group-hover:text-white transition-colors text-center leading-relaxed">
-                Restauramos tu vehículo a su configuración original cuando lo necesites. Proceso seguro y completo que devuelve todas las especificaciones de fábrica.
+                Disponemos de ficheros originales para restaurar la configuración de serie cuando lo necesites.
               </p>
             </div>
             
@@ -553,10 +606,10 @@ const Home: React.FC = () => {
                 <RefreshCw className="h-16 w-16" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-secondary transition-colors">
-                ACTUALIZACIONES
+                Actualizaciones
               </h3>
               <p className="text-text-secondary group-hover:text-white transition-colors text-center leading-relaxed">
-                Mantenemos tu tuning al día con las últimas mejoras y optimizaciones. Actualizaciones gratuitas de software y nuevas funcionalidades.
+                Actualizaciones continuas con las últimas calibraciones y mejoras en tuning files.
               </p>
             </div>
             
@@ -566,10 +619,10 @@ const Home: React.FC = () => {
                 <Wrench className="h-16 w-16" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-accent transition-colors">
-                MANTENIMIENTO
+                Mantenimiento
               </h3>
               <p className="text-text-secondary group-hover:text-white transition-colors text-center leading-relaxed">
-                Servicio técnico especializado para mantener el rendimiento óptimo. Diagnósticos periódicos y ajustes profesionales.
+                Soporte técnico especializado para la implementación de reprogramaciones.
               </p>
             </div>
           </div>
@@ -578,11 +631,11 @@ const Home: React.FC = () => {
           <div className="text-center mt-16">
             <div className="inline-flex items-center space-x-2 text-primary mb-8">
               <div className="w-8 h-0.5 bg-primary rounded-full"></div>
-              <span className="text-sm font-semibold uppercase tracking-widest">SERVICIO COMPLETO</span>
+              <span className="text-sm font-semibold uppercase tracking-widest">Servicio Completo</span>
               <div className="w-8 h-0.5 bg-primary rounded-full"></div>
             </div>
             <p className="text-lg text-text-secondary mb-8">
-              ¿Necesitas soporte técnico? Contáctanos para cualquier consulta sobre tu tuning
+              ¿Necesitas asistencia con tuning files? Contáctanos para soporte profesional
             </p>
             <a
               href="https://wa.me/34630841047"
@@ -591,7 +644,7 @@ const Home: React.FC = () => {
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
             >
               <MessageCircle className="mr-3 h-6 w-6 group-hover:animate-pulse" />
-              CONTACTAR SOPORTE
+              Contactar Soporte
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -617,7 +670,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-              LO QUE DICEN NUESTROS <span className="text-primary">CLIENTES</span>
+              Lo que dicen nuestros <span className="text-primary">clientes</span>
             </h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-8">Testimonios reales de conductores satisfechos</p>
             
@@ -647,9 +700,9 @@ const Home: React.FC = () => {
                   "@context": "https://schema.org",
                   "@type": "Review",
                   "author": {"@type": "Person", "name": "Carlos M."},
-                  "itemReviewed": {"@type": "LocalBusiness", "name": "Tuning Extremo"},
+                  "itemReviewed": {"@type": "LocalBusiness", "name": "FILESECUFB"},
                   "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                  "reviewBody": "Increíble mejora en potencia. El BMW ahora es una bestia.",
+                  "reviewBody": "Excelente servicio FILESECUFB. El Stage 1 para mi BMW funciona perfectamente.",
                   "datePublished": "2024-01-15"
                 })}
               </script>
@@ -662,7 +715,7 @@ const Home: React.FC = () => {
                 <Quote className="h-4 w-4 text-primary" />
               </div>
               <p className="text-text-secondary text-sm mb-3 leading-relaxed">
-                "Increíble mejora en potencia. El BMW ahora es una bestia."
+                "Excelente servicio FILESECUFB. El Stage 1 para mi BMW funciona perfectamente."
               </p>
               <div className="flex justify-between items-center text-xs">
                 <span className="font-semibold text-white">Carlos M.</span>
@@ -677,9 +730,9 @@ const Home: React.FC = () => {
                   "@context": "https://schema.org",
                   "@type": "Review",
                   "author": {"@type": "Person", "name": "Ana L."},
-                  "itemReviewed": {"@type": "LocalBusiness", "name": "Tuning Extremo"},
+                  "itemReviewed": {"@type": "LocalBusiness", "name": "FILESECUFB"},
                   "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                  "reviewBody": "Servicio profesional y resultados excepcionales.",
+                  "reviewBody": "Mapas de calidad profesional. FILESECUFB cumple con la entrega rápida prometida.",
                   "datePublished": "2024-02-03"
                 })}
               </script>
@@ -692,7 +745,7 @@ const Home: React.FC = () => {
                 <Quote className="h-4 w-4 text-secondary" />
               </div>
               <p className="text-text-secondary text-sm mb-3 leading-relaxed">
-                "Servicio profesional y resultados excepcionales."
+                "Mapas de calidad profesional. FILESECUFB cumple con la entrega rápida prometida."
               </p>
               <div className="flex justify-between items-center text-xs">
                 <span className="font-semibold text-white">Ana L.</span>
@@ -707,9 +760,9 @@ const Home: React.FC = () => {
                   "@context": "https://schema.org",
                   "@type": "Review",
                   "author": {"@type": "Person", "name": "Miguel R."},
-                  "itemReviewed": {"@type": "LocalBusiness", "name": "Tuning Extremo"},
+                  "itemReviewed": {"@type": "LocalBusiness", "name": "FILESECUFB"},
                   "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-                  "reviewBody": "Muy satisfecho con el tuning de mi Golf GTI.",
+                  "reviewBody": "Los mejores tuning files del mercado. FILESECUFB transformó mi Golf GTI.",
                   "datePublished": "2024-01-28"
                 })}
               </script>
@@ -722,7 +775,7 @@ const Home: React.FC = () => {
                 <Quote className="h-4 w-4 text-accent" />
               </div>
               <p className="text-text-secondary text-sm mb-3 leading-relaxed">
-                "Muy satisfecho con el tuning de mi Golf GTI."
+                "Los mejores tuning files del mercado. FILESECUFB transformó mi Golf GTI."
               </p>
               <div className="flex justify-between items-center text-xs">
                 <span className="font-semibold text-white">Miguel R.</span>
@@ -742,38 +795,38 @@ const Home: React.FC = () => {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              <span className="text-primary">PREGUNTAS</span> <span className="text-white">FRECUENTES</span>
+              <span className="text-primary">Preguntas</span> <span className="text-white">Frecuentes</span>
             </h2>
             <div className="h-1 w-32 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Resolvemos todas tus dudas sobre nuestros servicios de <span className="text-primary font-semibold">TUNING EXTREMO</span>
+              Resolvemos todas tus dudas sobre <span className="text-primary font-semibold">modificación de centralitas y tuning files</span>
             </p>
           </div>
           
           <div className="space-y-4">
             <FAQItem 
-              question="¿Qué servicios de tuning ofrecen?"
-              answer="Ofrecemos Stage 1 y Stage 2 tuning, reprogramación de ECU y TCU, optimización de rendimiento, y modificaciones personalizadas. Todos nuestros servicios están diseñados para maximizar la potencia y el rendimiento de tu vehículo de forma segura."
+              question="¿Qué tipos de tuning files ofrecen?"
+              answer="Ofrecemos ficheros modificados para Stage 1, Stage 2, solución DPF, EGR off, AdBlue off, pop & bang, hard cut limiter y calibraciones personalizadas. Todos los mapas son verificados antes de su entrega."
             />
             <FAQItem 
-              question="¿Cuánto tiempo toma el proceso de tuning?"
-              answer="El tiempo varía según el servicio: Stage 1 toma aproximadamente 2-3 horas, Stage 2 puede tomar 4-6 horas, y el TCU tuning requiere 3-4 horas. Trabajamos con cita previa para garantizar la mejor atención."
+              question="¿Cuál es el tiempo de entrega?"
+              answer="La entrega de ficheros tuning es inmediata para modelos en nuestra base de datos (30 minutos máximo). Para calibraciones personalizadas, el tiempo varía entre 2-4 horas según la complejidad."
             />
             <FAQItem 
-              question="¿Qué garantías ofrecen en sus servicios?"
-              answer="Ofrecemos garantía completa en todos nuestros trabajos. Si experimentas algún problema relacionado con nuestro tuning, lo solucionamos sin costo adicional. Tu satisfacción y la seguridad de tu vehículo son nuestra prioridad."
+              question="¿Qué garantías ofrecen?"
+              answer="Todos nuestros mapas están garantizados. Cada modificación es verificada en banco de potencia con soporte técnico incluido. Si surge algún problema, proporcionamos revisión sin costo adicional."
             />
             <FAQItem 
-              question="¿Trabajan con todas las marcas de vehículos?"
-              answer="Trabajamos con la mayoría de marcas europeas, japonesas y americanas. Tenemos experiencia especial con BMW, Audi, Mercedes, Volkswagen, Ford, y muchas más. Contáctanos para confirmar compatibilidad con tu modelo específico."
+              question="¿Qué centralitas soportan?"
+              answer="Trabajamos con todas las principales marcas: Bosch, Siemens, Delphi, Denso, Magneti Marelli, Continental y más. Nuestra base de datos incluye mapas para vehículos europeos, asiáticos y americanos."
             />
             <FAQItem 
-              question="¿Es seguro el tuning para mi vehículo?"
-              answer="Absolutamente. Con más de 10 años de experiencia, utilizamos equipos profesionales y software certificado. Realizamos todas las modificaciones dentro de los límites seguros del motor, manteniendo la fiabilidad a largo plazo."
+              question="¿Son seguros los tuning files?"
+              answer="Sí, todas nuestras reprogramaciones respetan los límites seguros del motor. Utilizamos herramientas profesionales como WinOLS, ECM Titanium y bancos de potencia para verificar cada calibración."
             />
             <FAQItem 
-              question="¿Necesito cita previa para el servicio?"
-              answer="Sí, trabajamos únicamente con cita previa para garantizar la mejor atención personalizada. Puedes contactarnos por WhatsApp o teléfono para agendar tu cita y recibir asesoramiento personalizado sobre tu vehículo."
+              question="¿Cómo solicitar un fichero tuning?"
+              answer="Puedes solicitar tu mapa modificado vía WhatsApp enviando el fichero original de tu centralita. Necesitamos marca, modelo, año, tipo de ECU y el archivo en formato BIN, ORI o similar."
             />
           </div>
         </div>
@@ -792,14 +845,14 @@ const Home: React.FC = () => {
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-            <span className="text-primary">ÚNETE A NUESTRA</span><br />
-            <span className="text-white">COMUNIDAD DE WHATSAPP</span>
+            <span className="text-primary">Únete a nuestra</span><br />
+            <span className="text-white">comunidad de WhatsApp</span>
           </h2>
           
           <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
           
           <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
-            ¿Tienes preguntas? Únete a nuestra <span className="text-primary font-semibold">comunidad</span> de profesionales del tuning y <span className="text-white font-semibold">resuelve dudas</span> al instante.
+            Comunidad profesional de <span className="text-primary font-semibold">especialistas en mapas motor</span>. Soporte técnico y <span className="text-white font-semibold">asistencia inmediata</span>.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8">
@@ -810,7 +863,7 @@ const Home: React.FC = () => {
               className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant"
             >
               <MessageCircle className="mr-3 h-6 w-6 group-hover:animate-pulse" />
-              UNIRSE AL GRUPO
+              Unirse al Grupo
               <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
