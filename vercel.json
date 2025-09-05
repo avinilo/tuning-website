@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!favicon|apple-touch-icon|site\\.webmanifest|.*\\.(ico|png|svg|webmanifest)).*)",
+      "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ]
