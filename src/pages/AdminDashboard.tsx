@@ -74,24 +74,66 @@ const AdminDashboard: React.FC = () => {
               <h1 className="text-lg font-bold text-white mb-3">
                 <span className="text-primary">ADMIN</span> PANEL
               </h1>
-              <div className="flex overflow-x-auto space-x-2 pb-2 scrollbar-hide">
-                {sidebarItems.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => setActiveSection(item.id)}
-                      className={`flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 touch-manipulation text-sm ${
-                        activeSection === item.id
-                          ? 'bg-primary text-white'
-                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                      }`}
-                    >
-                      <Icon className="w-4 h-4" />
-                      <span className="font-medium whitespace-nowrap">{item.label}</span>
-                    </button>
-                  );
-                })}
+              {/* Horizontal Scroll Container with Gradient Indicators */}
+              <div className="relative">
+                {/* Left Gradient Indicator */}
+                <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-gray-900/95 to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300" id="left-gradient"></div>
+                
+                {/* Right Gradient Indicator */}
+                <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-gray-900/95 to-transparent z-10 pointer-events-none opacity-100 transition-opacity duration-300" id="right-gradient"></div>
+                
+                {/* Scrollable Buttons Container */}
+                <div 
+                  className="flex overflow-x-auto space-x-2 pb-2 scrollbar-hide scroll-smooth"
+                  style={{
+                    scrollbarWidth: 'none',
+                    msOverflowStyle: 'none',
+                    WebkitOverflowScrolling: 'touch'
+                  }}
+                  onScroll={(e) => {
+                    const container = e.currentTarget;
+                    const leftGradient = document.getElementById('left-gradient');
+                    const rightGradient = document.getElementById('right-gradient');
+                    
+                    if (leftGradient && rightGradient) {
+                      // Show/hide left gradient
+                      if (container.scrollLeft > 10) {
+                        leftGradient.style.opacity = '1';
+                      } else {
+                        leftGradient.style.opacity = '0';
+                      }
+                      
+                      // Show/hide right gradient
+                      const isAtEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth - 10);
+                      if (isAtEnd) {
+                        rightGradient.style.opacity = '0';
+                      } else {
+                        rightGradient.style.opacity = '1';
+                      }
+                    }
+                  }}
+                >
+                  {sidebarItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => setActiveSection(item.id)}
+                        className={`flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 touch-manipulation text-sm min-w-max ${
+                          activeSection === item.id
+                            ? 'bg-primary text-white shadow-lg'
+                            : 'bg-gray-800 text-gray-300 hover:bg-gray-700 active:bg-gray-600'
+                        }`}
+                        style={{
+                          WebkitTapHighlightColor: 'transparent'
+                        }}
+                      >
+                        <Icon className="w-4 h-4" />
+                        <span className="font-medium whitespace-nowrap">{item.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
