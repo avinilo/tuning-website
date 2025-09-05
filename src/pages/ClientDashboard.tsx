@@ -6,6 +6,7 @@ interface TunedFile {
   fileName: string;
   uploadDate: string;
   size: string;
+  comments?: string;
 }
 
 interface Invoice {
@@ -75,7 +76,8 @@ const ClientDashboard: React.FC = () => {
           id: 'FILE-001',
           fileName: 'audi_a4_stage1_tuned.bin',
           uploadDate: '2024-01-18',
-          size: '1.2 MB'
+          size: '1.2 MB',
+          comments: 'Mapa optimizado para mejor rendimiento y eficiencia. Se recomienda usar combustible de 95 octanos mínimo.'
         }
       ],
       invoices: [
@@ -217,23 +219,31 @@ const ClientDashboard: React.FC = () => {
                     <FileText className="w-5 h-5" />
                     Archivos Tuneados
                   </h4>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {order.files.map((file) => (
-                      <div key={file.id} className="flex justify-between items-center bg-gray-600/30 rounded-lg p-3">
-                        <div>
-                          <p className="text-white font-medium">{file.fileName}</p>
-                          <p className="text-gray-400 text-sm">
-                            Subido: {new Date(file.uploadDate).toLocaleDateString('es-ES')} • {file.size}
-                          </p>
+                      <div key={file.id} className="bg-gray-600/30 rounded-lg p-3">
+                        <div className="flex justify-between items-center mb-3">
+                          <div>
+                            <p className="text-white font-medium">{file.fileName}</p>
+                            <p className="text-gray-400 text-sm">
+                              Subido: {new Date(file.uploadDate).toLocaleDateString('es-ES')} • {file.size}
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => handleDownload(file.fileName)}
+                            className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 text-sm sm:text-base touch-manipulation"
+                          >
+                            <Download className="w-4 h-4" />
+                            <span className="hidden sm:inline">Descargar</span>
+                            <span className="sm:hidden">DL</span>
+                          </button>
                         </div>
-                        <button
-                          onClick={() => handleDownload(file.fileName)}
-                          className="bg-primary hover:bg-primary/80 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 text-sm sm:text-base touch-manipulation"
-                        >
-                          <Download className="w-4 h-4" />
-                          <span className="hidden sm:inline">Descargar</span>
-                          <span className="sm:hidden">DL</span>
-                        </button>
+                        {file.comments && (
+                          <div className="bg-gray-700/40 rounded-lg p-3 border-l-4 border-primary/50">
+                            <p className="text-gray-300 text-sm font-medium mb-1">Comentarios del técnico:</p>
+                            <p className="text-gray-200 text-sm leading-relaxed">{file.comments}</p>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
