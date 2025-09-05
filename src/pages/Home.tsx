@@ -150,9 +150,9 @@ const Home: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 animate-slide-in-left">
             <Link to="/products" className="btn-primary px-10 py-4 btn-text-style inline-flex items-center group btn-hover-effect shadow-subtle hover:shadow-elegant">
-              <Zap className="mr-3 h-6 w-6 group-hover:animate-pulse" />Solicitar Tuning Files<ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              <Zap className="mr-3 h-6 w-6 group-hover:animate-pulse" />Ver Servicios<ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/register" className="btn-secondary px-10 py-4 btn-text-style btn-hover-effect shadow-subtle hover:shadow-elegant">Acceso Profesional</Link>
+            <Link to="/register" className="btn-secondary px-10 py-4 btn-text-style btn-hover-effect shadow-subtle hover:shadow-elegant">Iniciar Sesión</Link>
           </div>
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-8 sm:mt-12">
             <div className="section-center">
