@@ -60,7 +60,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-blue-corporate" />
-                <span className="text-gray-300 text-sm">info@fabipro.com</span>
+                <span className="text-gray-300 text-sm">info@filesecufb.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-blue-corporate" />
@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 FABI TUNING. Todos los derechos reservados.
+              © 2024 FILESECUFB. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-blue-corporate transition-colors duration-300 text-sm">

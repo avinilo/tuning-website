@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
                 <Zap className="h-8 w-8 text-white" />
               </div>
               <span className="text-2xl font-bold text-white font-accent">
-                FABI <span className="text-primary">PRO</span>
+                FILES<span className="text-primary">ECUFB</span>
               </span>
             </Link>
           </div>

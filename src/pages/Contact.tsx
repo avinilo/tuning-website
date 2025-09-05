@@ -78,10 +78,10 @@ const Contact: React.FC = () => {
                   <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
                   <p className="text-gray-300 mb-4">Envíanos un correo electrónico</p>
                   <a 
-                    href="mailto:info@fabipro.com" 
+                    href="mailto:info@filesecufb.com" 
                     className="text-primary hover:text-secondary transition-colors duration-300 font-medium text-lg"
                   >
-                    info@fabipro.com
+                    info@filesecufb.com
                   </a>
                 </div>
               </div>
