@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Información de la empresa */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-blue-corporate">
-              FABI PRO
+              FILESECUFB
             </h3>
             <p className="text-gray-300 leading-relaxed">
               Especialistas en reprogramación extrema y tuning de alto rendimiento. 

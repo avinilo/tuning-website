@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ubicación de FABI PRO - Paraje Narcisos, 21, MEDIALEGUA, 30320 Cuevas de Reyllo, Murcia"
+                  title="Ubicación de FILESECUFB - Paraje Narcisos, 21, MEDIALEGUA, 30320 Cuevas de Reyllo, Murcia"
                   className="w-full h-96 rounded-lg"
                 ></iframe>
               </div>
