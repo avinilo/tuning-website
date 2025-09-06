@@ -691,7 +691,8 @@
       "savePreferences": "Save Preferences",
       "cookiePolicy": "Cookie Policy",
       "privacyPolicy": "Privacy Policy",
-      "legalNotice": "Legal Notice"
+      "legalNotice": "Legal Notice",
+      "manageConsent": "Manage Consent"
     }
   },
   "cookiePolicy": {

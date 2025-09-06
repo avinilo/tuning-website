@@ -735,7 +735,8 @@
       "savePreferences": "Guardar Preferencias",
       "cookiePolicy": "Política de Cookies",
       "privacyPolicy": "Política de Privacidad",
-      "legalNotice": "Aviso Legal"
+      "legalNotice": "Aviso Legal",
+      "manageConsent": "Gestionar Consentimiento"
     },
     "settings": {
       "title": "Configuración de Cookies",
