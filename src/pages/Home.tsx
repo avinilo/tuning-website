@@ -728,27 +728,27 @@ const Home: React.FC = () => {
             </h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-8">{t('home.testimonials.subtitle')}</p>
             
-            {/* Aggregate Rating - More Subtle */}
-            <div className="inline-flex items-center bg-gradient-dark rounded-xl border border-elegant px-6 py-3 shadow-elegant">
-              <div className="flex items-center mr-4">
-                <div className="flex mr-2">
+            {/* Aggregate Rating - Mobile Optimized */}
+            <div className="inline-flex flex-col sm:flex-row items-center bg-gradient-dark rounded-xl border border-elegant px-4 sm:px-6 py-4 sm:py-3 shadow-elegant">
+              <div className="flex items-center mb-2 sm:mb-0 sm:mr-4">
+                <div className="flex mr-2 gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-4 w-4 text-yellow-400 fill-current" />
+                    <Star key={star} className="h-5 w-5 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="text-lg font-bold text-white mr-1">4.8</span>
-                <span className="text-sm text-text-secondary">/5</span>
+                <span className="text-xl sm:text-lg font-bold text-white mr-1">4.8</span>
+                <span className="text-base sm:text-sm text-text-secondary">/5</span>
               </div>
-              <div className="border-l border-elegant pl-4">
-                <span className="text-sm font-medium text-white">127 {t('home.testimonials.reviews')}</span>
+              <div className="border-t sm:border-t-0 sm:border-l border-elegant pt-2 sm:pt-0 sm:pl-4">
+                <span className="text-base sm:text-sm font-medium text-white">127 {t('home.testimonials.reviews')}</span>
               </div>
             </div>
           </div>
           
           {/* Testimonials Grid - Mobile Optimized */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {/* Testimonio 1 */}
-            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 sm:p-6 hover:border-primary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+            <div className="group bg-gradient-dark rounded-xl border border-elegant p-5 sm:p-4 hover:border-primary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <script type="application/ld+json">
                 {JSON.stringify({
                   "@context": "https://schema.org",
@@ -760,25 +760,25 @@ const Home: React.FC = () => {
                   "datePublished": "2024-01-15"
                 })}
               </script>
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
+                    <Star key={star} className="h-4 w-4 sm:h-3 sm:w-3 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0" />
+                <Quote className="h-5 w-5 sm:h-4 sm:w-4 text-primary" />
               </div>
-              <p className="text-text-secondary text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
+              <p className="text-text-secondary text-base sm:text-sm mb-4 sm:mb-3 leading-relaxed">
                 "{t('home.testimonials.items.carlos.text')}"
               </p>
-              <div className="flex justify-between items-center text-xs sm:text-sm">
+              <div className="flex justify-between items-center text-sm sm:text-xs">
                 <span className="font-semibold text-white">Carlos M.</span>
                 <span className="text-text-secondary">BMW 320i</span>
               </div>
             </div>
             
             {/* Testimonio 2 */}
-            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 sm:p-6 hover:border-secondary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+            <div className="group bg-gradient-dark rounded-xl border border-elegant p-5 sm:p-4 hover:border-secondary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <script type="application/ld+json">
                 {JSON.stringify({
                   "@context": "https://schema.org",
@@ -790,25 +790,25 @@ const Home: React.FC = () => {
                   "datePublished": "2024-02-03"
                 })}
               </script>
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
+                    <Star key={star} className="h-4 w-4 sm:h-3 sm:w-3 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-4 w-4 sm:h-5 sm:w-5 text-secondary flex-shrink-0" />
+                <Quote className="h-5 w-5 sm:h-4 sm:w-4 text-secondary" />
               </div>
-              <p className="text-text-secondary text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
+              <p className="text-text-secondary text-base sm:text-sm mb-4 sm:mb-3 leading-relaxed">
                 "{t('home.testimonials.items.ana.text')}"
               </p>
-              <div className="flex justify-between items-center text-xs sm:text-sm">
+              <div className="flex justify-between items-center text-sm sm:text-xs">
                 <span className="font-semibold text-white">Ana L.</span>
                 <span className="text-text-secondary">Audi A4</span>
               </div>
             </div>
             
             {/* Testimonio 3 */}
-            <div className="group bg-gradient-dark rounded-xl border border-elegant p-4 sm:p-6 hover:border-accent hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+            <div className="group bg-gradient-dark rounded-xl border border-elegant p-5 sm:p-4 hover:border-accent hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <script type="application/ld+json">
                 {JSON.stringify({
                   "@context": "https://schema.org",
@@ -820,18 +820,18 @@ const Home: React.FC = () => {
                   "datePublished": "2024-01-28"
                 })}
               </script>
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-current" />
+                    <Star key={star} className="h-4 w-4 sm:h-3 sm:w-3 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <Quote className="h-4 w-4 sm:h-5 sm:w-5 text-accent flex-shrink-0" />
+                <Quote className="h-5 w-5 sm:h-4 sm:w-4 text-accent" />
               </div>
-              <p className="text-text-secondary text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
+              <p className="text-text-secondary text-base sm:text-sm mb-4 sm:mb-3 leading-relaxed">
                 "{t('home.testimonials.items.miguel.text')}"
               </p>
-              <div className="flex justify-between items-center text-xs sm:text-sm">
+              <div className="flex justify-between items-center text-sm sm:text-xs">
                 <span className="font-semibold text-white">Miguel R.</span>
                 <span className="text-text-secondary">Golf GTI</span>
               </div>
