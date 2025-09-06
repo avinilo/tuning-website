@@ -721,7 +721,7 @@ const Home: React.FC = () => {
           })}
         </script>
         
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
               {t('home.testimonials.title.part1')} <span className="text-primary">{t('home.testimonials.title.part2')}</span>
@@ -746,7 +746,7 @@ const Home: React.FC = () => {
           </div>
           
           {/* Testimonials Grid - Mobile Optimized */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto px-2 sm:px-0">
             {/* Testimonio 1 */}
             <div className="group bg-gradient-dark rounded-xl border border-elegant p-5 sm:p-4 hover:border-primary hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
               <script type="application/ld+json">
