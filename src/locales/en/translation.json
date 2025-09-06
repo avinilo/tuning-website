@@ -308,7 +308,9 @@
         "originalTorque": "300 Nm",
         "tunedTorque": "420 Nm",
         "powerGain": "+33%",
-        "torqueGain": "+40%"
+        "torqueGain": "+40%",
+        "powerIncrease": "+61 HP",
+        "torqueIncrease": "+120 Nm"
       },
       "audi": {
         "model": "Audi A4 2.0T",
@@ -317,7 +319,9 @@
         "originalTorque": "320 Nm",
         "tunedTorque": "450 Nm",
         "powerGain": "+39%",
-        "torqueGain": "+41%"
+        "torqueGain": "+41%",
+        "powerIncrease": "+75 HP",
+        "torqueIncrease": "+130 Nm"
       },
       "golf": {
         "model": "Golf GTI Mk7",
@@ -326,7 +330,9 @@
         "originalTorque": "350 Nm",
         "tunedTorque": "480 Nm",
         "powerGain": "+32%",
-        "torqueGain": "+37%"
+        "torqueGain": "+37%",
+        "powerIncrease": "+70 HP",
+        "torqueIncrease": "+130 Nm"
       }
     },
     "process": {
