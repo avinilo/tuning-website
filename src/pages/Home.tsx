@@ -348,67 +348,69 @@ const Home: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* BMW 320i Results */}
-            <div className="group section-center p-8 bg-gradient-dark rounded-xl border border-elegant hover:border-primary hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 hover-elegant">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                    {t('home.results.bmw.model')}
-                  </h3>
-                  <TrendingUp className="h-6 w-6 text-primary group-hover:animate-pulse" />
-                </div>
-                
-                {/* Before/After Stats */}
-                <div className="space-y-4 mb-6">
-                  <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.power')}:</span>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.bmw.originalPower')}</span>
-                      <ArrowRight className="h-4 w-4 text-primary" />
-                      <span className="text-green-400 font-bold">{t('home.results.bmw.tunedPower')}</span>
+          {/* Contenedor centrado con max-width para las tarjetas */}
+          <div className="w-full max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
+              {/* BMW 320i Results */}
+              <div className="group w-full max-w-sm bg-gradient-dark rounded-xl border border-elegant hover:border-primary hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 hover-elegant">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                      {t('home.results.bmw.model')}
+                    </h3>
+                    <TrendingUp className="h-6 w-6 text-primary group-hover:animate-pulse" />
+                  </div>
+                  
+                  {/* Before/After Stats */}
+                  <div className="space-y-4 mb-6">
+                    <div className="flex justify-between items-center">
+                      <span className="text-text-secondary">{t('home.results.power')}:</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-red-400">{t('home.results.bmw.originalPower')}</span>
+                        <ArrowRight className="h-4 w-4 text-primary" />
+                        <span className="text-green-400 font-bold">{t('home.results.bmw.tunedPower')}</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-text-secondary">{t('home.results.torque')}:</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-red-400">{t('home.results.bmw.originalTorque')}</span>
+                        <ArrowRight className="h-4 w-4 text-primary" />
+                        <span className="text-green-400 font-bold">{t('home.results.bmw.tunedTorque')}</span>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-text-secondary">{t('home.results.torque')}:</span>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-red-400">{t('home.results.bmw.originalTorque')}</span>
-                      <ArrowRight className="h-4 w-4 text-primary" />
-                      <span className="text-green-400 font-bold">{t('home.results.bmw.tunedTorque')}</span>
+                  
+                  {/* Visual Bar Chart */}
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-text-secondary">{t('home.results.power')}</span>
+                        <span className="text-primary font-bold">{t('home.results.bmw.powerIncrease')}</span>
+                      </div>
+                      <div className="w-full bg-dark-secondary rounded-full h-2">
+                        <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '75%'}}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-text-secondary">{t('home.results.torque')}</span>
+                        <span className="text-primary font-bold">{t('home.results.bmw.torqueIncrease')}</span>
+                      </div>
+                      <div className="w-full bg-dark-secondary rounded-full h-2">
+                        <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '80%'}}></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                {/* Visual Bar Chart */}
-                <div className="space-y-3 mb-6">
-                  <div>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.power')}</span>
-                      <span className="text-primary font-bold">{t('home.results.bmw.powerIncrease')}</span>
-                    </div>
-                    <div className="w-full bg-dark-secondary rounded-full h-2">
-                      <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '75%'}}></div>
-                    </div>
+                  
+                  <div className="bg-primary/10 rounded-lg p-3 text-center">
+                    <span className="text-primary font-bold text-lg">{t('home.results.bmw.powerGain')}</span>
                   </div>
-                  <div>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="text-text-secondary">{t('home.results.torque')}</span>
-                      <span className="text-primary font-bold">{t('home.results.bmw.torqueIncrease')}</span>
-                    </div>
-                    <div className="w-full bg-dark-secondary rounded-full h-2">
-                      <div className="bg-gradient-to-r from-red-400 to-green-400 h-2 rounded-full" style={{width: '80%'}}></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-primary/10 rounded-lg p-3 text-center">
-                  <span className="text-primary font-bold text-lg">{t('home.results.bmw.powerGain')}</span>
                 </div>
               </div>
-            </div>
             
             {/* Audi A4 Results */}
-            <div className="group section-center p-8 bg-gradient-dark rounded-xl border border-elegant hover:border-secondary hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 hover-elegant">
+            <div className="group w-full max-w-sm bg-gradient-dark rounded-xl border border-elegant hover:border-secondary hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 hover-elegant">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-white group-hover:text-secondary transition-colors">
@@ -466,7 +468,7 @@ const Home: React.FC = () => {
             </div>
             
             {/* Golf GTI Results */}
-            <div className="group section-center p-8 bg-gradient-dark rounded-xl border border-elegant hover:border-accent hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 hover-elegant">
+            <div className="group w-full max-w-sm bg-gradient-dark rounded-xl border border-elegant hover:border-accent hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 hover-elegant">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors">
@@ -522,6 +524,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
           </div>
           
           <div className="section-center mt-16">
