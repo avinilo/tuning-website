@@ -13,40 +13,6 @@
       "closing": "CLOSING..."
     }
   },
-  "footer": {
-    "company": {
-      "name": "FILESECUFB",
-      "description": "Specialists in ECU remapping and professional tuning files with over 10 years of experience in the automotive sector."
-    },
-    "navigation": {
-      "title": "Navigation",
-      "home": "Home",
-      "process": "Our Process",
-      "services": "Services",
-      "contact": "Contact"
-    },
-    "services": {
-      "title": "Services",
-      "ecu": "ECU Remapping",
-      "tuning": "Extreme Tuning",
-      "optimization": "Performance Optimization",
-      "diagnostic": "Advanced Diagnostics"
-    },
-    "contact": {
-      "title": "Contact",
-      "phone": "+34 630 84 10 47",
-      "email": "info@filesecufb.com",
-      "address": "Paraje Narcisos, 21, MEDIALEGUA"
-    },
-    "legal": {
-      "copyright": "© 2024 FILESECUFB. All rights reserved.",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "cookies": "Cookie Policy",
-      "refund": "Refund Policy",
-      "disclaimer": "Disclaimer"
-    }
-  },
   "contact": {
     "header": {
       "title": "CONTACT <span class='text-primary'>US</span>",
@@ -116,7 +82,10 @@
       }
     },
     "features": {
-      "title": "Why Choose Us?",
+      "title": {
+        "part1": "Why Choose",
+        "part2": "Us?"
+      },
       "subtitle": "Leaders in ECU remapping with cutting-edge professional software",
       "items": {
         "calibration": {
@@ -134,34 +103,44 @@
       }
     },
     "services": {
-      "title": "Our Services",
+      "title": {
+        "part1": "Our",
+        "part2": "Services"
+      },
       "subtitle": "Professional catalog of tuning files for all makes and models",
       "viewAll": "View All Files",
       "viewDetails": "View Details",
-      "items": {
-        "stage1": {
+      "items": [
+        {
           "name": "Stage 1 Remap",
           "description": "Optimal calibration for stock vehicles",
           "badge": "Most Popular"
         },
-        "stage2": {
+        {
           "name": "Stage 2 Performance",
           "description": "Tuning files for vehicles with upgraded hardware",
           "badge": "Advanced"
         },
-        "dpfegr": {
+        {
           "name": "DPF/EGR Solutions",
           "description": "Specialized modifications for emission systems",
           "badge": "Technical"
         }
-      }
-    },
-    "results": {
-      "title": "Proven Results",
-      "subtitle": "Dyno-verified results from our professional remapping",
-      "power": "Power",
-        "torque": "Torque",
-        "contact": "Contact Us"
+      ],
+      "servicesList": [
+        {
+          "name": "Stage 1 Tuning Files",
+          "description": "Professional ECU modification service to optimize your vehicle's performance"
+        },
+        {
+          "name": "Stage 2 Tuning Files",
+          "description": "Advanced ECU modifications to get the maximum potential from your engine"
+        },
+        {
+          "name": "DPF/EGR Delete",
+          "description": "Professional removal of restrictive systems to improve performance"
+        }
+      ]
     },
     "process": {
       "title": {
@@ -169,7 +148,6 @@
         "part2": "Process"
       },
       "subtitle": "Technical and professional process in tuning file development",
-      "professional": "Professional Process",
       "steps": {
         "reception": {
           "title": "Reception",
@@ -187,8 +165,10 @@
           "title": "Delivery",
           "description": "We send the tuning file ready to program"
         }
-      }
+      },
+      "professional": "Professional service guaranteed"
     },
+
     "support": {
       "title": {
         "part1": "After-Sales",
@@ -213,11 +193,7 @@
         }
       }
     },
-    "testimonials": {
-      "title": "What our clients say",
-      "subtitle": "Real testimonials from satisfied drivers",
-      "reviews": "reviews"
-    },
+
     "faq": {
       "title": {
         "part1": "Frequently",
@@ -267,29 +243,6 @@
       },
       "button": "Join the Group"
     },
-    "services": {
-      "title": {
-        "part1": "Our",
-        "part2": "Services"
-      },
-      "subtitle": "Professional catalog of tuning files for all brands and models",
-      "viewDetails": "View Details",
-      "viewAll": "View All Files",
-      "items": [
-        {
-          "name": "Stage 1 Tuning Files",
-          "description": "Professional ECU modification service to optimize your vehicle's performance"
-        },
-        {
-          "name": "Stage 2 Tuning Files",
-          "description": "Advanced ECU modifications to get the maximum potential from your engine"
-        },
-        {
-          "name": "DPF/EGR Delete",
-          "description": "Professional removal of restrictive systems to improve performance"
-        }
-      ]
-    },
     "results": {
       "title": {
         "part1": "Proven",
@@ -333,56 +286,6 @@
         "torqueGain": "+37%",
         "powerIncrease": "+70 HP",
         "torqueIncrease": "+130 Nm"
-      }
-    },
-    "process": {
-      "title": {
-        "part1": "Our",
-        "part2": "Process"
-      },
-      "subtitle": "Technical and professional process in tuning file development",
-      "professional": "Professional Process",
-      "steps": {
-        "reception": {
-          "title": "Reception",
-          "description": "We receive the original file from your ECU"
-        },
-        "analysis": {
-          "title": "Analysis",
-          "description": "We study the parameters with specialized software"
-        },
-        "optimization": {
-          "title": "Optimization",
-          "description": "We modify the maps according to technical specifications"
-        },
-        "delivery": {
-          "title": "Delivery",
-          "description": "We send the tuning file ready to program"
-        }
-      }
-    },
-    "support": {
-      "title": {
-        "part1": "After-Sales",
-        "part2": "Support"
-      },
-      "subtitle": "Specialized technical assistance and engine map updates",
-      "complete": "Complete Service",
-      "question": "Need technical assistance?",
-      "contact": "Contact Support",
-      "services": {
-        "reversion": {
-          "title": "Stock Reversion",
-          "description": "We have original files available to restore factory configuration when needed."
-        },
-        "updates": {
-          "title": "Updates",
-          "description": "Continuous updates with the latest calibrations and tuning file improvements."
-        },
-        "maintenance": {
-          "title": "Maintenance",
-          "description": "Specialized technical support for remapping implementation."
-        }
       }
     },
     "testimonials": {
@@ -654,11 +557,7 @@
     },
     "lastUpdated": "Last updated:"
   },
-  "cookies": {
-    "banner": {
-      "title": "Cookie Settings"
-    }
-  },
+
   "clientDashboard": {
     "title": "CLIENT <span class='text-primary'>PANEL</span>",
     "sidebar": {
@@ -774,6 +673,25 @@
     "section10": {
       "title": "10. Entire Agreement",
       "content": "These terms constitute the entire agreement between you and us regarding the use of the website and supersede all prior agreements and understandings, whether written or oral."
+    }
+  },
+  "cookies": {
+    "banner": {
+      "title": "Cookie Settings",
+      "description": "We use cookies to improve your browsing experience, analyze site traffic and personalize content. By clicking 'Accept All', you consent to the use of all cookies.",
+      "reject": "Reject All",
+      "configure": "Configure",
+      "acceptAll": "Accept All",
+      "expandedDescription": "Customize which cookies you want to accept. You can change these preferences at any time.",
+      "functional": "Functional Cookies",
+      "alwaysActive": "Always Active",
+      "statistics": "Analytics Cookies",
+      "marketing": "Marketing Cookies",
+      "accept": "Accept",
+      "savePreferences": "Save Preferences",
+      "cookiePolicy": "Cookie Policy",
+      "privacyPolicy": "Privacy Policy",
+      "legalNotice": "Legal Notice"
     }
   },
   "cookiePolicy": {
@@ -923,30 +841,7 @@
     },
     "lastUpdated": "Last updated:"
   },
-  "cookies": {
-    "banner": {
-      "title": "Cookie Settings",
-      "description": "We use cookies to improve your experience. Configure your preferences.",
-      "reject": "Reject",
-      "configure": "Configure",
-      "acceptAll": "Accept All",
-      "manageConsent": "Manage Consent",
-      "expandedDescription": "We use cookies and similar technologies to improve your browsing experience, personalize content and ads, provide social media features, and analyze our traffic. By clicking 'Accept All', you consent to the use of all cookies. You can also manage your cookie preferences by selecting the categories you want to allow.",
-      "functional": "Functional",
-      "functionalDescription": "Essential cookies for basic website functionality.",
-      "alwaysActive": "Always Active",
-      "statistics": "Statistics",
-      "statisticsDescription": "Cookies to analyze website usage and improve performance.",
-      "marketing": "Marketing",
-      "marketingDescription": "Cookies to personalize ads and promotional content.",
-      "accept": "Accept",
-      "deny": "Deny",
-      "savePreferences": "Save Preferences",
-      "cookiePolicy": "Cookie Policy",
-      "privacyPolicy": "Privacy Policy",
-      "legalNotice": "Legal Notice"
-    }
-  },
+
   "disclaimer": {
     "title": "DISCLAIMER OF",
     "titleHighlight": "LIABILITY",

@@ -232,8 +232,8 @@ const Home: React.FC = () => {
       <section className="py-12 sm:py-16 md:py-20 bg-dark-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-              {t('home.features.title')}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              <span className="text-primary">{t('home.features.title.part1')}</span> <span className="text-white">{t('home.features.title.part2')}</span>
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
